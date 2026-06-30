@@ -1,0 +1,57 @@
+/*=========================================
+        ANIMACIÓN CONTADOR
+=========================================*/
+
+.contador__numero{
+
+    transition:
+
+        transform .35s ease,
+
+        opacity .35s ease;
+
+}
+
+/* cuando cambia */
+
+.contador__numero.cambiar{
+
+    transform:
+
+        translateY(-8px)
+
+        scale(1.12);
+
+    opacity:.35;
+
+}
+
+/*=========================================
+        ENTRADA DEL BLOQUE
+=========================================*/
+
+.fecha{
+
+    opacity:0;
+
+    transform:
+
+        translateY(70px);
+
+    transition:
+
+        opacity .9s ease,
+
+        transform .9s ease;
+
+}
+
+.fecha.visible{
+
+    opacity:1;
+
+    transform:
+
+        translateY(0);
+
+}

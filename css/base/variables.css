@@ -1,0 +1,45 @@
+:root{
+
+    /*======================================
+                COLORES PRINCIPALES
+    ======================================*/
+
+    --blanco:#FFFFFF;
+
+    --rosa:#D8B4B6;
+
+    --rosa-oscuro:#B97C7C;
+
+    --borgona:#6D2E46;
+
+    --borgona-claro:#8B4B63;
+
+    --texto:#3D2B33;
+
+
+    /*======================================
+                ALIAS
+    ======================================*/
+
+    --color-blanco:var(--blanco);
+
+    --color-rosa:var(--rosa);
+
+    --color-rosa-oscuro:var(--rosa-oscuro);
+
+    --color-borgona:var(--borgona);
+
+    --color-borgona-claro:var(--borgona-claro);
+
+    --color-texto:var(--texto);
+
+
+    /*======================================
+                FUENTES
+    ======================================*/
+
+    --fuente-principal:"Cormorant Garamond", serif;
+
+    --fuente-cursiva:"Great Vibes", cursive;
+
+}

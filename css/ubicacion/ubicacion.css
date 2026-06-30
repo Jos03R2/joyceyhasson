@@ -1,0 +1,459 @@
+/*=========================================
+            UBICACIÓN
+=========================================*/
+
+.ubicacion{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    padding:18px 20px 45px;
+
+}
+
+/*=========================================
+            TARJETA
+=========================================*/
+
+.ubicacion__tarjeta{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:560px;
+
+    min-height:930px;
+
+    overflow:hidden;
+
+    border-radius:
+
+        40px 120px
+        120px 40px;
+
+    box-shadow:
+
+        0 25px 60px rgba(0,0,0,.18);
+
+}
+
+/* Marco interior */
+
+
+
+/*=========================================
+            CONTENIDO
+=========================================*/
+
+.ubicacion__contenido{
+
+    position:relative;
+
+    z-index:5;
+
+    min-height:930px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:
+
+        70px
+        30px;
+
+}
+
+/*=========================================
+            SUBTÍTULO
+=========================================*/
+
+.ubicacion__subtitulo{
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+
+    color:#702335;
+
+    font-size:1rem;
+
+}
+
+/*=========================================
+            TÍTULO
+=========================================*/
+
+.ubicacion__titulo{
+
+    margin-top:18px;
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:5rem;
+
+    color:#924559;
+
+}
+
+/*=========================================
+            DESCRIPCIÓN
+=========================================*/
+
+.ubicacion__descripcion{
+
+    margin-top:24px;
+
+    font-size:1.35rem;
+
+    line-height:1.8;
+
+    color:#924559;
+
+    opacity:.95;
+
+}
+
+/*=========================================
+            EVENTOS
+=========================================*/
+
+.ubicacion__eventos{
+
+    width:100%;
+
+    margin-top:55px;
+
+    display:grid;
+
+    gap:22px;
+
+}
+
+
+
+
+/*=========================================
+            TABLET
+=========================================*/
+
+@media(max-width:768px){
+
+    .ubicacion__titulo{
+
+        font-size:4.4rem;
+
+    }
+
+}
+
+/*=========================================
+            MOVIL
+=========================================*/
+
+@media(max-width:480px){
+
+    .ubicacion{
+
+        padding:14px 10px 35px;
+
+    }
+
+    .ubicacion__tarjeta{
+
+        border-radius:
+            35px 90px
+            90px 35px;
+
+    }
+
+    .ubicacion__contenido{
+
+        padding:
+
+            55px
+            22px;
+
+    }
+
+    .ubicacion__titulo{
+
+        font-size:3.8rem;
+
+    }
+
+    .ubicacion__descripcion{
+
+        font-size:1.15rem;
+
+    }
+
+}
+
+
+
+
+
+/*=========================================
+            FOTO
+=========================================*/
+
+.ubicacion__fondo{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+.ubicacion__fondo img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    object-position:center;
+
+}
+
+/*=========================================
+            OVERLAY
+=========================================*/
+
+.ubicacion__overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        linear-gradient(
+
+            to bottom,
+
+            rgba(255,255,255,.08),
+
+            rgba(255,255,255,.05),
+
+            rgba(109,46,70,.18),
+
+            rgba(109,46,70,.55),
+
+            rgba(235,190,167,.95)
+
+        );
+
+}
+
+
+
+
+/*=========================================
+            TARJETAS
+=========================================*/
+
+.evento{
+
+    padding:
+
+        28px
+        24px;
+
+    border-radius:38px;
+
+    background:
+
+        rgba(255,255,255,.18);
+
+    backdrop-filter:blur(18px);
+
+    border:
+
+        1px solid rgba(255,255,255,.30);
+
+    box-shadow:
+
+        0 18px 35px rgba(0,0,0,.18);
+
+    transition:.35s;
+
+}
+
+.evento:hover{
+
+    transform:
+
+        translateY(-8px);
+
+}
+
+.evento__icono{
+
+    font-size:2.6rem;
+
+}
+
+.evento h3{
+
+    margin-top:16px;
+
+    color:#702335;
+
+    letter-spacing:2px;
+
+    font-size:1.25rem;
+
+}
+
+.evento h4{
+
+    margin-top:14px;
+
+    font-size:2rem;
+
+    color:#702335;
+
+    font-weight:500;
+
+}
+
+.evento p{
+
+    margin-top:10px;
+
+    color:#702335;
+
+    opacity:.92;
+
+    font-size:1.15rem;
+
+}
+
+
+
+
+
+/*=========================================
+            DIRECCION
+=========================================*/
+
+.ubicacion__direccion{
+
+    margin-top:45px;
+
+    display:flex;
+
+    gap:18px;
+
+    align-items:flex-start;
+
+    text-align:left;
+
+    color:white;
+
+}
+
+.ubicacion__direccion i{
+
+    font-size:2rem;
+
+    color:white;
+
+}
+
+.ubicacion__direccion h3{
+
+    margin-bottom:8px;
+
+}
+
+.ubicacion__direccion p{
+
+    line-height:1.8;
+
+}
+
+/*=========================================
+            MAPA
+=========================================*/
+
+.ubicacion__mapa{
+
+    margin-top:45px;
+
+    overflow:hidden;
+
+    border-radius:32px;
+
+    border:1px solid rgba(255,255,255,.25);
+
+}
+
+.ubicacion__mapa iframe{
+
+    width:100%;
+
+    height:240px;
+
+    border:none;
+
+}
+
+/*=========================================
+            BOTON
+=========================================*/
+
+.ubicacion__boton{
+
+    margin-top:35px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:18px;
+
+    border-radius:999px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:1.2rem;
+
+    background:linear-gradient(
+
+        135deg,
+
+        var(--borgona),
+
+        var(--borgona-claro)
+
+    );
+
+    transition:.35s;
+
+}
+
+.ubicacion__boton:hover{
+
+    transform:translateY(-5px);
+
+}

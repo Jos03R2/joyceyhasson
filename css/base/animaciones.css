@@ -1,0 +1,103 @@
+/*=========================================
+        ANIMACIONES GENERALES
+=========================================*/
+
+.animar{
+
+    opacity:0;
+
+    transform:translateY(70px);
+
+    transition:
+
+        opacity .9s ease,
+
+        transform .9s ease;
+
+}
+
+.animar.visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/*=========================================
+        DESDE LA IZQUIERDA
+=========================================*/
+
+.animar-izquierda{
+
+    opacity:0;
+
+    transform:translateX(-80px);
+
+    transition:
+
+        opacity .9s ease,
+
+        transform .9s ease;
+
+}
+
+.animar-izquierda.visible{
+
+    opacity:1;
+
+    transform:translateX(0);
+
+}
+
+/*=========================================
+        DESDE LA DERECHA
+=========================================*/
+
+.animar-derecha{
+
+    opacity:0;
+
+    transform:translateX(80px);
+
+    transition:
+
+        opacity .9s ease,
+
+        transform .9s ease;
+
+}
+
+.animar-derecha.visible{
+
+    opacity:1;
+
+    transform:translateX(0);
+
+}
+
+/*=========================================
+        ZOOM
+=========================================*/
+
+.animar-zoom{
+
+    opacity:0;
+
+    transform:scale(.90);
+
+    transition:
+
+        opacity .9s ease,
+
+        transform .9s ease;
+
+}
+
+.animar-zoom.visible{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}

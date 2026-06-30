@@ -1,0 +1,369 @@
+/*=========================================
+            BLOQUE INICIO
+=========================================*/
+
+.inicio{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    padding:45px 18px;
+
+}
+
+/*=========================================
+            TARJETA
+=========================================*/
+
+.inicio__tarjeta{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:560px;
+
+    height:980px;
+
+    overflow:hidden;
+
+    border-radius:
+        130px 35px
+        130px 35px;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.15);
+
+}
+
+/*=========================================
+            FOTO
+=========================================*/
+
+.inicio__fondo{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+.inicio__fondo img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    object-position:center;
+
+}
+
+/*=========================================
+            DEGRADADO
+=========================================*/
+
+.inicio__degradado{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        linear-gradient(
+
+            to bottom,
+
+            rgba(255,255,255,.18),
+
+            rgba(255,255,255,.08),
+
+            rgba(235,190,167,.45),
+
+            rgba(235,190,167,.95)
+
+        );
+
+}
+
+/*=========================================
+            CONTENIDO
+=========================================*/
+
+.inicio__contenido{
+
+    position:relative;
+
+    z-index:5;
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:60px 30px;
+
+}
+
+/*=========================================
+            NOMBRES
+=========================================*/
+
+.inicio__nombre{
+
+    font-family:"Great Vibes",cursive;
+
+    color:var(--borgona);
+
+    font-size:6rem;
+
+    line-height:.9;
+
+    text-shadow:
+
+        0 4px 12px rgba(255,255,255,.45);
+
+}
+
+.inicio__ampersand{
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:3rem;
+
+    color:var(--rosa-oscuro);
+
+    margin:10px 0;
+
+}
+
+/*=========================================
+            TEXTO
+=========================================*/
+
+.inicio__texto{
+
+    margin-top:40px;
+
+    font-size:1.8rem;
+
+    color:var(--texto);
+
+}
+
+/*=========================================
+            FECHA
+=========================================*/
+
+.inicio__fecha{
+
+    margin-top:40px;
+
+    font-size:4rem;
+
+    color:var(--borgona);
+
+    letter-spacing:8px;
+
+    font-weight:300;
+
+}
+
+/*=========================================
+            MUSICA
+=========================================*/
+
+.inicio__musica{
+
+    width:100%;
+
+    margin-top:45px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+/*=========================================
+            TABLET
+=========================================*/
+
+@media (max-width:992px){
+
+    .inicio{
+
+        padding:35px 18px;
+
+    }
+
+    .inicio__tarjeta{
+
+        max-width:540px;
+
+        height:920px;
+
+    }
+
+    .inicio__nombre{
+
+        font-size:5.2rem;
+
+    }
+
+    .inicio__fecha{
+
+        font-size:3.5rem;
+
+    }
+
+}
+
+/*=========================================
+            CELULAR
+=========================================*/
+
+@media (max-width:768px){
+
+    .inicio{
+
+        padding:20px 12px;
+
+    }
+
+    .inicio__tarjeta{
+
+        max-width:100%;
+
+        height:900px;
+
+        border-radius:
+            90px 25px
+            90px 25px;
+
+    }
+
+    .inicio__fondo img{
+
+        object-position:center;
+
+    }
+
+    .inicio__contenido{
+
+        padding:
+
+            45px
+            24px
+            35px;
+
+    }
+
+    .inicio__nombre{
+
+        font-size:4.8rem;
+
+    }
+
+    .inicio__ampersand{
+
+        font-size:2.5rem;
+
+    }
+
+    .inicio__texto{
+
+        font-size:1.35rem;
+
+    }
+
+    .inicio__fecha{
+
+        font-size:3rem;
+
+        letter-spacing:5px;
+
+    }
+
+}
+
+
+/*=========================================
+            CELULARES PEQUEÑOS
+=========================================*/
+
+@media (max-width:480px){
+
+    .inicio{
+
+        padding:10px;
+
+    }
+
+    .inicio__tarjeta{
+
+        height:860px;
+
+        border-radius:
+            75px 22px
+            75px 22px;
+
+    }
+
+    .inicio__contenido{
+
+        padding:
+
+            40px
+            18px
+            28px;
+
+    }
+
+    .inicio__nombre{
+
+        font-size:4rem;
+
+    }
+
+    .inicio__ampersand{
+
+        font-size:2.2rem;
+
+    }
+
+    .inicio__texto{
+
+        margin-top:28px;
+
+        font-size:1.2rem;
+
+        line-height:1.5;
+
+    }
+
+    .inicio__fecha{
+
+        margin-top:28px;
+
+        font-size:2.5rem;
+
+        letter-spacing:3px;
+
+    }
+
+}
+
+

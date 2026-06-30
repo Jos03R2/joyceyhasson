@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+        Joyce & Hasson
+
+    </title>
+
+    <!-- ========================= -->
+    <!-- TIPOGRAFIAS -->
+    <!-- ========================= -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+
+    <!-- ========================= -->
+    <!-- BASE -->
+    <!-- ========================= -->
+
+    <link
+        rel="stylesheet"
+        href="css/base/variables.css">
+
+    <link
+        rel="stylesheet"
+        href="css/base/reset.css">
+
+    <link
+        rel="stylesheet"
+        href="css/base/tipografias.css">
+
+    <link
+        rel="stylesheet"
+        href="css/base/global.css">
+
+    <link
+        rel="stylesheet"
+        href="css/base/animaciones.css">
+
+     
+
+    <!-- ========================= -->
+    <!-- INICIO -->
+    <!-- ========================= -->
+
+    <link
+        rel="stylesheet"
+        href="css/inicio/inicio.css">
+
+    <link
+        rel="stylesheet"
+        href="css/inicio/musica.css">
+
+    <link
+        rel="stylesheet"
+        href="css/inicio/responsive.css">
+
+    <link 
+        rel="stylesheet" 
+        href="css/foto/foto.css">    
+
+    <link 
+        rel="stylesheet"
+        href="css/fecha/fecha.css">    
+    
+    <link rel="stylesheet"
+        href="css/fecha/fecha-animaciones.css">
+
+    <link rel="stylesheet" 
+    href="css/vestimenta/vestimenta.css">
+
+    <link rel="stylesheet" 
+    href="css/ubicacion/ubicacion.css">
+
+
+    <link rel="stylesheet"
+        href="css/regalos/regalos.css">
+    
+    <link rel="stylesheet"
+        href="css/regalos/tarjetas.css">
+
+    <link rel="stylesheet"
+        href="css/confirmacion/confirmacion.css">    
+    
+        
+    <link rel="stylesheet"
+        href="css/confirmacion/formulario.css"> 
+
+    <link rel="stylesheet"
+        href="css/confirmacion/botones.css">       
+        
+        
+    <link rel="stylesheet"
+        href="css/confirmacion/modal.css">    
+        
+        
+    
+
+    <link rel="stylesheet" href="css/itinerario/itinerario.css">
+<link rel="stylesheet" href="css/itinerario/timeline.css">
+<link rel="stylesheet" href="css/itinerario/medallon.css">
+<link rel="stylesheet" href="css/itinerario/tarjeta.css">
+<link rel="stylesheet" href="css/itinerario/efectos.css">
+<link rel="stylesheet" href="css/itinerario/responsive.css">
+
+
+<link rel="stylesheet" href="css/recomendaciones/recomendaciones.css">
+
+    <link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- ========================= -->
+    <!-- INICIO -->
+    <!-- ========================= -->
+
+
+
+    <!-- Aquí construiremos el Hero -->
+
+
+
+<section
+    class="inicio animar"
+    id="inicio">
+
+    <div class="inicio__tarjeta">
+
+        <div class="inicio__fondo">
+
+            <img
+                src="img/Foto5.webp"
+                alt="Joyce y Hasson">
+
+        </div>
+
+        <div class="inicio__degradado"></div>
+
+        <div class="inicio__contenido">
+
+            <h1 class="inicio__nombre">
+                Joyce
+            </h1>
+
+            <div class="inicio__ampersand">
+                &
+            </div>
+
+            <h1 class="inicio__nombre">
+                Hasson
+            </h1>
+
+            <p class="inicio__texto">
+
+                Acompáñanos a celebrar
+                este gran día
+
+            </p>
+
+            <h2 class="inicio__fecha">
+
+                31 · 10 · 26
+
+            </h2>
+
+           
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!--======================================
+        FOTO + MÚSICA
+=======================================-->
+
+<section class="foto animar-zoom">
+
+    <div class="foto__tarjeta">
+
+        <img
+            src="img/Foto12.jpg"
+            alt="Joyce y Hasson">
+
+        <div class="foto__overlay">
+
+            <div class="musica">
+
+                <h3 class="musica__titulo">
+
+                    Dale play a nuestra Playlist
+
+                </h3>
+
+                <div class="musica__barra">
+
+                    <div class="musica__progreso"></div>
+
+                </div>
+
+                <div class="musica__controles">
+
+                    <button class="musica__boton">
+
+                        ↺
+
+                    </button>
+
+                    <button class="musica__boton">
+
+                        ⏮
+
+                    </button>
+
+                    <button
+                        id="play"
+                        class="musica__play">
+
+                        ▶
+
+                    </button>
+
+                    <button class="musica__boton">
+
+                        ⏭
+
+                    </button>
+
+                    <button class="musica__boton">
+
+                        ↻
+
+                    </button>
+
+                </div>
+
+                <audio
+                    id="audio"
+                    src="audio/musica.mp3">
+
+                </audio>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!--======================================
+        FOTO DECORATIVA
+=======================================-->
+
+<section class="foto animar-zoom">
+
+    <div class="foto__tarjeta">
+
+        <img
+            src="img/Foto6.webp"
+            alt="Joyce y Hasson">
+
+    </div>
+
+</section>
+
+
+
+
+<!--======================================
+            NUESTRA FECHA
+=======================================-->
+
+<section class="fecha animar">
+
+    <div class="fecha__tarjeta">
+
+        <!-- FOTO -->
+
+        <div class="fecha__fondo">
+
+            <img
+                src="img/Foto7.webp"
+                alt="Joyce y Hasson">
+
+        </div>
+
+        <!-- OSCURECER UN POCO -->
+
+        <div class="fecha__overlay"></div>
+
+        <!-- CONTENIDO -->
+
+        <div class="fecha__contenido">
+
+            <span class="fecha__subtitulo">
+
+                Nuestra Fecha
+
+            </span>
+
+            <h2 class="fecha__titulo">
+
+                31 Octubre 2026
+
+            </h2>
+
+            <h1 class="fecha__faltan">
+
+                Faltan...
+
+            </h1>
+
+            <!-- AQUÍ IRA EL CONTADOR -->
+
+           <div class="fecha__contador">
+
+    <div class="contador">
+
+        <div class="contador__item">
+
+            <span
+                id="dias"
+                class="contador__numero">
+
+                000
+
+            </span>
+
+            <span class="contador__texto">
+
+                Días
+
+            </span>
+
+        </div>
+
+        <div class="contador__item">
+
+            <span
+                id="horas"
+                class="contador__numero">
+
+                00
+
+            </span>
+
+            <span class="contador__texto">
+
+                Horas
+
+            </span>
+
+        </div>
+
+        <div class="contador__item">
+
+            <span
+                id="minutos"
+                class="contador__numero">
+
+                00
+
+            </span>
+
+            <span class="contador__texto">
+
+                Min.
+
+            </span>
+
+        </div>
+
+        <div class="contador__item">
+
+            <span
+                id="segundos"
+                class="contador__numero">
+
+                00
+
+            </span>
+
+            <span class="contador__texto">
+
+                Seg.
+
+            </span>
+
+             </div>
+
+           </div>
+
+          </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+<!--======================================
+        FOTO DECORATIVA
+=======================================-->
+
+<section class="foto foto--estilo2 animar-zoom">
+
+    <div class="foto__tarjeta">
+
+        <img
+            src="img/Foto8.webp"
+            alt="Joyce y Hasson"
+            class="foto__imagen">
+
+    </div>
+
+</section>
+
+
+
+
+
+
+<!--======================================
+        CODIGO DE VESTIMENTA
+=======================================-->
+
+<section class="vestimenta animar">
+
+    <div class="vestimenta__tarjeta">
+
+        <div class="vestimenta__contenido">
+
+            <span class="vestimenta__subtitulo">
+
+                Código de Vestimenta 
+
+            </span>
+
+            <h2 class="vestimenta__titulo">
+
+                 Formal Elegante
+
+            </h2>
+
+            <p class="vestimenta__descripcion">
+
+                Agradecemos que formes parte de este día tan especial
+                vistiendo de manera elegante.
+
+            </p>
+
+            <!--==============================
+                    TARJETAS
+            ==============================-->
+
+            <div class="vestimenta__grid">
+
+                <!-- DAMAS -->
+
+                <div class="vestimenta__card">
+
+                    <img
+                    src="img/woman-silhouette.png"
+                    alt="Vestido Largo"
+                    class="vestimenta__icono vestimenta__icono--vestido">
+
+                    <h3>
+
+                        DAMAS
+
+                    </h3>
+
+                    <p>
+
+                        Vestido Largo
+
+                    </p>
+
+                </div>
+
+                <!-- CABALLEROS -->
+
+                <div class="vestimenta__card">
+
+                    <img
+                    src="img/man-suit.png"
+                    alt="Traje Formal"
+                    class="vestimenta__icono">
+
+                    <h3>
+
+                        CABALLEROS
+
+                    </h3>
+
+                    <p>
+
+                        Traje Formal
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- AQUÍ IRÁN LOS COLORES -->
+
+            <div class="vestimenta__colores">
+
+    <h3 class="vestimenta__colores-titulo">
+
+        Con mucho cariño <br> te pedimos evitar prendas de estos colores 
+
+    </h3>
+
+    <div class="vestimenta__paleta">
+
+        <div class="color">
+
+            <span class="color__circulo blanco"></span>
+
+            <p>Blanco</p>
+
+        </div>
+
+        <div class="color">
+
+            <span class="color__circulo crema"></span>
+
+            <p>Crema</p>
+
+        </div>
+
+        <div class="color">
+
+            <span class="color__circulo palo-rosa"></span>
+
+            <p>Palo Rosa</p>
+
+        </div>
+
+        <div class="color">
+
+            <span class="color__circulo rosado-canela"></span>
+
+            <p>Rosado Canela</p>
+
+        </div>
+
+        <div class="color">
+
+            <span class="color__circulo borgona"></span>
+
+            <p>Borgoña</p>
+
+        </div>
+
+        <div class="color">
+
+            <span class="color__circulo gris"></span>
+
+            <p>Gris</p>
+
+        </div>
+
+        <div class="color">
+
+            <span class="color__circulo esmeralda"></span>
+
+            <p>Verde Esmeralda</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<!--======================================
+        FOTO DECORATIVA 3
+=======================================-->
+
+<section class="foto foto--estilo3 animar-zoom">
+
+    <div class="foto__tarjeta">
+
+        <img
+            src="img/Foto9.jpg"
+            alt="Joyce y Hasson"
+            class="foto__imagen">
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<!--======================================
+            UBICACIÓN
+=======================================-->
+
+<section class="ubicacion animar">
+
+    <div class="ubicacion__tarjeta">
+
+        <!-- FOTO DE FONDO -->
+
+        <div class="ubicacion__fondo">
+
+            <img
+                src="img/Foto13.jpg"
+                alt="Club Majadas">
+
+        </div>
+
+        <!-- OVERLAY -->
+
+        <div class="ubicacion__overlay"></div>
+
+        <!-- CONTENIDO -->
+
+        <div class="ubicacion__contenido">
+
+            <span class="ubicacion__subtitulo">
+
+                La Celebración
+
+            </span>
+
+            <h2 class="ubicacion__titulo">
+
+                Club Majadas
+
+            </h2>
+
+            <p class="ubicacion__descripcion">
+
+                Nos encantará celebrar este día tan especial contigo.
+
+            </p>
+
+            <!--======================================
+                    EVENTOS
+            =======================================-->
+
+            <div class="ubicacion__eventos">
+
+                <!-- CEREMONIA -->
+
+                <div class="evento">
+
+                    <div class="evento__icono">
+
+                        <i class="fa-solid fa-church"></i>
+
+                    </div>
+
+                    <h3>
+
+                        Ceremonia
+
+                    </h3>
+
+                    <h4>
+
+                        3:00 PM
+
+                    </h4>
+
+                    <p>
+
+                        Club Majadas
+
+                    </p>
+
+                </div>
+
+                <!-- RECEPCIÓN -->
+
+                <div class="evento">
+
+                    <div class="evento__icono">
+
+                        <i class="fa-solid fa-champagne-glasses"></i>
+
+                    </div>
+
+                    <h3>
+
+                        Recepción
+
+                    </h3>
+
+                    <h4>
+
+                        6:00 PM
+
+                    </h4>
+
+                    <p>
+
+                        Club Majadas
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!--======================================
+                    DIRECCIÓN
+            =======================================-->
+
+            <div class="ubicacion__direccion">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <div>
+
+                    <h3>
+
+                        Dirección
+
+                    </h3>
+
+                    <p>
+
+                        26 Avenida 7 Calle Final<br>
+                        Zona 11<br>
+                        Ciudad de Guatemala
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!--======================================
+                    MAPA
+            =======================================-->
+
+            <div class="ubicacion__mapa">
+
+                <iframe
+                    src="https://www.google.com/maps?q=Club+Majadas+Guatemala&output=embed"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+            <!--======================================
+                    BOTÓN
+            =======================================-->
+
+            <a
+                href="https://waze.com/ul?ll=14.6199411,-90.560102&navigate=yes"
+                target="_blank"
+                class="ubicacion__boton">
+
+                <i class="fa-brands fa-waze"></i>
+
+                Abrir ruta en Waze
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+<!--======================================
+            ITINERARIO
+=======================================-->
+
+<section class="itinerario animar">
+
+    <!-- DECORACIONES -->
+
+    <div class="itinerario__decoracion itinerario__decoracion--izquierda">
+
+        <img src="img/decoracion/rama-1.png" alt="">
+
+    </div>
+
+    <div class="itinerario__decoracion itinerario__decoracion--derecha">
+
+        <img src="img/decoracion/rama-2.png" alt="">
+
+    </div>
+
+    <div class="itinerario__acuarela itinerario__acuarela--uno"></div>
+
+    <div class="itinerario__acuarela itinerario__acuarela--dos"></div>
+
+    <!-- CONTENIDO -->
+
+    <div class="itinerario__contenido">
+
+        <span class="itinerario__subtitulo">
+            NUESTRA CELEBRACIÓN
+        </span>
+
+        <h2 class="itinerario__titulo">
+            Itinerario
+        </h2>
+
+        <div class="itinerario__ornamento">
+
+            <span></span>
+
+            <i class="fa-solid fa-heart"></i>
+
+            <span></span>
+
+        </div>
+
+        <p class="itinerario__descripcion">
+            Cada instante ha sido preparado con amor para compartir este día tan especial junto a ustedes.
+        </p>
+
+        <!--==================================
+                TIMELINE
+        ===================================-->
+
+        <div class="itinerario__timeline">
+
+            <!--========================
+                    EVENTO 1
+            ========================-->
+
+            <article class="itinerario__evento animar-zoom">
+
+                <div class="itinerario__medallon">
+
+                    <span></span>
+
+                    <i class="fa-solid fa-ring"></i>
+
+                </div>
+
+                <div class="itinerario__card">
+
+                    <span class="itinerario__hora">
+                        3:30 PM
+                    </span>
+
+                    <h3>Ceremonia Civil</h3>
+
+                    <p>
+                        Jardin Club Majadas
+                    </p>
+
+                </div>
+
+            </article>
+
+            <!--========================
+                    EVENTO 2
+            ========================-->
+
+            <article class="itinerario__evento animar-zoom">
+
+                <div class="itinerario__medallon">
+
+                    <span></span>
+
+                    <i class="fa-solid fa-church"></i>
+
+                </div>
+
+                <div class="itinerario__card">
+
+                    <span class="itinerario__hora">
+                        4:00 PM
+                    </span>
+
+                    <h3>Ceremonia Religiosa</h3>
+
+                    <p>
+                        Jardin Club Majadas
+                    </p>
+
+                </div>
+
+            </article>
+
+            <!--========================
+                    EVENTO 3
+            ========================-->
+
+            <article class="itinerario__evento animar-zoom">
+
+                <div class="itinerario__medallon">
+
+                    <span></span>
+
+                    <i class="fa-solid fa-champagne-glasses"></i>
+
+                </div>
+
+                <div class="itinerario__card">
+
+                    <span class="itinerario__hora">
+                        5:00 PM
+                    </span>
+
+                    <h3>Recepción</h3>
+
+                    <p>
+                        Salon de Eventos Club Majadas
+                    </p>
+
+                </div>
+
+            </article>
+
+            <!--========================
+                    EVENTO 4
+            ========================-->
+
+            <article class="itinerario__evento animar-zoom">
+
+                <div class="itinerario__medallon">
+
+                    <span></span>
+
+                    <i class="fa-solid fa-car-side"></i>
+
+                </div>
+
+                <div class="itinerario__card">
+
+                    <span class="itinerario__hora">
+                        6:00 PM
+                    </span>
+
+                    <h3>Llegada de los Novios</h3>
+
+
+                </div>
+
+            </article>
+
+            <!--========================
+                    EVENTO 5
+            ========================-->
+
+            <article class="itinerario__evento animar-zoom">
+
+                <div class="itinerario__medallon">
+
+                    <span></span>
+
+                    <i class="fa-solid fa-music"></i>
+
+                </div>
+
+                <div class="itinerario__card">
+
+                    <span class="itinerario__hora">
+                        6:10 PM
+                    </span>
+
+                    <h3>Primer Vals</h3>
+
+                    
+                </div>
+
+            </article>
+
+            <!--========================
+                    EVENTO 6
+            ========================-->
+
+            <article class="itinerario__evento animar-zoom">
+
+                <div class="itinerario__medallon">
+
+                    <span></span>
+
+                    <i class="fa-solid fa-utensils"></i>
+
+                </div>
+
+                <div class="itinerario__card">
+
+                    <span class="itinerario__hora">
+                        7:00 PM
+                    </span>
+
+                    <h3>Cena</h3>
+
+                   
+
+                </div>
+
+            </article>
+
+            <!--========================
+                    EVENTO 7
+            ========================-->
+
+            <article class="itinerario__evento animar-zoom">
+
+                <div class="itinerario__medallon">
+
+                    <span></span>
+
+                    <i class="fa-solid fa-heart"></i>
+
+                </div>
+
+                <div class="itinerario__card">
+
+                    <span class="itinerario__hora">
+                        8:00 PM
+                    </span>
+
+                    <h3>Baile</h3>
+
+                  
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<!--======================================
+            MESA DE REGALOS
+=======================================-->
+
+<section class="regalos animar">
+
+    <div class="regalos__contenido">
+
+        <span class="regalos__subtitulo">
+            UN DETALLE CON CARIÑO
+        </span>
+
+        <h2 class="regalos__titulo">
+            Mesa de Regalos
+        </h2>
+
+        <!-- ORNAMENTO -->
+
+        <div class="regalos__ornamento">
+
+            <span></span>
+
+            <i class="fa-solid fa-gift"></i>
+
+            <span></span>
+
+        </div>
+
+        <p class="regalos__descripcion">
+
+            Para nosotros, el mejor regalo es contar con tu presencia en este día tan memorable.
+
+            <br><br>
+
+            Si deseas obsequiarnos un detalle, hemos escogido las siguientes dos opciones
+
+        </p>
+
+        <!--==================================
+                TARJETAS
+        ===================================-->
+
+        <div class="regalos__grid">
+
+            <!--==============================
+                    MAX DISTELSA
+            ==============================-->
+
+            <article class="regalo__card animar-zoom">
+
+                <div class="regalo__logo">
+
+                    <img src="img/max.png" alt="MAX">
+
+                </div>
+
+                <h3>
+                    MAX Distelsa
+                </h3>
+
+                <p>
+                    Gift card en tiendas Max <br> En cualquier tienda Max  puedes acercarte con nuestro codigo el cual se encuentra en el 
+                    siguiente codigo QR
+                </p>
+
+
+
+                
+
+                <div class="regalo__qr">
+
+                    <img src="img/qr2.png" alt="QR MAX">
+
+                </div>
+
+                <a href="https://www2.max.com.gt/bodas/index/regalos/boda/43097/pareja/lorenzana-rosario/fecha/31-10-2026"
+   class="regalo__boton"
+   target="_blank">
+
+    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+    Ver Codigo
+
+</a>
+
+            </article>
+
+            <!--==============================
+                    CEMACO
+            ==============================-->
+
+            <article class="regalo__card animar-zoom">
+
+                <div class="regalo__logo">
+
+                    <img src="img/cemaco.jpg" alt="Cemaco">
+
+                </div>
+
+                <h3>
+                    Cemaco
+                </h3>
+
+                <p>
+                    Lista de regalos en Cemaco
+                </p>
+
+                <p>
+                    Escanea el código QR o presiona el botón para acceder a nuestra lista de regalos.
+                </p>
+
+                <div class="regalo__qr">
+
+                    <img src="img/QR1.png" alt="QR Cemaco">
+
+                </div>
+
+                <a href="https://www.cemaco.com/list/BODALorenzanaRosario31102026"
+   class="regalo__boton"
+   target="_blank">
+
+    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+    Ver Lista
+
+</a>
+
+            </article>
+
+        </div>
+
+        <!-- MENSAJE FINAL -->
+
+        <p class="regalos__mensaje">
+
+            Muchas gracias por compartir con nosotros este momento tan especial.
+
+            <br>
+
+            Su cariño y compañía serán siempre el mejor regalo.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--======================================
+            CONFIRMACIÓN
+=======================================-->
+
+<section class="confirmacion animar">
+
+    <div class="confirmacion__contenido">
+
+        <span class="confirmacion__subtitulo">
+            CONFIRMACIÓN
+        </span>
+
+        <h2 class="confirmacion__titulo">
+            ¿Nos acompañas?
+        </h2>
+
+        <!-- ORNAMENTO -->
+
+        <div class="confirmacion__ornamento">
+
+            <span></span>
+
+            <i class="fa-solid fa-heart"></i>
+
+            <span></span>
+
+        </div>
+
+        <p class="confirmacion__descripcion">
+
+            Tu presencia es muy importante para nosotros.
+
+            <br><br>
+
+            Nos haría muy felices contar con tu compañía en uno de los días más importantes de nuestras vidas.
+
+            <br><br>
+
+            Por favor confirma tu asistencia antes del <br>
+
+            <strong>15 de Agosto de 2026.</strong>
+
+        </p>
+
+        <!-- BOTÓN PRINCIPAL -->
+
+        <button
+            class="confirmacion__abrir"
+            id="abrirConfirmacion">
+
+            <i class="fa-solid fa-envelope-open-heart"></i>
+
+            Confirmar Asistencia
+
+        </button>
+
+    </div>
+
+</section>
+
+<!--======================================
+        MODAL CONFIRMACIÓN
+=======================================-->
+
+<div
+    class="modal-confirmacion"
+    id="modalConfirmacion">
+
+    <div class="modal-confirmacion__contenido">
+
+        <!-- BOTÓN CERRAR -->
+
+        <button
+            class="modal-confirmacion__cerrar"
+            id="cerrarConfirmacion">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+        <!-- ENCABEZADO -->
+
+        <span class="modal-confirmacion__subtitulo">
+
+            CONFIRMACIÓN
+
+        </span>
+
+        <h2 class="modal-confirmacion__titulo">
+
+            Confirma tu asistencia
+
+        </h2>
+
+        <div class="modal-confirmacion__ornamento">
+
+            <span></span>
+
+            <i class="fa-solid fa-heart"></i>
+
+            <span></span>
+
+        </div>
+
+        <!--======================================
+                CONTENIDO DINÁMICO
+        =======================================-->
+
+        <div
+            id="resultadoBusqueda"
+            class="confirmacion__resultado">
+
+            <!--
+                Aquí JavaScript agregará automáticamente:
+
+                • Familia
+                • Integrantes
+                • Opciones de asistencia
+                • Mensaje
+                • Botón Confirmar
+
+            -->
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<!--======================================
+            RECOMENDACIONES
+=======================================-->
+
+<section class="recomendaciones animar">
+
+    <div class="recomendaciones__contenido">
+
+        <span class="recomendaciones__subtitulo">
+
+            RECOMENDACIONES
+
+        </span>
+
+        <h2 class="recomendaciones__titulo">
+
+            Antes de nuestro gran día
+
+        </h2>
+
+        <div class="recomendaciones__ornamento">
+
+            <span></span>
+
+            <i class="fa-solid fa-heart"></i>
+
+            <span></span>
+
+        </div>
+
+        <p class="recomendaciones__descripcion">
+
+            Queremos que todos disfruten este día tan especial.
+            Por ello, te pedimos tomar en cuenta las siguientes
+            recomendaciones para que juntos vivamos una celebración inolvidable.
+
+        </p>
+
+        <div class="recomendaciones__lista">
+
+            <div class="recomendacion">
+
+                <div class="recomendacion__icono">
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                </div>
+
+                <div class="recomendacion__texto">
+
+                    <h3>Confirma tu asistencia</h3>
+
+                    <p>
+
+                        Confirma tu asistencia antes del
+                        <strong>15 de agosto de 2026.</strong>
+                        Después de esa fecha, si no recibimos tu respuesta,
+                        entenderemos con mucho respeto que no podrás acompañarnos.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="recomendacion">
+
+                <div class="recomendacion__icono">
+
+                    <i class="fa-solid fa-users"></i>
+
+                </div>
+
+                <div class="recomendacion__texto">
+
+                    <h3>Respeta el número de invitados</h3>
+
+                    <p>
+
+                        Tu invitación ha sido preparada especialmente
+                        para el número de personas indicado.
+                        Agradecemos mucho respetarlo.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="recomendacion">
+
+                <div class="recomendacion__icono">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                </div>
+
+                <div class="recomendacion__texto">
+
+                    <h3>Sé puntual</h3>
+
+                    <p>
+
+                        Queremos compartir contigo cada momento de este día.
+                        Tu puntualidad hará que la celebración inicie de la mejor manera.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="recomendacion">
+
+                <div class="recomendacion__icono">
+
+                    <i class="fa-solid fa-handshake"></i>
+
+                </div>
+
+                <div class="recomendacion__texto">
+
+                    <h3>Sigue las indicaciones</h3>
+
+                    <p>
+
+                        Nuestro equipo estará pendiente para brindarte la mejor atención.
+                        Te agradecemos seguir sus indicaciones durante el evento.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="recomendacion">
+
+                <div class="recomendacion__icono">
+
+                    <i class="fa-solid fa-child-reaching"></i>
+
+                </div>
+
+                <div class="recomendacion__texto">
+
+                    <h3>Padres con niños</h3>
+
+                    <p>
+
+                        Te pedimos amablemente supervisarlos en todo momento,
+                        para que todos podamos disfrutar de esta celebración
+                        con tranquilidad y alegría.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="recomendaciones__final">
+
+            <p>
+
+                Esperamos contar con tu presencia.
+
+            </p>
+
+            <h3>
+
+                ¡Muchas gracias!
+
+            </h3>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+<!--======================================
+            FOTO TRANSICIÓN 5
+=======================================-->
+
+<section class="foto foto--estilo5 animar">
+
+    <div class="foto__overlay"></div>
+
+    <div class="foto__contenido">
+
+        <span class="foto__detalle">
+            UN NUEVO CAPÍTULO
+        </span>
+
+        <h2 class="foto__frase">
+            Lo mejor está por comenzar...
+        </h2>
+
+        <p class="foto__texto">
+            Gracias por acompañarnos en este momento tan especial.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+   <script src="js/base/animaciones.js"></script>
+
+<script src="js/inicio/musica.js"></script>
+
+<script src="js/fecha/fecha.js"></script>
+
+<script src="js/confirmacion/modal.js"></script>
+
+
+<script src="js/confirmacion/codigo.js"></script>
+
+<script src="js/confirmacion/formulario.js"></script>
+
+</body>
+</html>

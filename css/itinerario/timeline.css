@@ -1,0 +1,151 @@
+/*======================================
+            TIMELINE
+======================================*/
+
+.itinerario__timeline{
+
+    position:relative;
+
+    max-width:360px;
+
+    margin:0 auto;
+
+    padding:15px 0;
+
+}
+
+/*======================================
+        LINEA CENTRAL
+======================================*/
+
+.itinerario__timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    bottom:0;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:2px;
+
+    border-radius:999px;
+
+    background:
+
+    linear-gradient(
+        transparent,
+        rgba(109,46,70,.08),
+        rgba(109,46,70,.28),
+        rgba(109,46,70,.08),
+        transparent
+    );
+
+}
+
+/*======================================
+            EVENTO
+======================================*/
+
+.itinerario__evento{
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    margin:42px 0;
+
+}
+
+/*======================================
+        PRIMER EVENTO
+======================================*/
+
+.itinerario__evento:first-child{
+
+    margin-top:15px;
+
+}
+
+/*======================================
+        ULTIMO EVENTO
+======================================*/
+
+.itinerario__evento:last-child{
+
+    margin-bottom:15px;
+
+}
+
+/*======================================
+        CONECTOR SUPERIOR
+======================================*/
+
+.itinerario__evento::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-20px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:#ffffff;
+
+    border:2px solid rgba(109,46,70,.18);
+
+    box-shadow:
+
+        0 0 0 4px rgba(255,255,255,.85);
+
+}
+
+/*======================================
+        CONECTOR FINAL
+======================================*/
+
+.itinerario__evento:last-child::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-20px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:#ffffff;
+
+    border:2px solid rgba(109,46,70,.18);
+
+    box-shadow:
+
+        0 0 0 4px rgba(255,255,255,.85);
+
+}

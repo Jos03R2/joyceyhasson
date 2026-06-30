@@ -1,0 +1,303 @@
+/*=========================================
+            REPRODUCTOR
+=========================================*/
+
+.musica{
+
+    width:100%;
+
+    padding:22px 24px;
+
+    border-radius:34px;
+
+    margin-bottom:20px;
+
+    border-radius:42px;
+
+    background:
+
+        rgba(255,255,255,.22);
+
+    backdrop-filter:blur(18px);
+
+    border:
+
+        1px solid rgba(255,255,255,.35);
+
+    box-shadow:
+
+        0 20px 45px rgba(0,0,0,.12);
+
+}
+
+/*=========================================*/
+
+.musica__titulo{
+
+    text-align:center;
+
+    color:var(--borgona);
+
+    font-size:1.6rem;
+
+    font-weight:500;
+
+}
+
+/*=========================================*/
+
+/*======================================
+        BARRA
+======================================*/
+
+.musica__barra{
+
+    position:relative;
+
+    width:100%;
+
+    height:6px;
+
+    margin:20px auto 28px;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    background:
+
+    rgba(255,255,255,.18);
+
+    box-shadow:
+
+        inset 0 1px 3px rgba(0,0,0,.15);
+
+}
+
+/*======================================
+        PROGRESO
+======================================*/
+
+.musica__progreso{
+
+    width:0%;
+
+    height:100%;
+
+    border-radius:30px;
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        #b97c7c,
+
+        #8b4b63
+
+    );
+
+    transition:.25s;
+
+}
+
+/*=========================================*/
+
+/*======================================
+        CONTROLES
+======================================*/
+
+.musica__controles{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+/*=========================================*/
+
+/*======================================
+        BOTONES
+======================================*/
+
+.musica__boton{
+
+    width:38px;
+
+    height:38px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    color:rgba(255,255,255,.70);
+
+    background:transparent;
+
+    font-size:1rem;
+
+    transition:.35s;
+
+}
+
+.musica__boton:hover{
+
+    color:#fff;
+
+    transform:scale(1.15);
+
+}
+
+
+
+/*======================================
+        PLAY
+======================================*/
+
+.musica__play{
+
+    width:72px;
+
+    height:72px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    color:#fff;
+
+    font-size:1.7rem;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+
+    linear-gradient(
+
+        180deg,
+
+        #b97c7c,
+
+        #8b4b63
+
+    );
+
+    box-shadow:
+
+        0 12px 30px rgba(109,46,70,.35);
+
+    transition:.35s;
+
+}
+
+.musica__play:hover{
+
+    transform:translateY(-4px) scale(1.08);
+
+    box-shadow:
+
+        0 20px 40px rgba(109,46,70,.45);
+
+}
+
+
+
+
+
+/*=========================================
+            TABLET
+=========================================*/
+
+@media (max-width:768px){
+
+    .musica{
+
+        padding:22px;
+
+        border-radius:32px;
+
+    }
+
+    .musica__titulo{
+
+    color:#fff;
+
+    text-align:center;
+
+    font-size:1.05rem;
+
+    font-weight:500;
+
+    letter-spacing:.6px;
+
+    margin-bottom:16px;
+
+}
+
+    .musica__play{
+
+        width:60px;
+
+        height:60px;
+
+        font-size:1.4rem;
+
+    }
+
+}
+
+/*=========================================
+            MOVIL
+=========================================*/
+
+@media (max-width:480px){
+
+    .musica{
+
+        padding:18px;
+
+    }
+
+    .musica__titulo{
+
+        font-size:1.15rem;
+
+    }
+
+    .musica__controles{
+
+        gap:12px;
+
+    }
+
+    .musica__boton{
+
+        font-size:1rem;
+
+    }
+
+    .musica__play{
+
+        width:54px;
+
+        height:54px;
+
+        font-size:1.2rem;
+
+    }
+
+}

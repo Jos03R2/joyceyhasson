@@ -1,0 +1,174 @@
+/*======================================
+        TRANSICIONES
+======================================*/
+
+.confirmacion__buscar,
+.confirmacion__enviar,
+.modal-confirmacion__cerrar{
+
+    transition:
+    .35s cubic-bezier(.22,.61,.36,1);
+
+}
+
+/*======================================
+        BOTON BUSCAR
+======================================*/
+
+.confirmacion__buscar:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 18px 35px rgba(109,46,70,.30);
+
+}
+
+/*======================================
+        BOTON CONFIRMAR
+======================================*/
+
+.confirmacion__enviar:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 20px 40px rgba(109,46,70,.35);
+
+}
+
+/*======================================
+        BOTON CERRAR
+======================================*/
+
+.modal-confirmacion__cerrar:hover{
+
+    transform:rotate(90deg);
+
+}
+
+/*======================================
+        EFECTO CLICK
+======================================*/
+
+.confirmacion__buscar:active,
+.confirmacion__enviar:active{
+
+    transform:scale(.98);
+
+}
+
+/*======================================
+        BOTON ABRIR MODAL
+======================================*/
+
+.confirmacion__abrir{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    width:100%;
+
+    max-width:340px;
+
+    margin:0 auto;
+
+    padding:18px 28px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    background:linear-gradient(
+        180deg,
+        var(--color-borgona),
+        #8b4b63
+    );
+
+    color:#fff;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    font-family:inherit;
+
+    box-shadow:
+        0 15px 30px rgba(109,46,70,.25);
+
+    transition:.35s cubic-bezier(.22,.61,.36,1);
+
+}
+
+.confirmacion__abrir i{
+
+    font-size:1rem;
+
+}
+
+.confirmacion__abrir:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 20px 40px rgba(109,46,70,.35);
+
+}
+
+.confirmacion__abrir:active{
+
+    transform:scale(.98);
+
+}
+
+
+
+/*======================================
+        BOTON BUSCAR
+======================================*/
+
+.confirmacion__buscar{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    width:100%;
+
+    margin-top:18px;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    background:linear-gradient(
+        180deg,
+        var(--color-borgona),
+        #8b4b63
+    );
+
+    color:#fff;
+
+    font-size:.95rem;
+
+    font-weight:600;
+
+    box-shadow:
+        0 12px 28px rgba(109,46,70,.22);
+
+}

@@ -1,0 +1,289 @@
+/*======================================
+        TABLET GRANDE
+======================================*/
+
+@media (max-width:992px){
+
+.itinerario{
+
+    max-width:500px;
+
+    padding:65px 25px;
+
+}
+
+.itinerario__titulo{
+
+    font-size:3.2rem;
+
+}
+
+.itinerario__timeline{
+
+    max-width:340px;
+
+}
+
+.itinerario__card{
+
+    max-width:310px;
+
+}
+
+}
+
+/*======================================
+        TABLET
+======================================*/
+
+@media (max-width:768px){
+
+.itinerario{
+
+    max-width:92%;
+
+    margin:55px auto;
+
+    padding:60px 22px;
+
+    border-radius:0 55px 0 55px;
+
+}
+
+.itinerario__subtitulo{
+
+    font-size:.70rem;
+
+    letter-spacing:6px;
+
+}
+
+.itinerario__titulo{
+
+    font-size:3rem;
+
+}
+
+.itinerario__descripcion{
+
+    max-width:320px;
+
+    font-size:.90rem;
+
+    margin-bottom:45px;
+
+}
+
+.itinerario__timeline{
+
+    max-width:320px;
+
+}
+
+.itinerario__evento{
+
+    margin:36px 0;
+
+}
+
+.itinerario__medallon{
+
+    width:64px;
+
+    height:64px;
+
+}
+
+.itinerario__medallon::before{
+
+    inset:-6px;
+
+}
+
+.itinerario__medallon::after{
+
+    inset:6px;
+
+}
+
+.itinerario__medallon i{
+
+    font-size:1rem;
+
+}
+
+.itinerario__card{
+
+    max-width:290px;
+
+    padding:24px;
+
+}
+
+.itinerario__hora{
+
+    font-size:1.35rem;
+
+    padding:8px 16px;
+
+}
+
+.itinerario__card h3{
+
+    font-size:.95rem;
+
+}
+
+.itinerario__card p{
+
+    font-size:.88rem;
+
+    line-height:1.7;
+
+}
+
+}
+
+/*======================================
+        MOVILES GRANDES
+======================================*/
+
+@media (max-width:576px){
+
+.itinerario{
+
+    padding:55px 20px;
+
+}
+
+.itinerario__titulo{
+
+    font-size:2.7rem;
+
+}
+
+.itinerario__descripcion{
+
+    max-width:280px;
+
+    font-size:.88rem;
+
+}
+
+.itinerario__timeline{
+
+    max-width:290px;
+
+}
+
+.itinerario__card{
+
+    max-width:270px;
+
+    padding:22px;
+
+}
+
+.itinerario__hora{
+
+    font-size:1.25rem;
+
+}
+
+}
+
+/*======================================
+        MOVILES PEQUEÑOS
+======================================*/
+
+@media (max-width:400px){
+
+.itinerario{
+
+    padding:45px 16px;
+
+    border-radius:0 38px 0 38px;
+
+}
+
+.itinerario__subtitulo{
+
+    letter-spacing:4px;
+
+    font-size:.65rem;
+
+}
+
+.itinerario__titulo{
+
+    font-size:2.3rem;
+
+}
+
+.itinerario__descripcion{
+
+    font-size:.82rem;
+
+    max-width:240px;
+
+}
+
+.itinerario__timeline{
+
+    max-width:100%;
+
+}
+
+.itinerario__evento{
+
+    margin:28px 0;
+
+}
+
+.itinerario__medallon{
+
+    width:56px;
+
+    height:56px;
+
+}
+
+.itinerario__medallon i{
+
+    font-size:.90rem;
+
+}
+
+.itinerario__card{
+
+    max-width:240px;
+
+    padding:18px;
+
+    border-radius:22px;
+
+}
+
+.itinerario__hora{
+
+    font-size:1.10rem;
+
+    padding:6px 14px;
+
+}
+
+.itinerario__card h3{
+
+    font-size:.85rem;
+
+}
+
+.itinerario__card p{
+
+    font-size:.80rem;
+
+    line-height:1.6;
+
+}
+
+}

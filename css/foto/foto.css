@@ -1,0 +1,618 @@
+/*=========================================
+            FOTO DECORATIVA
+=========================================*/
+
+.foto{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    padding:18px 20px 45px;
+
+}
+
+/*=========================================
+            TARJETA
+=========================================*/
+
+.foto__tarjeta{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:560px;
+
+    overflow:hidden;
+
+    border-radius:
+        70px 22px
+        120px 28px
+        90px 35px
+        45px 110px;
+
+    background:white;
+
+    box-shadow:
+
+        0 18px 45px rgba(0,0,0,.12);
+
+    transition:
+        transform .45s ease,
+        box-shadow .45s ease;
+
+}
+
+
+/*======================================
+        OVERLAY
+======================================*/
+
+.foto__overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-end;
+
+    padding-bottom:45px;
+
+    background:linear-gradient(
+
+        to top,
+
+        rgba(0,0,0,.30),
+
+        rgba(0,0,0,.05),
+
+        transparent
+
+    );
+
+}
+
+/*=========================================
+            MARCO INTERNO
+=========================================*/
+
+.foto__tarjeta::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:12px;
+
+    border-radius:inherit;
+
+    border:1px solid rgba(255,255,255,.45);
+
+    pointer-events:none;
+
+    z-index:2;
+
+}
+
+/*=========================================
+            EFECTO DE LUZ
+=========================================*/
+
+.foto__tarjeta::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            rgba(255,255,255,.22),
+
+            transparent 35%,
+
+            transparent 70%,
+
+            rgba(255,255,255,.10)
+
+        );
+
+    pointer-events:none;
+
+    z-index:1;
+
+}
+
+/*=========================================
+            IMAGEN
+=========================================*/
+
+.foto__imagen{
+
+    width:100%;
+
+    height:650px;
+
+    object-fit:cover;
+
+    object-position:center;
+
+    transition:
+        transform .8s ease;
+
+}
+
+/*=========================================
+            HOVER
+=========================================*/
+
+.foto__tarjeta:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+
+        0 30px 60px rgba(0,0,0,.16);
+
+}
+
+.foto__tarjeta:hover .foto__imagen{
+
+    transform:scale(1.06);
+
+}
+
+/*=========================================
+            TABLET
+=========================================*/
+
+@media(max-width:768px){
+
+    .foto{
+
+        padding:14px 14px 38px;
+
+    }
+
+    .foto__imagen{
+
+        height:560px;
+
+    }
+
+}
+
+/*=========================================
+            MOVIL
+=========================================*/
+
+@media(max-width:480px){
+
+    .foto{
+
+        padding:12px 10px 32px;
+
+    }
+
+    .foto__tarjeta{
+
+        border-radius:
+            55px 18px
+            90px 22px
+            70px 26px
+            35px 90px;
+
+    }
+
+    .foto__imagen{
+
+        height:500px;
+
+    }
+
+}
+
+
+
+
+/*=========================================
+            ESTILO 2
+=========================================*/
+
+.foto--estilo2 .foto__tarjeta{
+
+    border-radius:
+        35px 90px
+        35px 120px
+        120px 35px
+        35px 90px;
+
+}
+
+
+
+.foto--estilo3 .foto__tarjeta{
+
+    border-radius:
+        120px 25px
+        40px 120px
+        120px 40px
+        25px 120px;
+
+}
+
+
+.foto--estilo4 .foto__tarjeta{
+
+    border-radius:
+        90px 20px
+        90px 20px
+        20px 90px
+        20px 90px;
+
+}
+
+
+
+.foto--final .foto__tarjeta{
+
+    border-radius:
+        140px 30px
+        140px 30px
+        140px 30px
+        140px 30px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*=========================================
+            FOTO ESTILO 3
+=========================================*/
+
+.foto--estilo3{
+
+    padding:18px 20px 45px;
+
+}
+
+.foto--estilo3 .foto__tarjeta{
+
+    border-radius:
+        130px 35px
+        35px 130px
+        90px 35px
+        35px 90px;
+
+    overflow:hidden;
+
+    box-shadow:
+
+        0 20px 45px rgba(0,0,0,.15);
+
+    position:relative;
+
+}
+
+/* Marco interior */
+
+.foto--estilo3 .foto__tarjeta::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:14px;
+
+    border:
+
+        1px solid rgba(255,255,255,.45);
+
+    border-radius:inherit;
+
+    pointer-events:none;
+
+}
+
+/* Imagen */
+
+.foto--estilo3 .foto__imagen{
+
+    width:100%;
+
+    height:620px;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.6s;
+
+}
+
+.foto--estilo3:hover .foto__imagen{
+
+    transform:scale(1.03);
+
+}
+
+
+
+
+@media(max-width:480px){
+
+    .foto--estilo3 .foto__imagen{
+
+        height:520px;
+
+    }
+
+}
+
+
+
+/*======================================
+        FOTO TRANSICIÓN 5
+======================================*/
+
+.foto--estilo5{
+
+    position:relative;
+
+    max-width:520px;
+
+    height:520px;
+
+    margin:70px auto;
+
+    overflow:hidden;
+
+    border-radius:70px 0 70px 0;
+
+    background:
+
+        url("../../img/Foto11.jpg")
+
+        center center/cover no-repeat;
+
+    box-shadow:
+
+        0 20px 45px rgba(0,0,0,.12);
+
+}
+
+/*======================================
+        OVERLAY
+======================================*/
+
+.foto--estilo5 .foto__overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+
+        rgba(109,46,70,.18),
+
+        rgba(0,0,0,.28)
+
+    );
+
+}
+
+/*======================================
+        CONTENIDO
+======================================*/
+
+.foto--estilo5 .foto__contenido{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:60px 35px 270px;
+
+    color:#fff;
+
+    z-index:2;
+
+}
+
+/*======================================
+        DETALLE
+======================================*/
+
+.foto--estilo5 .foto__detalle{
+
+    letter-spacing:6px;
+
+    text-transform:uppercase;
+
+    font-size:.75rem;
+
+    margin-bottom:18px;
+
+    opacity:.85;
+
+}
+
+/*======================================
+        FRASE
+======================================*/
+
+.foto--estilo5 .foto__frase{
+
+    font-family:var(--fuente-cursiva);
+
+    font-size:3.2rem;
+
+    line-height:1.2;
+
+    margin-bottom:18px;
+
+}
+
+/*======================================
+        TEXTO
+======================================*/
+
+.foto--estilo5 .foto__texto{
+
+    max-width:300px;
+
+    line-height:1.8;
+
+    opacity:.92;
+
+}
+
+/*======================================
+        RESPONSIVE
+======================================*/
+
+@media(max-width:768px){
+
+.foto--estilo5{
+
+    max-width:92%;
+
+    height:500px;
+
+    border-radius:0 60px 0 60px;
+
+}
+
+.foto--estilo5 .foto__frase{
+
+    font-size:2.6rem;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.foto--estilo5{
+
+    height:450px;
+
+    border-radius:0 45px 0 45px;
+
+}
+
+.foto--estilo5 .foto__frase{
+
+    font-size:2.2rem;
+
+}
+
+.foto--estilo5 .foto__texto{
+
+    font-size:.9rem;
+
+}
+
+}
+
+
+/*======================================
+        TARJETA MUSICA
+======================================*/
+
+.foto .musica{
+
+    width:88%;
+
+    max-width:450px;
+
+    padding:24px 28px;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.30);
+
+    box-shadow:
+
+        0 15px 35px rgba(0,0,0,.18);
+
+}
+
+
+/*======================================
+        TITULO MUSICA
+======================================*/
+
+.foto .musica__titulo{
+
+    color:#fff;
+
+    text-align:center;
+
+    margin-bottom:18px;
+
+    font-size:1rem;
+
+    font-weight:500;
+
+    letter-spacing:.5px;
+
+}
+
+/*======================================
+        BARRA
+======================================*/
+
+.foto .musica__barra{
+
+    margin-bottom:22px;
+
+}
+
+/*======================================
+        CONTROLES
+======================================*/
+
+.foto .musica__controles{
+
+    justify-content:center;
+
+}

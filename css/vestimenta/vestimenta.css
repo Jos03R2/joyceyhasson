@@ -1,0 +1,422 @@
+/*=========================================
+        CODIGO DE VESTIMENTA
+=========================================*/
+
+.vestimenta{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    padding:18px 20px 45px;
+
+}
+
+/*=========================================
+            TARJETA
+=========================================*/
+
+.vestimenta__tarjeta{
+
+    width:100%;
+
+    max-width:560px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #fffdfc,
+            #f8f2f2
+        );
+
+    border-radius:
+        120px 28px
+        55px 110px;
+
+    box-shadow:
+
+        0 20px 50px rgba(0,0,0,.12);
+
+    overflow:hidden;
+
+}
+
+/*=========================================
+            CONTENIDO
+=========================================*/
+
+.vestimenta__contenido{
+
+    padding:
+
+        70px
+        30px;
+
+    text-align:center;
+
+}
+
+/*=========================================
+            TITULOS
+=========================================*/
+
+.vestimenta__subtitulo{
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+
+    color:var(--borgona);
+
+    font-size:1rem;
+
+}
+
+.vestimenta__titulo{
+
+    margin-top:18px;
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:5rem;
+
+    color:var(--borgona);
+
+}
+
+.vestimenta__descripcion{
+
+    margin-top:20px;
+
+    font-size:1.35rem;
+
+    color:var(--texto);
+
+    line-height:1.7;
+
+}
+
+/*=========================================
+            GRID
+=========================================*/
+
+.vestimenta__grid{
+
+    margin-top:60px;
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(2,1fr);
+
+    gap:22px;
+
+}
+
+/*=========================================
+            TARJETAS
+=========================================*/
+
+.vestimenta__card{
+
+    transition:
+
+        transform .35s,
+
+        box-shadow .35s;
+
+}
+
+.vestimenta__card:hover{
+
+    transform:
+
+        translateY(-10px);
+
+    box-shadow:
+
+        0 18px 35px rgba(109,46,70,.18);
+
+}
+
+/*=========================================
+            ICONOS
+=========================================*/
+
+.vestimenta__icono{
+
+    width:109px;
+
+    margin:0 auto 10px;
+
+    display:block;
+
+}
+
+/* Vestido */
+
+.vestimenta__icono--vestido{
+
+    width:125px;
+
+}
+
+.vestimenta__card h3{
+
+    margin-top:20px;
+
+    color:var(--borgona);
+
+    font-size:1.2rem;
+
+    letter-spacing:2px;
+
+}
+
+.vestimenta__card p{
+
+    margin-top:12px;
+
+    font-size:1.2rem;
+
+    color:var(--texto);
+
+}
+
+/*=========================================
+            COLORES
+=========================================*/
+
+.vestimenta__colores{
+
+    margin-top:60px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*=========================================
+            TABLET
+=========================================*/
+
+@media(max-width:768px){
+
+    .vestimenta__titulo{
+
+        font-size:4.3rem;
+
+    }
+
+}
+
+/*=========================================
+            MOVIL
+=========================================*/
+
+@media(max-width:480px){
+
+    .vestimenta{
+
+        padding:14px 10px 35px;
+
+    }
+
+    .vestimenta__tarjeta{
+
+        border-radius:
+            90px 22px
+            40px 90px;
+
+    }
+
+    .vestimenta__contenido{
+
+        padding:
+
+            50px
+            20px;
+
+    }
+
+    .vestimenta__grid{
+
+        grid-template-columns:1fr;
+
+        gap:18px;
+
+    }
+
+    .vestimenta__titulo{
+
+        font-size:3.8rem;
+
+    }
+
+    .vestimenta__descripcion{
+
+        font-size:1.15rem;
+
+    }
+
+}
+
+
+
+
+
+/*=========================================
+        COLORES PROHIBIDOS
+=========================================*/
+
+.vestimenta__colores{
+
+    margin-top:65px;
+
+}
+
+.vestimenta__colores-titulo{
+
+    font-size:1.3rem;
+
+    color:var(--borgona);
+
+    line-height:1.7;
+
+    margin-bottom:40px;
+
+}
+
+/*=========================================
+            PALETA
+=========================================*/
+
+.vestimenta__paleta{
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(4,1fr);
+
+    gap:28px 18px;
+
+    justify-items:center;
+
+}
+
+.color{
+
+    text-align:center;
+
+}
+
+.color__circulo{
+
+    width:54px;
+
+    height:54px;
+
+    display:block;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    border:2px solid rgba(0,0,0,.08);
+
+    box-shadow:
+
+        0 8px 18px rgba(0,0,0,.10);
+
+}
+
+.color p{
+
+    margin-top:12px;
+
+    font-size:.95rem;
+
+    color:var(--texto);
+
+    line-height:1.3;
+
+}
+
+
+
+/*=========================================
+            COLORES
+=========================================*/
+
+.blanco{
+
+    background:#ffffff;
+
+}
+
+.crema{
+
+    background:#F5E6CC;
+
+}
+
+.palo-rosa{
+
+    background:#dfadae;
+
+}
+
+.rosado-canela{
+
+    background:#954953;
+
+}
+
+.borgona{
+
+    background:#6D2E46;
+
+}
+
+.gris{
+
+    background:#A9A9A9;
+
+}
+
+.esmeralda{
+
+    background:#0F8B6D;
+
+}
+
+
+
+
+@media(max-width:480px){
+
+    .vestimenta__paleta{
+
+        grid-template-columns:
+
+            repeat(2,1fr);
+
+    }
+
+}

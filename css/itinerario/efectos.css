@@ -1,0 +1,141 @@
+/*======================================
+            TRANSICIONES
+======================================*/
+
+.itinerario,
+.itinerario__card,
+.itinerario__medallon,
+.itinerario__hora,
+.itinerario__medallon i{
+
+    transition:
+    .45s cubic-bezier(.22,.61,.36,1);
+
+}
+
+/*======================================
+        HOVER CONTENEDOR
+======================================*/
+
+.itinerario:hover{
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.12);
+
+}
+
+/*======================================
+        HOVER EVENTO
+======================================*/
+
+.itinerario__evento{
+
+    transition:
+    transform .35s ease;
+
+}
+
+.itinerario__evento:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/*======================================
+        HOVER TARJETA
+======================================*/
+
+.itinerario__evento:hover .itinerario__card{
+
+    transform:translateY(-6px);
+
+    border-color:
+    rgba(109,46,70,.10);
+
+    box-shadow:
+        0 22px 45px rgba(0,0,0,.12);
+
+}
+
+/*======================================
+        HOVER MEDALLON
+======================================*/
+
+.itinerario__evento:hover .itinerario__medallon{
+
+    transform:
+        translateY(-4px)
+        scale(1.06);
+
+    box-shadow:
+        0 18px 40px rgba(109,46,70,.18),
+        inset 0 1px 0 rgba(255,255,255,.95);
+
+}
+
+/*======================================
+        HOVER ICONO
+======================================*/
+
+.itinerario__evento:hover .itinerario__medallon i{
+
+    transform:rotate(-8deg);
+
+    color:var(--color-borgona);
+
+}
+
+/*======================================
+        HOVER HORA
+======================================*/
+
+.itinerario__evento:hover .itinerario__hora{
+
+    background:var(--color-borgona);
+
+    color:#fff;
+
+    letter-spacing:1px;
+
+}
+
+/*======================================
+        HOVER TITULO
+======================================*/
+
+.itinerario__card h3{
+
+    transition:
+    color .35s ease;
+
+}
+
+.itinerario__evento:hover h3{
+
+    color:var(--color-borgona);
+
+}
+
+/*======================================
+        DECORACION ENTRE EVENTOS
+======================================*/
+
+.itinerario__evento:not(:last-child)::after{
+
+    content:"✦";
+
+    position:absolute;
+
+    bottom:-28px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:.55rem;
+
+    color:rgba(109,46,70,.30);
+
+    letter-spacing:2px;
+
+}
