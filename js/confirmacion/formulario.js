@@ -79,15 +79,17 @@ async function enviarFormulario(){
 
         });
 
-    const formulario = new URLSearchParams();
+    const datos = {
 
-    formulario.append("codigo",codigo);
-    formulario.append("familia",familia);
-    formulario.append("mensaje",mensaje);
-    formulario.append(
-        "integrantes",
-        JSON.stringify(integrantes)
-    );
+        codigo: codigo,
+        familia: familia,
+        mensaje: mensaje,
+        integrantes: integrantes
+
+    };
+
+    console.log("========== RSVP ==========");
+    console.log(datos);
 
     const boton =
         document.getElementById("btnEnviar");
@@ -104,70 +106,41 @@ async function enviarFormulario(){
 
     try{
 
-        const respuesta = await fetch(
+        await fetch(
 
             URL_API_FORMULARIO,
 
             {
 
-                method:"POST",
+                method: "POST",
 
-                body:formulario
+                mode: "no-cors",
+
+                headers: {
+
+                    "Content-Type": "application/json"
+
+                },
+
+                body: JSON.stringify(datos)
 
             }
 
         );
 
-        const resultado =
-            await respuesta.json();
+        mostrarMensaje(
 
-        console.log(resultado);
+            "¡Muchas gracias! Tu confirmación fue enviada.",
 
-        if(resultado.status==="success"){
+            "success"
 
-            mostrarMensaje(
+        );
 
-                "¡Muchas gracias! Tu asistencia ha sido confirmada.",
+        setTimeout(function(){
 
-                "success"
+            location.reload();
 
-            );
-
-            setTimeout(function(){
-
-                location.reload();
-
-            },2000);
-
-            return;
-
-        }
-
-        if(resultado.status==="duplicado"){
-
-            mostrarMensaje(
-
-                "Esta invitación ya fue confirmada anteriormente.",
-
-                "warning"
-
-            );
-
-            boton.disabled=false;
-
-            boton.innerHTML=`
-
-                <i class="fa-solid fa-heart"></i>
-
-                Confirmar asistencia
-
-            `;
-
-            return;
-
-        }
-
-        throw new Error("Respuesta desconocida");
+        },2000);
 
     }
 
@@ -177,15 +150,15 @@ async function enviarFormulario(){
 
         mostrarMensaje(
 
-            "No fue posible conectar con Google Sheets.",
+            "No fue posible enviar la confirmación.",
 
             "error"
 
         );
 
-        boton.disabled=false;
+        boton.disabled = false;
 
-        boton.innerHTML=`
+        boton.innerHTML = `
 
             <i class="fa-solid fa-heart"></i>
 
