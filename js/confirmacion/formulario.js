@@ -3,230 +3,171 @@
 ======================================*/
 
 const URL_API_FORMULARIO =
-"https://script.google.com/macros/s/AKfycbz3qfgnrSCSzblRBPbtSWwbKc3SDRJ_MA5WdQoS1Af6eXwC1fQH7rZzvqto4fFxOVTq/exec";
+"https://script.google.com/macros/s/AKfycbwPZtVR80sZfiIg1SvVUKHOCJzsHRcB8KkzCvqlOnQeTIZXDsiqJwWxlINqnk-Zhwq8/exec";
 
 
 /*======================================
-        FORMULARIO RSVP
+        EVENTO
 ======================================*/
 
-document.addEventListener(
+document.addEventListener("click", async function(event){
 
-    "click",
+    if(!event.target.closest("#btnEnviar")){
+        return;
+    }
 
-    function(event){
+    await enviarFormulario();
 
-        if(event.target.closest("#btnEnviar")){
+});
 
-            obtenerDatosFormulario();
 
-        }
+/*======================================
+        ENVIAR FORMULARIO
+======================================*/
+
+async function enviarFormulario(){
+
+    const parametros = new URLSearchParams(window.location.search);
+
+    const codigo = parametros.get("codigo");
+
+    if(!codigo){
+
+        mostrarMensaje(
+            "Esta invitación no contiene un código válido.",
+            "error"
+        );
+
+        return;
 
     }
 
-);
+    const familiaElemento =
+        document.querySelector(".confirmacion__familia h3");
 
+    if(!familiaElemento){
 
-/*======================================
-        OBTENER DATOS
-======================================*/
-
-async function obtenerDatosFormulario(){
-
-    const parametros =
-
-        new URLSearchParams(
-
-            window.location.search
-
+        mostrarMensaje(
+            "No fue posible obtener la familia.",
+            "error"
         );
 
-    const codigo =
+        return;
 
-        parametros.get("codigo");
+    }
 
-    const familia =
-
-        document
-
-            .querySelector(
-
-                ".confirmacion__familia h3"
-
-            )
-
-            .textContent
-
-            .trim();
+    const familia = familiaElemento.textContent.trim();
 
     const mensaje =
-
-        document
-
-            .getElementById("mensaje")
-
-            .value
-
-            .trim();
+        document.getElementById("mensaje").value.trim();
 
     const integrantes = [];
 
     document
-
-        .querySelectorAll(
-
-            ".confirmacion__opcion"
-
-        )
-
+        .querySelectorAll(".confirmacion__opcion")
         .forEach(function(opcion){
-
-            const checkbox =
-
-                opcion.querySelector("input");
-
-            const nombre =
-
-                opcion.querySelector("span")
-
-                .textContent
-
-                .trim();
 
             integrantes.push({
 
-                nombre:nombre,
+                nombre:
+                    opcion.querySelector("span").textContent.trim(),
 
-                asiste:checkbox.checked
+                asiste:
+                    opcion.querySelector("input").checked
 
             });
 
         });
 
+    const formulario = new URLSearchParams();
 
-    const datos={
-
-        codigo:codigo,
-
-        familia:familia,
-
-        mensaje:mensaje,
-
-        integrantes:integrantes
-
-    };
-
-
-    console.log("========== RSVP ==========");
-
-    console.log(datos);
-
-
-    /*======================================
-            PREPARAR FORMULARIO
-    ======================================*/
-
-    const formulario =
-
-        new URLSearchParams();
-
+    formulario.append("codigo",codigo);
+    formulario.append("familia",familia);
+    formulario.append("mensaje",mensaje);
     formulario.append(
-
-        "codigo",
-
-        datos.codigo
-
-    );
-
-    formulario.append(
-
-        "familia",
-
-        datos.familia
-
-    );
-
-    formulario.append(
-
-        "mensaje",
-
-        datos.mensaje
-
-    );
-
-    formulario.append(
-
         "integrantes",
-
-        JSON.stringify(
-
-            datos.integrantes
-
-        )
-
+        JSON.stringify(integrantes)
     );
 
+    const boton =
+        document.getElementById("btnEnviar");
 
-    /*======================================
-            ENVIAR
-    ======================================*/
+    boton.disabled = true;
+
+    boton.innerHTML = `
+
+        <i class="fa-solid fa-spinner fa-spin"></i>
+
+        Enviando...
+
+    `;
 
     try{
 
-        const respuesta =
+        const respuesta = await fetch(
 
-            await fetch(
+            URL_API_FORMULARIO,
 
-                URL_API_FORMULARIO,
+            {
 
-                {
+                method:"POST",
 
-                    method:"POST",
+                body:formulario
 
-                    body:formulario
+            }
 
-                }
-
-            );
+        );
 
         const resultado =
-
             await respuesta.json();
 
         console.log(resultado);
 
-
         if(resultado.status==="success"){
 
-            alert(
+            mostrarMensaje(
 
-                "¡Muchas gracias! Tu asistencia ha sido confirmada."
+                "¡Muchas gracias! Tu asistencia ha sido confirmada.",
 
-            );
-
-            location.reload();
-
-        }
-
-        else if(resultado.status==="duplicado"){
-
-            alert(
-
-                "Esta invitación ya fue confirmada anteriormente."
+                "success"
 
             );
 
+            setTimeout(function(){
+
+                location.reload();
+
+            },2000);
+
+            return;
+
         }
 
-        else{
+        if(resultado.status==="duplicado"){
 
-            alert(
+            mostrarMensaje(
 
-                "Ocurrió un error al guardar la información."
+                "Esta invitación ya fue confirmada anteriormente.",
+
+                "warning"
 
             );
 
+            boton.disabled=false;
+
+            boton.innerHTML=`
+
+                <i class="fa-solid fa-heart"></i>
+
+                Confirmar asistencia
+
+            `;
+
+            return;
+
         }
+
+        throw new Error("Respuesta desconocida");
 
     }
 
@@ -234,12 +175,35 @@ async function obtenerDatosFormulario(){
 
         console.error(error);
 
-        alert(
+        mostrarMensaje(
 
-            "No fue posible conectar con Google Sheets."
+            "No fue posible conectar con Google Sheets.",
+
+            "error"
 
         );
 
+        boton.disabled=false;
+
+        boton.innerHTML=`
+
+            <i class="fa-solid fa-heart"></i>
+
+            Confirmar asistencia
+
+        `;
+
     }
+
+}
+
+
+/*======================================
+        MENSAJES
+======================================*/
+
+function mostrarMensaje(texto,tipo){
+
+    alert(texto);
 
 }

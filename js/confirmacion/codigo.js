@@ -3,7 +3,7 @@
 ======================================*/
 
 const URL_API =
-"https://script.google.com/macros/s/AKfycbz3qfgnrSCSzblRBPbtSWwbKc3SDRJ_MA5WdQoS1Af6eXwC1fQH7rZzvqto4fFxOVTq/exec";
+"https://script.google.com/macros/s/AKfycbwPZtVR80sZfiIg1SvVUKHOCJzsHRcB8KkzCvqlOnQeTIZXDsiqJwWxlINqnk-Zhwq8/exec";
 
 
 /*======================================
@@ -11,11 +11,8 @@ const URL_API =
 ======================================*/
 
 window.addEventListener(
-
     "DOMContentLoaded",
-
     iniciar
-
 );
 
 
@@ -25,43 +22,65 @@ window.addEventListener(
 
 async function iniciar(){
 
-    const parametros =
+    const parametros = new URLSearchParams(window.location.search);
 
-        new URLSearchParams(
+    const codigo = parametros.get("codigo");
 
-            window.location.search
+    console.log("Código recibido:", codigo);
 
-        );
-
-    const codigo =
-
-        parametros.get("codigo");
-
-    console.log("Código recibido:",codigo);
+    const contenedor = document.getElementById("resultadoBusqueda");
 
     if(!codigo){
+
+        contenedor.innerHTML = `
+
+            <div class="confirmacion__error">
+
+                <i class="fa-solid fa-envelope-open-text"></i>
+
+                <h3>Invitación personalizada</h3>
+
+                <p>
+
+                    Esta invitación utiliza un enlace único para cada familia.
+
+                    <br><br>
+
+                    Por favor abre el enlace que recibiste por WhatsApp para confirmar tu asistencia.
+
+                </p>
+
+            </div>
+
+        `;
 
         return;
 
     }
 
+    contenedor.innerHTML = `
+
+        <div class="confirmacion__cargando">
+
+            <i class="fa-solid fa-spinner fa-spin"></i>
+
+            <p>Cargando invitación...</p>
+
+        </div>
+
+    `;
+
     try{
 
-        const respuesta =
+        const respuesta = await fetch(
 
-            await fetch(
+            URL_API +
+            "?codigo=" +
+            encodeURIComponent(codigo)
 
-                URL_API +
+        );
 
-                "?codigo=" +
-
-                encodeURIComponent(codigo)
-
-            );
-
-        const datos =
-
-            await respuesta.json();
+        const datos = await respuesta.json();
 
         mostrarFamilia(datos);
 
@@ -70,6 +89,26 @@ async function iniciar(){
     catch(error){
 
         console.error(error);
+
+        contenedor.innerHTML = `
+
+            <div class="confirmacion__error">
+
+                <i class="fa-solid fa-circle-xmark"></i>
+
+                <h3>Error de conexión</h3>
+
+                <p>
+
+                    No fue posible obtener la información de tu invitación.
+
+                    Inténtalo nuevamente más tarde.
+
+                </p>
+
+            </div>
+
+        `;
 
     }
 
@@ -82,17 +121,11 @@ async function iniciar(){
 
 function mostrarFamilia(datos){
 
-    const contenedor =
-
-        document.getElementById(
-
-            "resultadoBusqueda"
-
-        );
+    const contenedor = document.getElementById("resultadoBusqueda");
 
     if(!datos.encontrado){
 
-        contenedor.innerHTML=`
+        contenedor.innerHTML = `
 
             <div class="confirmacion__error">
 
@@ -114,7 +147,7 @@ function mostrarFamilia(datos){
 
     }
 
-    let html=`
+    let html = `
 
         <div class="confirmacion__familia">
 
@@ -134,19 +167,14 @@ function mostrarFamilia(datos){
 
     datos.integrantes.forEach(function(nombre,index){
 
-        html+=`
+        html += `
 
             <label class="confirmacion__opcion">
 
                 <input
-
                     type="checkbox"
-
                     checked
-
-                    id="integrante${index}"
-
-                >
+                    id="integrante${index}">
 
                 <span>${nombre}</span>
 
@@ -156,7 +184,7 @@ function mostrarFamilia(datos){
 
     });
 
-    html+=`
+    html += `
 
         </div>
 
@@ -169,11 +197,8 @@ function mostrarFamilia(datos){
             </label>
 
             <textarea
-
                 id="mensaje"
-
                 rows="5"
-
                 placeholder="Escribe aquí unas palabras para los novios...">
 
             </textarea>
@@ -181,9 +206,7 @@ function mostrarFamilia(datos){
         </div>
 
         <button
-
             id="btnEnviar"
-
             class="confirmacion__enviar">
 
             <i class="fa-solid fa-heart"></i>
@@ -194,6 +217,6 @@ function mostrarFamilia(datos){
 
     `;
 
-    contenedor.innerHTML=html;
+    contenedor.innerHTML = html;
 
 }
