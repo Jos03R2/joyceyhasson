@@ -10,15 +10,21 @@ const URL_API_FORMULARIO =
         EVENTO
 ======================================*/
 
-document.addEventListener("click", async function(event){
+document.addEventListener(
 
-    if(!event.target.closest("#btnEnviar")){
-        return;
+    "click",
+
+    async function(event){
+
+        if(!event.target.closest("#btnEnviar")){
+            return;
+        }
+
+        await enviarFormulario();
+
     }
 
-    await enviarFormulario();
-
-});
+);
 
 
 /*======================================
@@ -27,15 +33,24 @@ document.addEventListener("click", async function(event){
 
 async function enviarFormulario(){
 
-    const parametros = new URLSearchParams(window.location.search);
+    const parametros =
 
-    const codigo = parametros.get("codigo");
+        new URLSearchParams(
+
+            window.location.search
+
+        );
+
+    const codigo =
+
+        parametros.get("codigo");
 
     if(!codigo){
 
         mostrarMensaje(
-            "Esta invitación no contiene un código válido.",
-            "error"
+
+            "Esta invitación no contiene un código válido."
+
         );
 
         return;
@@ -43,37 +58,70 @@ async function enviarFormulario(){
     }
 
     const familiaElemento =
-        document.querySelector(".confirmacion__familia h3");
+
+        document.querySelector(
+
+            ".confirmacion__familia h3"
+
+        );
 
     if(!familiaElemento){
 
         mostrarMensaje(
-            "No fue posible obtener la familia.",
-            "error"
+
+            "No fue posible obtener la familia."
+
         );
 
         return;
 
     }
 
-    const familia = familiaElemento.textContent.trim();
+    const familia =
+
+        familiaElemento.textContent.trim();
 
     const mensaje =
-        document.getElementById("mensaje").value.trim();
+
+        document
+
+            .getElementById("mensaje")
+
+            .value
+
+            .trim();
 
     const integrantes = [];
 
     document
-        .querySelectorAll(".confirmacion__opcion")
+
+        .querySelectorAll(
+
+            ".confirmacion__opcion"
+
+        )
+
         .forEach(function(opcion){
 
             integrantes.push({
 
                 nombre:
-                    opcion.querySelector("span").textContent.trim(),
+
+                    opcion
+
+                    .querySelector("span")
+
+                    .textContent
+
+                    .trim(),
 
                 asiste:
-                    opcion.querySelector("input").checked
+
+                    opcion
+
+                    .querySelector("input")
+
+                    .checked
 
             });
 
@@ -81,10 +129,13 @@ async function enviarFormulario(){
 
     const datos = {
 
-        codigo: codigo,
-        familia: familia,
-        mensaje: mensaje,
-        integrantes: integrantes
+        codigo:codigo,
+
+        familia:familia,
+
+        mensaje:mensaje,
+
+        integrantes:integrantes
 
     };
 
@@ -92,7 +143,12 @@ async function enviarFormulario(){
     console.log(datos);
 
     const boton =
-        document.getElementById("btnEnviar");
+
+        document.getElementById(
+
+            "btnEnviar"
+
+        );
 
     boton.disabled = true;
 
@@ -106,41 +162,41 @@ async function enviarFormulario(){
 
     try{
 
-        await fetch(
+        const respuesta =
 
-            URL_API_FORMULARIO,
+            await fetch(
 
-            {
+                URL_API_FORMULARIO,
 
-                method: "POST",
+                {
 
-                mode: "no-cors",
+                    method:"POST",
 
-                headers: {
+                    headers:{
 
-                    "Content-Type": "application/json"
+                        "Content-Type":"application/json"
 
-                },
+                    },
 
-                body: JSON.stringify(datos)
+                    body:JSON.stringify(datos)
 
-            }
+                }
 
-        );
+            );
+
+        const texto =
+
+            await respuesta.text();
+
+        console.log("========== RESPUESTA ==========");
+
+        console.log(texto);
 
         mostrarMensaje(
 
-            "¡Muchas gracias! Tu confirmación fue enviada.",
-
-            "success"
+            "¡Muchas gracias! Tu confirmación fue enviada."
 
         );
-
-        setTimeout(function(){
-
-            location.reload();
-
-        },2000);
 
     }
 
@@ -150,21 +206,9 @@ async function enviarFormulario(){
 
         mostrarMensaje(
 
-            "No fue posible enviar la confirmación.",
-
-            "error"
+            "Error al enviar la confirmación."
 
         );
-
-        boton.disabled = false;
-
-        boton.innerHTML = `
-
-            <i class="fa-solid fa-heart"></i>
-
-            Confirmar asistencia
-
-        `;
 
     }
 
@@ -175,7 +219,7 @@ async function enviarFormulario(){
         MENSAJES
 ======================================*/
 
-function mostrarMensaje(texto,tipo){
+function mostrarMensaje(texto){
 
     alert(texto);
 
