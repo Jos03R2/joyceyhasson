@@ -6,31 +6,30 @@
 
     width:100%;
 
-    padding:22px 24px;
-
-    border-radius:34px;
+    padding:28px 28px 24px;
 
     margin-bottom:20px;
 
     border-radius:42px;
 
     background:
+        rgba(255,255,255,.20);
 
-        rgba(255,255,255,.22);
+    backdrop-filter:blur(22px);
 
-    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(22px);
 
     border:
-
         1px solid rgba(255,255,255,.35);
 
     box-shadow:
-
-        0 20px 45px rgba(0,0,0,.12);
+        0 20px 45px rgba(0,0,0,.18);
 
 }
 
-/*=========================================*/
+/*=========================================
+            TITULO
+=========================================*/
 
 .musica__titulo{
 
@@ -38,13 +37,45 @@
 
     color:var(--borgona);
 
-    font-size:1.6rem;
+    font-size:1.45rem;
 
-    font-weight:500;
+    font-weight:600;
+
+    letter-spacing:.5px;
+
+    margin-bottom:22px;
 
 }
 
-/*=========================================*/
+/*=========================================
+            CANCION
+=========================================*/
+
+.musica__cancion{
+
+    font-size:1.18rem;
+
+    font-weight:600;
+
+    color:#3d2b33;
+
+    margin-bottom:4px;
+
+}
+
+/*=========================================
+            ARTISTA
+=========================================*/
+
+.musica__artista{
+
+    color:#4d3d44;
+
+    font-size:1rem;
+
+    margin-bottom:18px;
+
+}
 
 /*======================================
         BARRA
@@ -56,21 +87,23 @@
 
     width:100%;
 
-    height:6px;
+    height:7px;
 
-    margin:20px auto 28px;
+    margin:18px auto 18px;
 
-    border-radius:30px;
+    border-radius:50px;
 
     overflow:hidden;
 
+    cursor:pointer;
+
     background:
 
-    rgba(255,255,255,.18);
+        rgba(255,255,255,.22);
 
     box-shadow:
 
-        inset 0 1px 3px rgba(0,0,0,.15);
+        inset 0 2px 5px rgba(0,0,0,.12);
 
 }
 
@@ -84,25 +117,210 @@
 
     height:100%;
 
-    border-radius:30px;
+    border-radius:50px;
 
     background:
 
-    linear-gradient(
+        linear-gradient(
 
-        90deg,
+            90deg,
 
-        #b97c7c,
+            #c68a8a,
 
-        #8b4b63
+            #8b4b63
 
-    );
+        );
 
-    transition:.25s;
+    transition:
+
+        width .25s linear;
 
 }
 
-/*=========================================*/
+/*======================================
+        CONTADOR
+======================================*/
+
+.musica__contador{
+
+    margin-bottom:22px;
+
+    color:#3d2b33;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+}
+
+/*======================================
+        VOLUMEN
+======================================*/
+
+/*======================================
+        VOLUMEN
+======================================*/
+
+.musica__volumen{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-top:18px;
+
+    max-height:0;
+
+    opacity:0;
+
+    overflow:hidden;
+
+    transition:
+
+        max-height .35s ease,
+
+        opacity .35s ease,
+
+        margin-top .35s ease;
+
+}
+
+/* Se mostrará con JS */
+
+.musica__volumen.activo{
+
+    max-height:80px;
+
+    opacity:1;
+
+}
+
+.musica__volumen-btn{
+
+    width:52px;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+
+        rgba(255,255,255,.18);
+
+    backdrop-filter:blur(18px);
+
+    color:#fff;
+
+    font-size:1.1rem;
+
+    border:
+
+        1px solid rgba(255,255,255,.28);
+
+    box-shadow:
+
+        0 10px 22px rgba(0,0,0,.12);
+
+    transition:.30s;
+
+}
+
+.musica__volumen-btn:hover{
+
+    transform:
+
+        translateY(-3px) scale(1.08);
+
+}
+
+.musica__slider{
+
+    appearance:none;
+
+    -webkit-appearance:none;
+
+    width:180px;
+
+    height:6px;
+
+    border-radius:50px;
+
+    background:
+
+        rgba(255,255,255,.20);
+
+    outline:none;
+
+    cursor:pointer;
+
+}
+
+/* Chrome */
+
+.musica__slider::-webkit-slider-thumb{
+
+    -webkit-appearance:none;
+
+    appearance:none;
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:
+
+        linear-gradient(
+
+            180deg,
+
+            #b97c7c,
+
+            #8b4b63
+
+        );
+
+    cursor:pointer;
+
+    box-shadow:
+
+        0 4px 12px rgba(109,46,70,.35);
+
+}
+
+/* Firefox */
+
+.musica__slider::-moz-range-thumb{
+
+    width:18px;
+
+    height:18px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#8b4b63;
+
+    cursor:pointer;
+
+}
+
 
 /*======================================
         CONTROLES
@@ -120,63 +338,15 @@
 
 }
 
-/*=========================================*/
-
 /*======================================
         BOTONES
 ======================================*/
 
 .musica__boton{
 
-    width:38px;
+    width:52px;
 
-    height:38px;
-
-    border:none;
-
-    border-radius:50%;
-
-    cursor:pointer;
-
-    color:rgba(255,255,255,.70);
-
-    background:transparent;
-
-    font-size:1rem;
-
-    transition:.35s;
-
-}
-
-.musica__boton:hover{
-
-    color:#fff;
-
-    transform:scale(1.15);
-
-}
-
-
-
-/*======================================
-        PLAY
-======================================*/
-
-.musica__play{
-
-    width:72px;
-
-    height:72px;
-
-    border:none;
-
-    border-radius:50%;
-
-    cursor:pointer;
-
-    color:#fff;
-
-    font-size:1.7rem;
+    height:52px;
 
     display:flex;
 
@@ -184,38 +354,167 @@
 
     align-items:center;
 
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    color:#ffffff;
+
+    font-size:1.15rem;
+
     background:
 
-    linear-gradient(
+        rgba(255,255,255,.18);
 
-        180deg,
+    backdrop-filter:blur(18px);
 
-        #b97c7c,
+    -webkit-backdrop-filter:blur(18px);
 
-        #8b4b63
+    border:
 
-    );
+        1px solid rgba(255,255,255,.28);
 
     box-shadow:
 
-        0 12px 30px rgba(109,46,70,.35);
+        0 10px 22px rgba(0,0,0,.12);
 
-    transition:.35s;
+    transition:
+
+        transform .30s,
+
+        background .30s,
+
+        box-shadow .30s;
+
+}
+
+.musica__boton:hover{
+
+    transform:
+
+        translateY(-3px) scale(1.08);
+
+    background:
+
+        rgba(255,255,255,.28);
+
+    box-shadow:
+
+        0 16px 30px rgba(0,0,0,.20);
+
+}
+
+/*======================================
+        PLAY
+======================================*/
+
+.musica__play{
+
+    width:82px;
+
+    height:82px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    color:#ffffff;
+
+    font-size:2rem;
+
+    background:
+
+        linear-gradient(
+
+            180deg,
+
+            #c68a8a,
+
+            #8b4b63
+
+        );
+
+    box-shadow:
+
+        0 18px 40px rgba(109,46,70,.38);
+
+    transition:
+
+        transform .35s,
+
+        box-shadow .35s;
 
 }
 
 .musica__play:hover{
 
-    transform:translateY(-4px) scale(1.08);
+    transform:
+
+        translateY(-5px) scale(1.08);
 
     box-shadow:
 
-        0 20px 40px rgba(109,46,70,.45);
+        0 26px 48px rgba(109,46,70,.45);
 
 }
 
+/*======================================
+        ICONOS
+======================================*/
 
+.musica__boton i{
 
+    pointer-events:none;
+
+}
+
+.musica__play i{
+
+    pointer-events:none;
+
+}
+
+/*======================================
+        BOTONES ACTIVOS
+======================================*/
+
+.musica__boton.activo{
+
+    background:
+
+        linear-gradient(
+
+            180deg,
+
+            #c68a8a,
+
+            #8b4b63
+
+        );
+
+    color:#ffffff;
+
+    border:
+
+        1px solid rgba(255,255,255,.45);
+
+    transform:scale(1.08);
+
+    box-shadow:
+
+        0 16px 32px rgba(109,46,70,.35);
+
+}
 
 
 /*=========================================
@@ -226,35 +525,57 @@
 
     .musica{
 
-        padding:22px;
+        padding:24px;
 
-        border-radius:32px;
+        border-radius:34px;
 
     }
 
     .musica__titulo{
 
-    color:#fff;
+        color:#ffffff;
 
-    text-align:center;
+        font-size:1.15rem;
 
-    font-size:1.05rem;
+        margin-bottom:18px;
 
-    font-weight:500;
+    }
 
-    letter-spacing:.6px;
+    .musica__cancion{
 
-    margin-bottom:16px;
+        font-size:1.05rem;
 
-}
+    }
+
+    .musica__artista{
+
+        font-size:.95rem;
+
+    }
+
+    .musica__slider{
+
+        width:150px;
+
+    }
+
+    .musica__boton{
+
+        width:48px;
+
+        height:48px;
+
+        font-size:1.05rem;
+
+    }
 
     .musica__play{
 
-        width:60px;
+        width:72px;
 
-        height:60px;
+        height:72px;
 
-        font-size:1.4rem;
+        font-size:1.7rem;
 
     }
 
@@ -268,13 +589,69 @@
 
     .musica{
 
-        padding:18px;
+        padding:20px 16px;
+
+        border-radius:30px;
 
     }
 
     .musica__titulo{
 
-        font-size:1.15rem;
+        font-size:1.05rem;
+
+        margin-bottom:16px;
+
+    }
+
+    .musica__cancion{
+
+        font-size:1rem;
+
+    }
+
+    .musica__artista{
+
+        font-size:.90rem;
+
+        margin-bottom:16px;
+
+    }
+
+    .musica__barra{
+
+        margin:16px auto;
+
+    }
+
+    .musica__contador{
+
+        font-size:.90rem;
+
+        margin-bottom:18px;
+
+    }
+
+    .musica__volumen{
+
+        gap:10px;
+
+        margin-bottom:22px;
+
+    }
+
+    .musica__slider{
+
+        width:120px;
+
+    }
+
+    .musica__volumen-btn{
+
+        width:38px;
+
+        height:38px;
+
+        font-size:.90rem;
 
     }
 
@@ -286,18 +663,77 @@
 
     .musica__boton{
 
+        width:44px;
+
+        height:44px;
+
         font-size:1rem;
 
     }
 
     .musica__play{
 
-        width:54px;
+        width:64px;
 
-        height:54px;
+        height:64px;
 
-        font-size:1.2rem;
+        font-size:1.45rem;
 
     }
+
+}
+
+/*======================================
+        EFECTO PLAY
+======================================*/
+
+.musica__play{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.musica__play::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-35%;
+
+    background:
+
+        radial-gradient(
+
+            rgba(255,255,255,.35),
+
+            transparent 70%
+
+        );
+
+    opacity:0;
+
+    transition:.45s;
+
+}
+
+.musica__play:hover::before{
+
+    opacity:1;
+
+}
+
+/*======================================
+        TRANSICIONES
+======================================*/
+
+.musica__play,
+.musica__boton,
+.musica__volumen-btn,
+.musica__slider{
+
+    transition:all .30s ease;
 
 }

@@ -1,0 +1,392 @@
+/*======================================
+        ENTRADA
+======================================*/
+
+.bienvenida{
+
+    animation:
+
+        fondoEntrada 1.2s ease forwards;
+
+}
+
+.bienvenida__contenido{
+
+    opacity:0;
+
+    transform:
+
+        scale(.88)
+
+        translateY(40px);
+
+    animation:
+
+        tarjetaEntrada
+
+        1s
+
+        .25s
+
+        forwards;
+
+}
+
+/*======================================
+        ANIMACION TARJETA
+======================================*/
+
+@keyframes tarjetaEntrada{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+
+            scale(.88)
+
+            translateY(40px);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+
+            scale(1)
+
+            translateY(0);
+
+    }
+
+}
+
+/*======================================
+        FONDO
+======================================*/
+
+@keyframes fondoEntrada{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+/*======================================
+        TITULO
+======================================*/
+
+.bienvenida__titulo{
+
+    animation:
+
+        flotar
+
+        4s
+
+        ease-in-out
+
+        infinite;
+
+}
+
+@keyframes flotar{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*======================================
+        CORAZON
+======================================*/
+
+.bienvenida__ornamento i{
+
+    animation:
+
+        latido
+
+        1.8s
+
+        infinite;
+
+}
+
+@keyframes latido{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    15%{
+
+        transform:scale(1.22);
+
+    }
+
+    30%{
+
+        transform:scale(1);
+
+    }
+
+    45%{
+
+        transform:scale(1.18);
+
+    }
+
+    60%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+/*======================================
+        BOTON
+======================================*/
+
+.bienvenida__boton{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/*======================================
+        BRILLO
+======================================*/
+
+.bienvenida__boton::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            transparent,
+
+            rgba(255,255,255,.55),
+
+            transparent
+
+        );
+
+    transform:skewX(-25deg);
+
+    animation:
+
+        brillo
+
+        3.8s
+
+        infinite;
+
+}
+
+@keyframes brillo{
+
+    0%{
+
+        left:-120%;
+
+    }
+
+    40%{
+
+        left:150%;
+
+    }
+
+    100%{
+
+        left:150%;
+
+    }
+
+}
+
+/*======================================
+        TEXTO
+======================================*/
+
+.bienvenida__subtitulo,
+
+.bienvenida__fecha,
+
+.bienvenida__texto{
+
+    animation:
+
+        aparecerTexto
+
+        1.4s;
+
+}
+
+@keyframes aparecerTexto{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(18px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/*======================================
+        SALIDA
+======================================*/
+
+.bienvenida.cerrar{
+
+    animation:
+
+        cerrarFondo
+
+        .9s
+
+        forwards;
+
+}
+
+.bienvenida.cerrar
+.bienvenida__contenido{
+
+    animation:
+
+        cerrarTarjeta
+
+        .8s
+
+        forwards;
+
+}
+
+@keyframes cerrarTarjeta{
+
+    0%{
+
+        opacity:1;
+
+        transform:
+
+            scale(1)
+
+            translateY(0);
+
+    }
+
+    30%{
+
+        transform:
+
+            scale(.97)
+
+            translateY(6px);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+
+            scale(1.08)
+
+            translateY(-20px);
+
+    }
+
+}
+
+@keyframes cerrarFondo{
+
+    from{
+
+        opacity:1;
+
+    }
+
+    to{
+
+        opacity:0;
+
+    }
+
+}
+
+
+/*======================================
+        CLICK BOTON
+======================================*/
+
+.bienvenida__boton.presionado{
+
+    transform:scale(.95);
+
+    box-shadow:
+
+        0 0 35px rgba(184,107,128,.55);
+
+    transition:.35s;
+
+}

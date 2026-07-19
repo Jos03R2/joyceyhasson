@@ -1,0 +1,692 @@
+/*=========================================
+            FOTO REPRODUCTOR
+=========================================*/
+
+.foto{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    padding:20px 20px 50px;
+
+}
+
+/*=========================================
+            TARJETA
+=========================================*/
+
+.foto__tarjeta{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:560px;
+
+    overflow:hidden;
+
+    border-radius:
+        70px 24px
+        120px 30px
+        90px 35px
+        45px 110px;
+
+    background:#ffffff;
+
+    box-shadow:
+
+        0 22px 55px rgba(0,0,0,.16);
+
+}
+
+/*=========================================
+            IMAGEN
+=========================================*/
+
+.foto__tarjeta img{
+
+    width:100%;
+
+    height:760px;
+
+    display:block;
+
+    object-fit:cover;
+
+    object-position:center;
+
+}
+
+/*=========================================
+            MARCO INTERNO
+=========================================*/
+
+.foto__tarjeta::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:14px;
+
+    border-radius:inherit;
+
+    border:1px solid rgba(255,255,255,.45);
+
+    pointer-events:none;
+
+    z-index:3;
+
+}
+
+/*=========================================
+            OVERLAY
+=========================================*/
+
+.foto__overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-end;
+
+    padding-bottom:10px;
+
+    background:
+
+        linear-gradient(
+
+            to top,
+
+            rgba(15,15,15,.28),
+
+            rgba(15,15,15,.08),
+
+            transparent 45%
+
+        );
+
+}
+
+/*=========================================
+            TARJETA MUSICA
+=========================================*/
+
+.musica{
+
+    width:88%;
+
+    max-width:510px;
+
+    padding:28px;
+
+    border-radius:34px;
+
+    background:
+
+        linear-gradient(
+
+            145deg,
+
+            rgba(255,255,255,.28),
+
+            rgba(255,255,255,.14)
+
+        );
+
+    backdrop-filter:blur(22px);
+
+    -webkit-backdrop-filter:blur(22px);
+
+    border:
+
+        1px solid rgba(255,255,255,.30);
+
+    box-shadow:
+
+        0 18px 45px rgba(0,0,0,.22);
+
+}
+
+
+
+
+
+/*=========================================
+            TITULO
+=========================================*/
+
+.musica__titulo{
+
+    margin:0;
+
+    text-align:center;
+
+    color:#ffffff;
+
+    font-size:1.28rem;
+
+    font-weight:600;
+
+    letter-spacing:.8px;
+
+    text-shadow:
+
+        0 2px 8px rgba(0,0,0,.30);
+
+}
+
+/*=========================================
+            CANCION
+=========================================*/
+
+.musica__cancion{
+
+    margin-top:28px;
+
+    font-size:1.30rem;
+
+    font-weight:600;
+
+    color:#ffffff;
+
+    text-shadow:
+
+        0 2px 6px rgba(0,0,0,.25);
+
+}
+
+/*=========================================
+            ARTISTA
+=========================================*/
+
+.musica__artista{
+
+    margin-top:8px;
+
+    margin-bottom:24px;
+
+    color:rgba(255,255,255,.82);
+
+    font-size:1rem;
+
+    letter-spacing:.5px;
+
+}
+
+/*=========================================
+            BARRA
+=========================================*/
+
+.musica__barra{
+
+    position:relative;
+
+    width:100%;
+
+    height:7px;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    border-radius:999px;
+
+    background:
+
+        rgba(255,255,255,.22);
+
+    box-shadow:
+
+        inset 0 2px 5px rgba(0,0,0,.15);
+
+}
+
+/*=========================================
+            PROGRESO
+=========================================*/
+
+.musica__progreso{
+
+    width:0%;
+
+    height:100%;
+
+    border-radius:999px;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            #d8a4b1,
+
+            #b15d7d,
+
+            #8b4b63
+
+        );
+
+    transition:
+
+        width .15s linear;
+
+}
+
+/*=========================================
+            CONTADOR
+=========================================*/
+
+.musica__contador{
+
+    margin-top:18px;
+
+    color:#ffffff;
+
+    font-size:.95rem;
+
+    letter-spacing:1px;
+
+    opacity:.92;
+
+}
+
+
+
+
+/*=========================================
+            CONTROLES
+=========================================*/
+
+.musica__controles{
+
+    margin-top:28px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+}
+
+/*=========================================
+            BOTONES
+=========================================*/
+
+.musica__boton{
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#ffffff;
+
+    font-size:1.15rem;
+
+    background:
+
+        rgba(255,255,255,.18);
+
+    backdrop-filter:blur(12px);
+
+    -webkit-backdrop-filter:blur(12px);
+
+    border:
+
+        1px solid rgba(255,255,255,.22);
+
+    transition:
+
+        transform .30s ease,
+        background .30s ease,
+        box-shadow .30s ease;
+
+}
+
+/*=========================================
+            HOVER BOTONES
+=========================================*/
+
+.musica__boton:hover{
+
+    transform:
+
+        translateY(-4px);
+
+    background:
+
+        rgba(255,255,255,.28);
+
+    box-shadow:
+
+        0 12px 24px rgba(0,0,0,.18);
+
+}
+
+/*=========================================
+            BOTON PLAY
+=========================================*/
+
+.musica__play{
+
+    width:82px;
+
+    height:82px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#ffffff;
+
+    font-size:2rem;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            #d58a9d,
+
+            #b15d7d,
+
+            #8b4b63
+
+        );
+
+    box-shadow:
+
+        0 18px 35px rgba(109,46,70,.35);
+
+    transition:
+
+        transform .30s ease,
+        box-shadow .30s ease;
+
+}
+
+/*=========================================
+            HOVER PLAY
+=========================================*/
+
+.musica__play:hover{
+
+    transform:
+
+        translateY(-5px) scale(1.08);
+
+    box-shadow:
+
+        0 24px 45px rgba(109,46,70,.45);
+
+}
+
+/*=========================================
+            BOTONES ACTIVOS
+=========================================*/
+
+.musica__boton.activo{
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            #b15d7d,
+
+            #8b4b63
+
+        );
+
+    color:#ffffff;
+
+    box-shadow:
+
+        0 10px 24px rgba(109,46,70,.35);
+
+}
+
+
+
+
+/*=========================================
+            VOLUMEN
+=========================================*/
+
+.musica__volumen{
+
+    width:100%;
+
+    max-height:0;
+
+    overflow:hidden;
+
+    opacity:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    transition:
+
+        max-height .35s ease,
+        opacity .35s ease,
+        margin-top .35s ease;
+
+}
+
+.musica__volumen.mostrar{
+
+    max-height:60px;
+
+    opacity:1;
+
+    margin-top:20px;
+
+}
+
+/*=========================================
+            SLIDER
+=========================================*/
+
+.musica__slider{
+
+    width:220px;
+
+    cursor:pointer;
+
+    accent-color:#b15d7d;
+
+}
+
+/*=========================================
+            RESPONSIVE TABLET
+=========================================*/
+
+@media(max-width:768px){
+
+    .foto{
+
+        padding:16px 14px 40px;
+
+    }
+
+    .foto__tarjeta{
+
+        max-width:520px;
+
+    }
+
+    .foto__tarjeta img{
+
+        height:670px;
+
+    }
+
+    .foto__overlay{
+
+        padding-bottom:42px;
+
+    }
+
+    .musica{
+
+        width:90%;
+
+        padding:24px;
+
+    }
+
+    .musica__play{
+
+        width:72px;
+
+        height:72px;
+
+        font-size:1.7rem;
+
+    }
+
+    .musica__boton{
+
+        width:48px;
+
+        height:48px;
+
+    }
+
+}
+
+/*=========================================
+            RESPONSIVE MOVIL
+=========================================*/
+
+@media(max-width:480px){
+
+    .foto{
+
+        padding:12px 10px 32px;
+
+    }
+
+    .foto__tarjeta{
+
+        border-radius:
+
+            55px 18px
+            90px 22px
+            70px 26px
+            35px 90px;
+
+    }
+
+    .foto__tarjeta img{
+
+        height:560px;
+
+    }
+
+    .foto__overlay{
+
+        padding-bottom:26px;
+
+    }
+
+    .musica{
+
+        width:92%;
+
+        padding:20px;
+
+        border-radius:28px;
+
+    }
+
+    .musica__titulo{
+
+        font-size:1.05rem;
+
+    }
+
+    .musica__cancion{
+
+        font-size:1.05rem;
+
+    }
+
+    .musica__artista{
+
+        font-size:.90rem;
+
+    }
+
+    .musica__controles{
+
+        gap:10px;
+
+    }
+
+    .musica__boton{
+
+        width:44px;
+
+        height:44px;
+
+        font-size:1rem;
+
+    }
+
+    .musica__play{
+
+        width:66px;
+
+        height:66px;
+
+        font-size:1.5rem;
+
+    }
+
+    .musica__slider{
+
+        width:170px;
+
+    }
+
+}
+

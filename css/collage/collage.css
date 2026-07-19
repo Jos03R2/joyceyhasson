@@ -1,0 +1,174 @@
+/*=========================================
+            CONTENEDOR
+=========================================*/
+
+.collage{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    padding:20px 20px 50px;
+
+}
+
+/*=========================================
+            TARJETA
+=========================================*/
+
+.collage__tarjeta{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:600px;
+
+    padding:18px;
+
+    overflow:hidden;
+
+    border-radius:
+        70px 24px
+        120px 30px
+        90px 35px
+        45px 110px;
+
+    background:
+
+        linear-gradient(
+
+            145deg,
+
+            #ffffff,
+
+            #fbf8f8
+
+        );
+
+}
+
+/*=========================================
+                GRID
+=========================================*/
+
+.collage__grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(2,1fr);
+
+    grid-template-areas:
+
+        "principal principal"
+        "dos tres"
+        "dos cuatro"
+        "cinco cinco";
+
+    grid-template-rows:
+
+        320px
+        170px
+        170px
+        250px;
+
+    gap:10px;
+
+}
+
+/*=========================================
+            FOTO PRINCIPAL
+=========================================*/
+
+.collage__item--grande{
+
+    grid-area:principal;
+
+}
+
+/*=========================================
+                FOTO 2
+=========================================*/
+
+.collage__item:nth-child(2){
+
+    grid-area:dos;
+
+}
+
+/*=========================================
+                FOTO 3
+=========================================*/
+
+.collage__item:nth-child(3){
+
+    grid-area:tres;
+
+}
+
+/*=========================================
+                FOTO 4
+=========================================*/
+
+.collage__item:nth-child(4){
+
+    grid-area:cuatro;
+
+}
+
+/*=========================================
+                FOTO 5
+=========================================*/
+
+.collage__item:nth-child(5){
+
+    grid-area:cinco;
+
+}
+
+/*=========================================
+                ITEMS
+=========================================*/
+
+.collage__item{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:10px;
+
+    background:#f5f5f5;
+
+    cursor:pointer;
+
+}
+
+
+/*=========================================
+        FOTO PRINCIPAL
+=========================================*/
+
+.collage__item--grande{
+
+    grid-area:principal;
+
+    border-radius:28px;
+
+}
+
+/*=========================================
+        FOTO INFERIOR
+=========================================*/
+
+.collage__item:nth-child(5){
+
+    grid-area:cinco;
+
+    border-radius:28px;
+
+}

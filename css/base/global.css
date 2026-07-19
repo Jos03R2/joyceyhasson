@@ -11,3 +11,56 @@ body{
     overflow-x:hidden;
 
 }
+
+/*======================================
+        PAGINA OCULTA
+======================================*/
+
+main{
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:
+
+        opacity .8s ease;
+
+}
+
+body.pagina-cargada main{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+
+/*======================================
+        APARECER PAGINA
+======================================*/
+
+main{
+
+    opacity:0;
+
+    transform:
+
+        scale(1.02);
+
+    transition:
+
+        opacity .9s,
+
+        transform .9s;
+
+}
+
+body.pagina-cargada main{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}

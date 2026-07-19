@@ -1,0 +1,266 @@
+/*======================================
+        OCULTAR PAGINA
+======================================*/
+
+body{
+
+    overflow:hidden;
+
+}
+
+body.pagina-cargada{
+
+    overflow:auto;
+
+}
+
+
+/*======================================
+        BIENVENIDA
+======================================*/
+
+.bienvenida{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:25px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #fdf8f6,
+        #f8efeb,
+        #f5e6e6
+    );
+
+    z-index:999999;
+
+    transition:
+        opacity .8s,
+        visibility .8s;
+
+}
+
+/*======================================
+        OCULTAR
+======================================*/
+
+.bienvenida.ocultar{
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+}
+
+/*======================================
+        CONTENIDO
+======================================*/
+
+.bienvenida__contenido{
+
+    width:100%;
+
+    max-width:520px;
+
+    text-align:center;
+
+    padding:55px 45px;
+
+    border-radius:40px;
+
+    background:
+
+        rgba(255,255,255,.72);
+
+    backdrop-filter:blur(18px);
+
+    border:
+
+        1px solid rgba(255,255,255,.8);
+
+    box-shadow:
+
+        0 30px 80px rgba(0,0,0,.10);
+
+}
+
+/*======================================
+        SUBTITULO
+======================================*/
+
+.bienvenida__subtitulo{
+
+    display:block;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    color:#8b4b63;
+
+    font-size:.90rem;
+
+}
+
+/*======================================
+        TITULO
+======================================*/
+
+.bienvenida__titulo{
+
+    margin-top:20px;
+
+    font-family:"Great Vibes",cursive;
+
+    font-size:5rem;
+
+    color:#6D2E46;
+
+}
+
+.bienvenida__titulo span{
+
+    color:#b97c7c;
+
+}
+
+/*======================================
+        FECHA
+======================================*/
+
+.bienvenida__fecha{
+
+    margin-top:10px;
+
+    font-size:1.15rem;
+
+    color:#6d2e46;
+
+}
+
+/*======================================
+        ORNAMENTO
+======================================*/
+
+.bienvenida__ornamento{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin:30px 0;
+
+}
+
+.bienvenida__ornamento span{
+
+    width:80px;
+
+    height:1px;
+
+    background:#d6b6bf;
+
+}
+
+.bienvenida__ornamento i{
+
+    color:#b97c7c;
+
+    font-size:1.2rem;
+
+}
+
+/*======================================
+        TEXTO
+======================================*/
+
+.bienvenida__texto{
+
+    color:#6f6468;
+
+    line-height:1.9;
+
+    font-size:1.08rem;
+
+}
+
+/*======================================
+        BOTON
+======================================*/
+
+.bienvenida__boton{
+
+    margin-top:40px;
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            #6D2E46,
+
+            #8B4B63,
+
+            #B97C7C
+
+        );
+
+    color:white;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    transition:.35s;
+
+    box-shadow:
+
+        0 20px 45px rgba(109,46,70,.25);
+
+}
+
+.bienvenida__boton:hover{
+
+    transform:translateY(-4px);
+
+}
+
+.bienvenida__boton:active{
+
+    transform:scale(.98);
+
+}

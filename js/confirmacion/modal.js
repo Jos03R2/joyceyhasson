@@ -1,57 +1,43 @@
 /*======================================
-        ELEMENTOS
+        VARIABLES
 ======================================*/
 
-const abrirModal = document.getElementById("abrirConfirmacion");
+const abrirConfirmacion = document.getElementById("abrirConfirmacion");
 
-const cerrarModal = document.getElementById("cerrarConfirmacion");
+const cerrarConfirmacion = document.getElementById("cerrarConfirmacion");
 
-const modal = document.getElementById("modalConfirmacion");
-
+const modalConfirmacion = document.getElementById("modalConfirmacion");
 
 /*======================================
         ABRIR MODAL
 ======================================*/
 
-abrirModal.addEventListener("click", () => {
+abrirConfirmacion.addEventListener("click", () => {
 
-    modal.classList.add("activo");
-
-    document.body.style.overflow = "hidden";
+    modalConfirmacion.classList.add("activo");
 
 });
-
 
 /*======================================
         CERRAR MODAL
 ======================================*/
 
-cerrarModal.addEventListener("click", cerrar);
+cerrarConfirmacion.addEventListener("click", () => {
 
+    modalConfirmacion.classList.remove("activo");
+
+});
 
 /*======================================
-        CERRAR FUERA DEL MODAL
+        CERRAR HACIENDO CLICK AFUERA
 ======================================*/
 
-modal.addEventListener("click", (e)=>{
+modalConfirmacion.addEventListener("click", (e) => {
 
-    if(e.target===modal){
+    if (e.target === modalConfirmacion) {
 
-        cerrar();
+        modalConfirmacion.classList.remove("activo");
 
     }
 
 });
-
-
-/*======================================
-        FUNCION CERRAR
-======================================*/
-
-function cerrar(){
-
-    modal.classList.remove("activo");
-
-    document.body.style.overflow="auto";
-
-}

@@ -77,11 +77,18 @@
 
     <link 
         rel="stylesheet" 
-        href="css/foto/foto.css">    
+        href="css/reproductor/reproductor.css">    
 
     <link 
         rel="stylesheet"
         href="css/fecha/fecha.css">    
+     
+    <link rel="stylesheet" href="css/collage/collage.css">    
+
+    <link rel="stylesheet" href="css/collage/collage-efectos.css"> 
+    
+    <link rel="stylesheet" href="css/collage/collage-responsive.css"> 
+    
     
     <link rel="stylesheet"
         href="css/fecha/fecha-animaciones.css">
@@ -112,6 +119,12 @@
         
     <link rel="stylesheet"
         href="css/confirmacion/modal.css">    
+
+    <link rel="stylesheet" href="css/confirmacion/success.css">  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="css/final/final.css">
         
         
     
@@ -126,13 +139,284 @@
 
 <link rel="stylesheet" href="css/recomendaciones/recomendaciones.css">
 
-    <link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<link
+    rel="stylesheet"
+    href="css/bienvenida/bienvenida.css">
+    
+
+<link
+    rel="stylesheet"
+    href="css/bienvenida/bienvenida-animaciones.css">    
+
+
+<link
+    rel="stylesheet"
+    href="css/menu/menu.css"> 
+    
 
 </head>
 
 <body>
+
+
+<!--======================================
+        PANTALLA DE BIENVENIDA
+=======================================-->
+
+<div
+    class="bienvenida"
+    id="bienvenida">
+
+    <div class="bienvenida__contenido">
+
+        <span class="bienvenida__subtitulo">
+
+            Estás cordialmente invitado
+
+        </span>
+
+        <h1 class="bienvenida__titulo">
+
+            Joyce <span>&</span> Hasson
+
+        </h1>
+
+        <p class="bienvenida__fecha">
+
+            31 de Octubre de 2026
+
+        </p>
+
+        <div class="bienvenida__ornamento">
+
+            <span></span>
+
+            <i class="fa-solid fa-heart"></i>
+
+            <span></span>
+
+        </div>
+
+        <p class="bienvenida__texto">
+
+            Nos llenaría de alegría que formes parte
+            de uno de los días más importantes de nuestras vidas.
+
+        </p>
+
+        <button
+            id="abrirInvitacion"
+            class="bienvenida__boton">
+
+            <i class="fa-solid fa-envelope-open-heart"></i>
+
+            Abrir Invitación
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<!--======================================
+            MENÚ HAMBURGUESA
+=======================================-->
+
+<!-- BOTÓN -->
+
+<button
+    class="menu__toggle"
+    id="menuToggle"
+    aria-label="Abrir menú">
+
+    <span></span>
+
+    <span></span>
+
+    <span></span>
+
+</button>
+
+<!-- OVERLAY -->
+
+<div
+    class="menu__overlay"
+    id="menuOverlay">
+
+</div>
+
+<!-- MENÚ -->
+
+<nav
+    class="menu"
+    id="menu">
+
+    <!-- CABECERA -->
+
+    <div class="menu__header">
+
+        <h2>
+
+            Joyce & Hasson
+
+        </h2>
+
+        <button
+            class="menu__cerrar"
+            id="menuCerrar"
+            aria-label="Cerrar menú">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+    </div>
+
+    <!-- OPCIONES -->
+
+    <ul class="menu__lista">
+
+        <li>
+
+            <a href="#inicio">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>Inicio</span>
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="#foto">
+
+                <i class="fa-solid fa-music"></i>
+
+                <span>Playlist</span>
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="#fecha">
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                <span>Nuestra Fecha</span>
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="#vestimenta">
+
+                <i class="fa-solid fa-shirt"></i>
+
+                <span>Vestimenta</span>
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="#ubicacion">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <span>Ubicación</span>
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="#itinerario">
+
+                <i class="fa-solid fa-clock"></i>
+
+                <span>Itinerario</span>
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="#regalos">
+
+                <i class="fa-solid fa-gift"></i>
+
+                <span>Mesa de Regalos</span>
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="#confirmacion">
+
+                <i class="fa-solid fa-heart"></i>
+
+                <span>Confirmación</span>
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="#recomendaciones">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                <span>Recomendaciones</span>
+
+            </a>
+
+        </li>
+
+    </ul>
+
+    <!-- PIE -->
+
+    <div class="menu__footer">
+
+        <div class="menu__footer-linea"></div>
+
+        <p>
+
+            Joyce & Hasson
+
+        </p>
+
+        <span>
+
+            31 · Octubre · 2026
+
+        </span>
+
+    </div>
+
+</nav>
+
+
+
+
+
 
     <!-- ========================= -->
     <!-- INICIO -->
@@ -144,9 +428,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 
 
-<section
-    class="inicio animar"
-    id="inicio">
+<section id="inicio" class="inicio animar">
 
     <div class="inicio__tarjeta">
 
@@ -196,11 +478,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 </section>
 
 
+
 <!--======================================
         FOTO + MÚSICA
 =======================================-->
 
-<section class="foto animar-zoom">
+<section id="foto" class="foto animar-zoom">
 
     <div class="foto__tarjeta">
 
@@ -212,59 +495,228 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
             <div class="musica">
 
+                <!--======================================
+                        TITULO
+                =======================================-->
+
                 <h3 class="musica__titulo">
 
-                    Dale play a nuestra Playlist
+                    Dale Play a Nuestra Playlist
 
                 </h3>
 
+                <!--======================================
+                        CANCION
+                =======================================-->
+
+                <p
+                    class="musica__cancion"
+                    id="nombreCancion">
+
+                    Cargando canción...
+
+                </p>
+
+                <!--======================================
+                        ARTISTA
+                =======================================-->
+
+                <p
+                    class="musica__artista"
+                    id="nombreArtista">
+
+                    Joyce & Hasson ❤️
+
+                </p>
+
+                <!--======================================
+                        BARRA DE PROGRESO
+                =======================================-->
+
                 <div class="musica__barra">
 
-                    <div class="musica__progreso"></div>
+                    <div
+                        class="musica__progreso"
+                        id="barraProgreso">
+
+                    </div>
 
                 </div>
+
+                <!--======================================
+                        CONTADOR
+                =======================================-->
+
+                <div
+                    class="musica__contador"
+                    id="contadorPlaylist">
+
+                    1 / 38
+
+                </div>
+
+                <!--======================================
+                        CONTROLES
+                =======================================-->
 
                 <div class="musica__controles">
 
-                    <button class="musica__boton">
-
-                        ↺
-
-                    </button>
-
-                    <button class="musica__boton">
-
-                        ⏮
-
-                    </button>
+                    <!-- ALEATORIO -->
 
                     <button
-                        id="play"
-                        class="musica__play">
+                        id="btnAleatorio"
+                        class="musica__boton"
+                        title="Aleatorio">
 
-                        ▶
-
-                    </button>
-
-                    <button class="musica__boton">
-
-                        ⏭
+                        <i class="fa-solid fa-shuffle"></i>
 
                     </button>
 
-                    <button class="musica__boton">
+                    <!-- ANTERIOR -->
 
-                        ↻
+                    <button
+                        id="btnAnterior"
+                        class="musica__boton"
+                        title="Anterior">
+
+                        <i class="fa-solid fa-backward-step"></i>
+
+                    </button>
+
+                    <!-- PLAY -->
+
+                    <button
+                        id="btnPlay"
+                        class="musica__play"
+                        title="Reproducir">
+
+                        <i class="fa-solid fa-play"></i>
+
+                    </button>
+
+                    <!-- SIGUIENTE -->
+
+                    <button
+                        id="btnSiguiente"
+                        class="musica__boton"
+                        title="Siguiente">
+
+                        <i class="fa-solid fa-forward-step"></i>
+
+                    </button>
+
+                    <!-- REPETIR -->
+
+                    <button
+                        id="btnRepetir"
+                        class="musica__boton"
+                        title="Repetir">
+
+                        <i class="fa-solid fa-repeat"></i>
+
+                    </button>
+
+                    <!-- VOLUMEN -->
+
+                    <button
+                        id="btnVolumen"
+                        class="musica__boton"
+                        title="Volumen">
+
+                        <i class="fa-solid fa-volume-high"></i>
 
                     </button>
 
                 </div>
 
-                <audio
-                    id="audio"
-                    src="audio/musica.mp3">
+                <!--======================================
+                        SLIDER DE VOLUMEN
+                =======================================-->
 
-                </audio>
+                <div class="musica__volumen">
+
+                    <input
+                        type="range"
+                        id="sliderVolumen"
+                        class="musica__slider"
+                        min="0"
+                        max="100"
+                        value="100">
+
+                </div>
+
+                <!--======================================
+                        AUDIO
+                =======================================-->
+
+                <audio id="audio"></audio>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!--======================================
+        COLLAGE DE FOTOS
+=======================================-->
+
+<section class="collage animar-zoom">
+
+    <div class="collage__tarjeta">
+
+        <div class="collage__grid">
+
+            <!-- FOTO PRINCIPAL -->
+
+            <div class="collage__item collage__item--grande">
+
+                <img
+                    src="img/Foto10.jpg"
+                    alt="Joyce y Hasson">
+
+            </div>
+
+            <!-- FOTO 2 -->
+
+            <div class="collage__item">
+
+                <img
+                    src="img/Foto15.jpg"
+                    alt="Joyce y Hasson">
+
+            </div>
+
+            <!-- FOTO 3 -->
+
+            <div class="collage__item">
+
+                <img
+                    src="img/Foto16.jpg"
+                    alt="Joyce y Hasson">
+
+            </div>
+
+            <!-- FOTO 4 -->
+
+            <div class="collage__item">
+
+                <img
+                    src="img/foto20.jpg"
+                    alt="Joyce y Hasson">
+
+            </div>
+
+            <!-- FOTO 5 -->
+
+            <div class="collage__item">
+
+                <img
+                    src="img/Foto21.jpg"
+                    alt="Joyce y Hasson">
 
             </div>
 
@@ -276,32 +728,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 
 
-
-
-<!--======================================
-        FOTO DECORATIVA
-=======================================-->
-
-<section class="foto animar-zoom">
-
-    <div class="foto__tarjeta">
-
-        <img
-            src="img/Foto6.webp"
-            alt="Joyce y Hasson">
-
-    </div>
-
-</section>
-
-
-
-
 <!--======================================
             NUESTRA FECHA
 =======================================-->
 
-<section class="fecha animar">
+<section id="fecha" class="fecha animar">
 
     <div class="fecha__tarjeta">
 
@@ -460,7 +891,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         CODIGO DE VESTIMENTA
 =======================================-->
 
-<section class="vestimenta animar">
+<section id="vestimenta" class="vestimenta animar">
 
     <div class="vestimenta__tarjeta">
 
@@ -657,7 +1088,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
             UBICACIÓN
 =======================================-->
 
-<section class="ubicacion animar">
+<section id="ubicacion" class="ubicacion animar">
 
     <div class="ubicacion__tarjeta">
 
@@ -697,74 +1128,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
             </p>
 
-            <!--======================================
-                    EVENTOS
-            =======================================-->
-
-            <div class="ubicacion__eventos">
-
-                <!-- CEREMONIA -->
-
-                <div class="evento">
-
-                    <div class="evento__icono">
-
-                        <i class="fa-solid fa-church"></i>
-
-                    </div>
-
-                    <h3>
-
-                        Ceremonia
-
-                    </h3>
-
-                    <h4>
-
-                        3:00 PM
-
-                    </h4>
-
-                    <p>
-
-                        Club Majadas
-
-                    </p>
-
-                </div>
-
-                <!-- RECEPCIÓN -->
-
-                <div class="evento">
-
-                    <div class="evento__icono">
-
-                        <i class="fa-solid fa-champagne-glasses"></i>
-
-                    </div>
-
-                    <h3>
-
-                        Recepción
-
-                    </h3>
-
-                    <h4>
-
-                        6:00 PM
-
-                    </h4>
-
-                    <p>
-
-                        Club Majadas
-
-                    </p>
-
-                </div>
-
-            </div>
-
+           
             <!--======================================
                     DIRECCIÓN
             =======================================-->
@@ -783,7 +1147,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
                     <p>
 
-                        26 Avenida 7 Calle Final<br>
+                        .  26 Avenida 7 Calle Final
                         Zona 11<br>
                         Ciudad de Guatemala
 
@@ -833,12 +1197,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 
 
-
 <!--======================================
             ITINERARIO
 =======================================-->
 
-<section class="itinerario animar">
+<section id="itinerario" class="itinerario animar">
 
     <!-- DECORACIONES -->
 
@@ -863,11 +1226,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     <div class="itinerario__contenido">
 
         <span class="itinerario__subtitulo">
+
             NUESTRA CELEBRACIÓN
+
         </span>
 
         <h2 class="itinerario__titulo">
+
             Itinerario
+
         </h2>
 
         <div class="itinerario__ornamento">
@@ -881,18 +1248,20 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         </div>
 
         <p class="itinerario__descripcion">
+
             Cada instante ha sido preparado con amor para compartir este día tan especial junto a ustedes.
+
         </p>
 
         <!--==================================
                 TIMELINE
-        ===================================-->
+        ==================================-->
 
         <div class="itinerario__timeline">
 
-            <!--========================
-                    EVENTO 1
-            ========================-->
+            <!--==================================
+                    CEREMONIA CIVIL
+            ==================================-->
 
             <article class="itinerario__evento animar-zoom">
 
@@ -907,52 +1276,30 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
                 <div class="itinerario__card">
 
                     <span class="itinerario__hora">
-                        3:30 PM
-                    </span>
 
-                    <h3>Ceremonia Civil</h3>
-
-                    <p>
-                        Jardin Club Majadas
-                    </p>
-
-                </div>
-
-            </article>
-
-            <!--========================
-                    EVENTO 2
-            ========================-->
-
-            <article class="itinerario__evento animar-zoom">
-
-                <div class="itinerario__medallon">
-
-                    <span></span>
-
-                    <i class="fa-solid fa-church"></i>
-
-                </div>
-
-                <div class="itinerario__card">
-
-                    <span class="itinerario__hora">
                         4:00 PM
+
                     </span>
 
-                    <h3>Ceremonia Religiosa</h3>
+                    <h3>
+
+                        Ceremonia Civil
+
+                    </h3>
 
                     <p>
-                        Jardin Club Majadas
+
+                        Jardín Club Majadas
+
                     </p>
 
                 </div>
 
             </article>
 
-            <!--========================
-                    EVENTO 3
-            ========================-->
+            <!--==================================
+                    CEREMONIA RELIGIOSA
+            ==================================-->
 
             <article class="itinerario__evento animar-zoom">
 
@@ -960,29 +1307,40 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
                     <span></span>
 
-                    <i class="fa-solid fa-champagne-glasses"></i>
+                    <img
+                        src="img/iconos/anillos-borgona.svg"
+                        alt="Anillos"
+                        class="itinerario__icono-anillos">
 
                 </div>
 
                 <div class="itinerario__card">
 
                     <span class="itinerario__hora">
-                        5:00 PM
+
+                        4:30 PM
+
                     </span>
 
-                    <h3>Recepción</h3>
+                    <h3>
+
+                        Ceremonia Religiosa
+
+                    </h3>
 
                     <p>
-                        Salon de Eventos Club Majadas
+
+                        Jardín Club Majadas
+
                     </p>
 
                 </div>
 
             </article>
 
-            <!--========================
-                    EVENTO 4
-            ========================-->
+            <!--==================================
+                    LLEGADA DE LOS NOVIOS
+            ==================================-->
 
             <article class="itinerario__evento animar-zoom">
 
@@ -997,94 +1355,22 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
                 <div class="itinerario__card">
 
                     <span class="itinerario__hora">
+
                         6:00 PM
+
                     </span>
 
-                    <h3>Llegada de los Novios</h3>
+                    <h3>
 
+                        Recepción
 
-                </div>
+                    </h3>
 
-            </article>
+                    <p>
 
-            <!--========================
-                    EVENTO 5
-            ========================-->
+                        ¡Comienza la gran celebración!
 
-            <article class="itinerario__evento animar-zoom">
-
-                <div class="itinerario__medallon">
-
-                    <span></span>
-
-                    <i class="fa-solid fa-music"></i>
-
-                </div>
-
-                <div class="itinerario__card">
-
-                    <span class="itinerario__hora">
-                        6:10 PM
-                    </span>
-
-                    <h3>Primer Vals</h3>
-
-                    
-                </div>
-
-            </article>
-
-            <!--========================
-                    EVENTO 6
-            ========================-->
-
-            <article class="itinerario__evento animar-zoom">
-
-                <div class="itinerario__medallon">
-
-                    <span></span>
-
-                    <i class="fa-solid fa-utensils"></i>
-
-                </div>
-
-                <div class="itinerario__card">
-
-                    <span class="itinerario__hora">
-                        7:00 PM
-                    </span>
-
-                    <h3>Cena</h3>
-
-                   
-
-                </div>
-
-            </article>
-
-            <!--========================
-                    EVENTO 7
-            ========================-->
-
-            <article class="itinerario__evento animar-zoom">
-
-                <div class="itinerario__medallon">
-
-                    <span></span>
-
-                    <i class="fa-solid fa-heart"></i>
-
-                </div>
-
-                <div class="itinerario__card">
-
-                    <span class="itinerario__hora">
-                        8:00 PM
-                    </span>
-
-                    <h3>Baile</h3>
-
-                  
+                    </p>
 
                 </div>
 
@@ -1104,12 +1390,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 
 
-
 <!--======================================
             MESA DE REGALOS
 =======================================-->
 
-<section class="regalos animar">
+<section id="regalos" class="regalos animar">
 
     <div class="regalos__contenido">
 
@@ -1174,11 +1459,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
                 
 
-                <div class="regalo__qr">
-
-                    <img src="img/qr2.png" alt="QR MAX">
-
-                </div>
+                
 
                 <a href="https://www2.max.com.gt/bodas/index/regalos/boda/43097/pareja/lorenzana-rosario/fecha/31-10-2026"
    class="regalo__boton"
@@ -1216,12 +1497,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
                     Escanea el código QR o presiona el botón para acceder a nuestra lista de regalos.
                 </p>
 
-                <div class="regalo__qr">
-
-                    <img src="img/QR1.png" alt="QR Cemaco">
-
-                </div>
-
+               
                 <a href="https://www.cemaco.com/list/BODALorenzanaRosario31102026"
    class="regalo__boton"
    target="_blank">
@@ -1272,7 +1548,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
             CONFIRMACIÓN
 =======================================-->
 
-<section class="confirmacion animar">
+<section id="confirmacion" class="confirmacion animar">
 
     <div class="confirmacion__contenido">
 
@@ -1380,18 +1656,50 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
             id="resultadoBusqueda"
             class="confirmacion__resultado">
 
-            <!--
-                Aquí JavaScript agregará automáticamente:
+        </div>
 
-                • Familia
-                • Integrantes
-                • Opciones de asistencia
-                • Mensaje
-                • Botón Confirmar
+    </div>
 
-            -->
+</div>
+
+<!--======================================
+            MODAL ÉXITO
+=======================================-->
+
+<div
+    class="modal-success"
+    id="modalSuccess">
+
+    <div class="modal-success__contenido">
+
+        <div class="modal-success__icono">
+
+            <i class="fa-solid fa-heart"></i>
 
         </div>
+
+        <h2
+            class="modal-success__titulo">
+
+            ¡Gracias!
+
+        </h2>
+
+        <p
+            class="modal-success__mensaje"
+            id="successMessage">
+
+            Tu asistencia ha sido confirmada correctamente.
+
+        </p>
+
+        <button
+            class="modal-success__boton"
+            id="cerrarSuccess">
+
+            Aceptar
+
+        </button>
 
     </div>
 
@@ -1400,13 +1708,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 
 
-
-
 <!--======================================
             RECOMENDACIONES
 =======================================-->
 
-<section class="recomendaciones animar">
+<section
+    id="recomendaciones"
+    class="recomendaciones animar">
 
     <div class="recomendaciones__contenido">
 
@@ -1483,7 +1791,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
                         Tu invitación ha sido preparada especialmente
                         para el número de personas indicado.
-                        Agradecemos mucho respetarlo.
+                        
 
                     </p>
 
@@ -1528,8 +1836,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
                     <p>
 
-                        Nuestro equipo estará pendiente para brindarte la mejor atención.
-                        Te agradecemos seguir sus indicaciones durante el evento.
+                        Seguir las indicaciones del personal del evento. 
 
                     </p>
 
@@ -1551,9 +1858,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
                     <p>
 
-                        Te pedimos amablemente supervisarlos en todo momento,
-                        para que todos podamos disfrutar de esta celebración
-                        con tranquilidad y alegría.
+                        Con mucho amor hemos invitado a tus pequeños también, te rogamos que porfavor los supervises en todo momento
 
                     </p>
 
@@ -1625,18 +1930,26 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 
 
-   <script src="js/base/animaciones.js"></script>
+<script src="js/base/animaciones.js"></script>
+
+<script src="js/musica/playlist.js"></script>
 
 <script src="js/inicio/musica.js"></script>
 
+<script src="js/bienvenida/bienvenida.js"></script>
+
+<script src="js/menu/menu.js"></script>
+
 <script src="js/fecha/fecha.js"></script>
+
+<script src="js/confirmacion/familias.js"></script>
+
+<script src="js/confirmacion/formulario.js"></script>
 
 <script src="js/confirmacion/modal.js"></script>
 
+<script src="js/confirmacion/success.js"></script>
 
-<script src="js/confirmacion/codigo.js"></script>
-
-<script src="js/confirmacion/formulario.js"></script>
 
 </body>
 </html>

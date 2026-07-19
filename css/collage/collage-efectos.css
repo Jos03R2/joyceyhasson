@@ -1,0 +1,256 @@
+/*=========================================
+        TARJETA - SOMBRA
+=========================================*/
+
+.collage__tarjeta{
+
+    box-shadow:
+
+        0 22px 55px rgba(0,0,0,.14);
+
+}
+
+/*=========================================
+        MARCO INTERIOR
+=========================================*/
+
+.collage__tarjeta::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:12px;
+
+    border-radius:inherit;
+
+    border:1px solid rgba(255,255,255,.45);
+
+    pointer-events:none;
+
+}
+
+/*=========================================
+        BRILLO TARJETA
+=========================================*/
+
+.collage__tarjeta::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            rgba(255,255,255,.18),
+
+            transparent 35%,
+
+            transparent 70%,
+
+            rgba(255,255,255,.08)
+
+        );
+
+}
+
+/*=========================================
+        SOMBRA FOTOS
+=========================================*/
+
+.collage__item{
+
+    box-shadow:
+
+        0 12px 28px rgba(0,0,0,.12);
+
+    transition:
+
+        transform .40s ease,
+        box-shadow .40s ease;
+
+}
+
+/*=========================================
+        IMAGENES
+=========================================*/
+
+.collage__item img{
+
+    width:100%;
+
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+
+    transition:
+
+        transform .70s ease;
+
+}
+
+/*=========================================
+        FOTO PRINCIPAL
+=========================================*/
+
+.collage__item--grande img{
+
+    object-position:center 38%;
+
+}
+
+/*=========================================
+        FOTO 2
+=========================================*/
+
+.collage__item:nth-child(2) img{
+
+    object-position:center 18%;
+
+}
+
+/*=========================================
+        FOTO 3
+=========================================*/
+
+.collage__item:nth-child(3) img{
+
+    object-fit:cover;
+
+    object-position:center 20%;
+
+}
+
+/*=========================================
+        FOTO 4
+=========================================*/
+
+.collage__item:nth-child(4) img{
+
+    object-position:center;
+
+}
+
+/*=========================================
+        FOTO 5
+=========================================*/
+
+.collage__item:nth-child(5) img{
+
+    object-fit:cover;
+
+    object-position:center 32%;
+
+}
+
+/*=========================================
+        BRILLO SOBRE FOTOS
+=========================================*/
+
+.collage__item::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:0;
+
+    transition:
+
+        opacity .40s ease;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            rgba(255,255,255,.25),
+
+            transparent 40%,
+
+            transparent 65%,
+
+            rgba(255,255,255,.08)
+
+        );
+
+}
+
+/*=========================================
+        HOVER
+=========================================*/
+
+.collage__item:hover{
+
+    transform:
+
+        translateY(-6px);
+
+    box-shadow:
+
+        0 22px 40px rgba(0,0,0,.18);
+
+}
+
+.collage__item:hover img{
+
+    transform:
+
+        scale(1.08);
+
+}
+
+.collage__item:hover::after{
+
+    opacity:1;
+
+}
+
+/*=========================================
+        ANIMACION
+=========================================*/
+
+.collage__item{
+
+    animation:
+
+        collageFade .8s ease both;
+
+}
+
+@keyframes collageFade{
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+            translateY(18px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+
+            translateY(0);
+
+    }
+
+}

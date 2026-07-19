@@ -5,11 +5,8 @@
 .ubicacion{
 
     width:100%;
-
     display:flex;
-
     justify-content:center;
-
     padding:18px 20px 45px;
 
 }
@@ -21,188 +18,19 @@
 .ubicacion__tarjeta{
 
     position:relative;
-
     width:100%;
-
     max-width:560px;
-
-    min-height:930px;
-
+    min-height:1030px;
     overflow:hidden;
 
     border-radius:
-
         40px 120px
         120px 40px;
 
     box-shadow:
-
-        0 25px 60px rgba(0,0,0,.18);
-
-}
-
-/* Marco interior */
-
-
-
-/*=========================================
-            CONTENIDO
-=========================================*/
-
-.ubicacion__contenido{
-
-    position:relative;
-
-    z-index:5;
-
-    min-height:930px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:flex-end;
-
-    align-items:center;
-
-    text-align:center;
-
-    padding:
-
-        70px
-        30px;
+        0 30px 70px rgba(0,0,0,.22);
 
 }
-
-/*=========================================
-            SUBTÍTULO
-=========================================*/
-
-.ubicacion__subtitulo{
-
-    text-transform:uppercase;
-
-    letter-spacing:3px;
-
-    color:#702335;
-
-    font-size:1rem;
-
-}
-
-/*=========================================
-            TÍTULO
-=========================================*/
-
-.ubicacion__titulo{
-
-    margin-top:18px;
-
-    font-family:"Great Vibes",cursive;
-
-    font-size:5rem;
-
-    color:#924559;
-
-}
-
-/*=========================================
-            DESCRIPCIÓN
-=========================================*/
-
-.ubicacion__descripcion{
-
-    margin-top:24px;
-
-    font-size:1.35rem;
-
-    line-height:1.8;
-
-    color:#924559;
-
-    opacity:.95;
-
-}
-
-/*=========================================
-            EVENTOS
-=========================================*/
-
-.ubicacion__eventos{
-
-    width:100%;
-
-    margin-top:55px;
-
-    display:grid;
-
-    gap:22px;
-
-}
-
-
-
-
-/*=========================================
-            TABLET
-=========================================*/
-
-@media(max-width:768px){
-
-    .ubicacion__titulo{
-
-        font-size:4.4rem;
-
-    }
-
-}
-
-/*=========================================
-            MOVIL
-=========================================*/
-
-@media(max-width:480px){
-
-    .ubicacion{
-
-        padding:14px 10px 35px;
-
-    }
-
-    .ubicacion__tarjeta{
-
-        border-radius:
-            35px 90px
-            90px 35px;
-
-    }
-
-    .ubicacion__contenido{
-
-        padding:
-
-            55px
-            22px;
-
-    }
-
-    .ubicacion__titulo{
-
-        font-size:3.8rem;
-
-    }
-
-    .ubicacion__descripcion{
-
-        font-size:1.15rem;
-
-    }
-
-}
-
-
-
-
 
 /*=========================================
             FOTO
@@ -211,7 +39,6 @@
 .ubicacion__fondo{
 
     position:absolute;
-
     inset:0;
 
 }
@@ -219,11 +46,8 @@
 .ubicacion__fondo img{
 
     width:100%;
-
     height:100%;
-
     object-fit:cover;
-
     object-position:center;
 
 }
@@ -235,116 +59,93 @@
 .ubicacion__overlay{
 
     position:absolute;
-
     inset:0;
 
     background:
-
         linear-gradient(
-
             to bottom,
-
-            rgba(255,255,255,.08),
-
-            rgba(255,255,255,.05),
-
-            rgba(109,46,70,.18),
-
-            rgba(109,46,70,.55),
-
+            rgba(255,255,255,.03),
+            rgba(255,255,255,.02),
+            rgba(0,0,0,.12),
+            rgba(109,46,70,.48),
             rgba(235,190,167,.95)
-
         );
 
 }
 
-
-
-
 /*=========================================
-            TARJETAS
+            CONTENIDO
 =========================================*/
 
-.evento{
+.ubicacion__contenido{
+
+    position:relative;
+    z-index:5;
+
+    min-height:1030px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    align-items:center;
+
+    text-align:center;
 
     padding:
-
-        28px
-        24px;
-
-    border-radius:38px;
-
-    background:
-
-        rgba(255,255,255,.18);
-
-    backdrop-filter:blur(18px);
-
-    border:
-
-        1px solid rgba(255,255,255,.30);
-
-    box-shadow:
-
-        0 18px 35px rgba(0,0,0,.18);
-
-    transition:.35s;
+        70px
+        30px;
 
 }
 
-.evento:hover{
+/*=========================================
+            TEXTOS
+=========================================*/
 
-    transform:
+.ubicacion__subtitulo{
 
-        translateY(-8px);
+    text-transform:uppercase;
+    letter-spacing:5px;
+    font-size:.95rem;
+    font-weight:600;
 
-}
+    color:#fff;
 
-.evento__icono{
-
-    font-size:2.6rem;
-
-}
-
-.evento h3{
-
-    margin-top:16px;
-
-    color:#702335;
-
-    letter-spacing:2px;
-
-    font-size:1.25rem;
+    text-shadow:
+        0 2px 8px rgba(0,0,0,.70),
+        0 0 18px rgba(0,0,0,.40);
 
 }
 
-.evento h4{
+.ubicacion__titulo{
 
-    margin-top:14px;
+    margin-top:18px;
 
-    font-size:2rem;
+    font-family:"Great Vibes",cursive;
+    font-size:5rem;
+    line-height:1;
 
-    color:#702335;
+    color:#fff;
 
-    font-weight:500;
-
-}
-
-.evento p{
-
-    margin-top:10px;
-
-    color:#702335;
-
-    opacity:.92;
-
-    font-size:1.15rem;
+    text-shadow:
+        0 4px 16px rgba(0,0,0,.70),
+        0 0 35px rgba(0,0,0,.35);
 
 }
 
+.ubicacion__descripcion{
 
+    margin-top:25px;
+    max-width:430px;
 
+    font-size:1.30rem;
+    line-height:1.8;
 
+    color:#fff;
+
+    text-shadow:
+        0 2px 10px rgba(0,0,0,.75);
+
+}
 
 /*=========================================
             DIRECCION
@@ -352,108 +153,204 @@
 
 .ubicacion__direccion{
 
-    margin-top:45px;
+    width:100%;
+
+    margin-top:250px;
+
+    padding:30px;
 
     display:flex;
-
-    gap:18px;
-
+    gap:20px;
     align-items:flex-start;
 
     text-align:left;
 
-    color:white;
+    border-radius:32px;
+
+    background:rgba(255,255,255,.16);
+
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
+
+    border:1px solid rgba(255,255,255,.30);
+
+    color:#fff;
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,.22);
 
 }
 
 .ubicacion__direccion i{
 
     font-size:2rem;
-
-    color:white;
+    margin-top:4px;
 
 }
 
 .ubicacion__direccion h3{
 
-    margin-bottom:8px;
+    margin-bottom:10px;
+    font-size:1.35rem;
 
 }
 
 .ubicacion__direccion p{
 
-    line-height:1.8;
+    font-size:1.30rem;
+
+    line-height:1.1;
+
+    font-weight:400;
+
+    color:rgba(255,255,255,.96);
 
 }
 
-/*=========================================
-            MAPA
-=========================================*/
-
 .ubicacion__mapa{
 
-    margin-top:45px;
+    width:100%;
+    margin-top:42px;
 
     overflow:hidden;
 
     border-radius:32px;
 
-    border:1px solid rgba(255,255,255,.25);
+    border:1px solid rgba(255,255,255,.30);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.20);
 
 }
 
 .ubicacion__mapa iframe{
 
     width:100%;
-
-    height:240px;
-
+    height:250px;
     border:none;
 
 }
 
-/*=========================================
-            BOTON
-=========================================*/
-
 .ubicacion__boton{
+
+    width:100%;
 
     margin-top:35px;
 
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     gap:12px;
 
-    padding:18px;
+    padding:20px;
 
     border-radius:999px;
 
     text-decoration:none;
 
-    color:white;
+    background:
+        linear-gradient(
+            135deg,
+            #6D2E46,
+            #8B4B63,
+            #B97C7C
+        );
 
-    font-size:1.2rem;
+    color:#fff;
 
-    background:linear-gradient(
+    font-size:1.18rem;
+    font-weight:600;
 
-        135deg,
+    box-shadow:
+        0 18px 35px rgba(109,46,70,.28);
 
-        var(--borgona),
-
-        var(--borgona-claro)
-
-    );
-
-    transition:.35s;
+    transition:
+        transform .35s,
+        box-shadow .35s;
 
 }
 
 .ubicacion__boton:hover{
 
-    transform:translateY(-5px);
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 24px 45px rgba(109,46,70,.35);
+
+}
+
+.ubicacion__boton i{
+
+    font-size:1.35rem;
+
+}
+
+/*=========================================
+            RESPONSIVE
+=========================================*/
+
+@media(max-width:768px){
+
+    .ubicacion__titulo{
+
+        font-size:4.3rem;
+
+    }
+
+    .ubicacion__direccion{
+
+        margin-top:120px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .ubicacion{
+
+        padding:14px 10px 35px;
+
+    }
+
+    .ubicacion__tarjeta{
+
+        min-height:980px;
+
+        border-radius:
+            35px 90px
+            90px 35px;
+
+    }
+
+    .ubicacion__contenido{
+
+        min-height:980px;
+
+        padding:
+            55px
+            22px;
+
+    }
+
+    .ubicacion__titulo{
+
+        font-size:3.7rem;
+
+    }
+
+    .ubicacion__descripcion{
+
+        font-size:1.1rem;
+
+    }
+
+    .ubicacion__direccion{
+
+        margin-top:90px;
+
+        padding:24px;
+
+    }
 
 }

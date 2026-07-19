@@ -1,226 +1,492 @@
 /*======================================
-        CONFIGURACIÓN
+        VARIABLES
 ======================================*/
 
-const URL_API_FORMULARIO =
-"https://script.google.com/macros/s/AKfycbzm9rBl_7zEiLWoUvaVxctBCZxJBoR1ykUogHbtcJxtZY_U42obExHz08Ysm4uiG3IIFA/exec";
+const resultadoBusqueda =
+document.getElementById("resultadoBusqueda");
 
+const SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbwVP6Js9NJligg9X6aVlYv7PPHEvEH6x1GL4sc53IP0ozlHOGwg2LVuoSgY79BfaSVb/exec";
+
+let familiaActual = null;
 
 /*======================================
-        EVENTO
+        OBTENER CODIGO
 ======================================*/
 
-document.addEventListener(
-
-    "click",
-
-    async function(event){
-
-        if(!event.target.closest("#btnEnviar")){
-            return;
-        }
-
-        await enviarFormulario();
-
-    }
-
-);
-
-
-/*======================================
-        ENVIAR FORMULARIO
-======================================*/
-
-async function enviarFormulario(){
+function obtenerCodigo(){
 
     const parametros =
+    new URLSearchParams(
+        window.location.search
+    );
 
-        new URLSearchParams(
+    return parametros.get("codigo");
 
-            window.location.search
+}
 
-        );
+/*======================================
+        CARGAR FAMILIA
+======================================*/
+
+function cargarFamilia(){
 
     const codigo =
+    obtenerCodigo();
 
-        parametros.get("codigo");
+    resultadoBusqueda.innerHTML = "";
 
     if(!codigo){
 
-        mostrarMensaje(
+        resultadoBusqueda.innerHTML = `
 
-            "Esta invitación no contiene un código válido."
+            <p style="text-align:center;">
 
-        );
+                No se encontró el código de invitación.
 
-        return;
+            </p>
 
-    }
-
-    const familiaElemento =
-
-        document.querySelector(
-
-            ".confirmacion__familia h3"
-
-        );
-
-    if(!familiaElemento){
-
-        mostrarMensaje(
-
-            "No fue posible obtener la familia."
-
-        );
+        `;
 
         return;
 
     }
 
-    const familia =
+    familiaActual =
+    familias[codigo];
 
-        familiaElemento.textContent.trim();
+    if(!familiaActual){
 
-    const mensaje =
+        resultadoBusqueda.innerHTML = `
 
-        document
+            <p style="text-align:center;">
 
-            .getElementById("mensaje")
+                Código de invitación inválido.
 
-            .value
+            </p>
 
-            .trim();
+        `;
 
-    const integrantes = [];
+        return;
 
-    document
+    }
 
-        .querySelectorAll(
+    let html = `
 
-            ".confirmacion__opcion"
+        <form id="confirmacionForm">
 
-        )
+            <div class="confirmacion__familia">
 
-        .forEach(function(opcion){
+                <h3>
 
-            integrantes.push({
+                    ${familiaActual.familia}
 
-                nombre:
+                </h3>
 
-                    opcion
+                <p class="confirmacion__descripcion-familia">
 
-                    .querySelector("span")
+                    Nos llena de alegría compartir este momento tan especial con ustedes.
 
-                    .textContent
+                </p>
 
-                    .trim(),
+                <p class="confirmacion__ayuda">
 
-                asiste:
+                    Marca o desmarca cada integrante para indicarnos quién podrá acompañarnos en este día tan especial.
 
-                    opcion
+                </p>
 
-                    .querySelector("input")
+            </div>
 
-                    .checked
-
-            });
-
-        });
-
-    const datos = {
-
-        codigo:codigo,
-
-        familia:familia,
-
-        mensaje:mensaje,
-
-        integrantes:integrantes
-
-    };
-
-    console.log("========== RSVP ==========");
-    console.log(datos);
-
-    const boton =
-
-        document.getElementById(
-
-            "btnEnviar"
-
-        );
-
-    boton.disabled = true;
-
-    boton.innerHTML = `
-
-        <i class="fa-solid fa-spinner fa-spin"></i>
-
-        Enviando...
+            <div class="confirmacion__opciones">
 
     `;
 
-    try{
+    familiaActual.integrantes.forEach((nombre,index)=>{
 
-        const respuesta =
+        html += `
 
-            await fetch(
+            <label class="confirmacion__opcion">
 
-                URL_API_FORMULARIO,
+                <input
 
-                {
+                    type="checkbox"
 
-                    method:"POST",
+                    class="guest-checkbox"
 
-                    headers:{
+                    checked
 
-                        "Content-Type":"application/json"
+                    data-index="${index}">
 
-                    },
+                <span>
 
-                    body:JSON.stringify(datos)
+                    ${nombre}
+
+                </span>
+
+            </label>
+
+        `;
+
+    });
+
+    html += `
+
+            </div>
+
+            <div class="confirmacion__mensaje">
+
+                <label>
+
+                    Déjanos un mensaje
+
+                </label>
+
+                <div class="emoji-container">
+
+                    <button type="button" class="emoji-btn">❤️</button>
+
+                    <button type="button" class="emoji-btn">🥰</button>
+
+                    <button type="button" class="emoji-btn">🎉</button>
+
+                    <button type="button" class="emoji-btn">🥂</button>
+
+                    <button type="button" class="emoji-btn">💍</button>
+
+                    <button type="button" class="emoji-btn">✨</button>
+
+                    <button type="button" class="emoji-btn">😊</button>
+
+                    <button type="button" class="emoji-btn">🙏</button>
+
+                </div>
+
+                <textarea
+
+                    id="mensaje"
+
+                    placeholder="Dedícanos unas palabras, un consejo o un lindo deseo para comenzar esta nueva etapa juntos... ❤️"
+
+                ></textarea>
+
+            </div>
+
+            <button
+
+                type="submit"
+
+                class="confirmacion__enviar"
+
+                id="btnConfirmar">
+
+                <i class="fa-solid fa-heart"></i>
+
+                Confirmar Asistencia
+
+            </button>
+
+        </form>
+
+    `;
+
+    resultadoBusqueda.innerHTML = html;
+
+    iniciarFormulario();
+
+    iniciarEmojis();
+
+}
+
+/*======================================
+        EMOJIS
+======================================*/
+
+function iniciarEmojis(){
+
+    const botones =
+
+    document.querySelectorAll(
+
+        ".emoji-btn"
+
+    );
+
+    const mensaje =
+
+    document.getElementById(
+
+        "mensaje"
+
+    );
+
+    botones.forEach(boton=>{
+
+        boton.addEventListener(
+
+            "click",
+
+            ()=>{
+
+                mensaje.value +=
+
+                boton.textContent + " ";
+
+            }
+
+        );
+
+    });
+
+}
+
+/*======================================
+        FORMULARIO
+======================================*/
+
+function iniciarFormulario(){
+
+    const formulario =
+
+    document.getElementById(
+
+        "confirmacionForm"
+
+    );
+
+    const boton =
+
+    document.getElementById(
+
+        "btnConfirmar"
+
+    );
+
+    formulario.addEventListener(
+
+        "submit",
+
+        async function(e){
+
+            e.preventDefault();
+
+            boton.disabled = true;
+
+            boton.innerHTML = `
+
+<i class="fa-solid fa-spinner fa-spin"></i>
+
+Enviando...
+
+`;
+
+            const checkboxes =
+
+            document.querySelectorAll(
+
+                ".guest-checkbox"
+
+            );
+
+            const integrantes = [];
+
+            let total = 0;
+
+            checkboxes.forEach(
+
+                (checkbox,index)=>{
+
+                    const asiste =
+
+                    checkbox.checked;
+
+                    if(asiste){
+
+                        total++;
+
+                    }
+
+                    integrantes.push({
+
+                        nombre:
+
+                        familiaActual.integrantes[index],
+
+                        asiste:
+
+                        asiste
+
+                    });
 
                 }
 
             );
 
-        const texto =
+            const datos = {
 
-            await respuesta.text();
+                codigo:
 
-        console.log("========== RESPUESTA ==========");
+                familiaActual.codigo,
 
-        console.log(texto);
+                familia:
 
-        mostrarMensaje(
+                familiaActual.familia,
 
-            "¡Muchas gracias! Tu confirmación fue enviada."
+                integrantes:
 
-        );
+                integrantes,
 
-    }
+                mensaje:
 
-    catch(error){
+                document.getElementById(
 
-        console.error(error);
+                    "mensaje"
 
-        mostrarMensaje(
+                ).value,
 
-            "Error al enviar la confirmación."
+                total:
 
-        );
+                total
 
-    }
+            };
+
+            try{
+
+                const respuesta =
+
+                await fetch(
+
+                    SCRIPT_URL,
+
+                    {
+
+                        method:"POST",
+
+                        headers:{
+
+                            "Content-Type":
+
+                            "text/plain;charset=utf-8"
+
+                        },
+
+                        body:
+
+                        JSON.stringify(datos)
+
+                    }
+
+                );
+
+                const resultado =
+
+                await respuesta.json();
+
+                console.log(resultado);
+
+                if(resultado.ok){
+
+                    mostrarSuccess(
+
+`Tu asistencia ha sido confirmada correctamente.
+
+Nos sentimos muy felices de compartir este día tan especial con ustedes.
+
+¡Nos vemos en la boda! ❤️`
+
+);
+
+                    formulario.reset();
+
+                    boton.disabled = false;
+
+                    boton.innerHTML = `
+
+                        <i class="fa-solid fa-heart"></i>
+
+                        Confirmar Asistencia
+
+                    `;
+
+                    return;
+
+                }
+
+                if(resultado.duplicado){
+
+                   mostrarSuccess(
+
+`Esta invitación ya fue confirmada anteriormente.
+
+Si necesitas realizar algún cambio en tu confirmación, por favor comunícate con los novios.
+
+Muchas gracias por acompañarnos. ❤️`
+
+);
+
+                    boton.disabled = false;
+
+                    boton.innerHTML = `
+
+                        <i class="fa-solid fa-heart"></i>
+
+                        Confirmar Asistencia
+
+                    `;
+
+                    return;
+
+                }
+
+                mostrarSuccess(
+
+`No fue posible registrar tu confirmación.
+
+Por favor intenta nuevamente dentro de unos minutos.
+
+Si el problema continúa, comunícate con los novios.`
+
+);
+
+            }
+
+            catch(error){
+
+                console.error(error);
+
+                mostrarSuccess(
+
+`No fue posible conectar con el servidor.
+
+Verifica tu conexión a Internet e inténtalo nuevamente.`
+
+);
+
+            }
+
+            boton.disabled = false;
+
+            boton.innerHTML = `
+
+                <i class="fa-solid fa-heart"></i>
+
+                Confirmar Asistencia
+
+            `;
+
+        }
+
+    );
 
 }
-
 
 /*======================================
-        MENSAJES
+        INICIAR
 ======================================*/
 
-function mostrarMensaje(texto){
+document.addEventListener(
 
-    alert(texto);
+    "DOMContentLoaded",
 
-}
+    cargarFamilia
+
+);

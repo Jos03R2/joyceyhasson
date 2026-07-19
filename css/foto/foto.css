@@ -175,6 +175,295 @@
 }
 
 /*=========================================
+            FOTO DECORATIVA
+=========================================*/
+
+.foto{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    padding:18px 20px 45px;
+
+}
+
+/*=========================================
+            TARJETA
+=========================================*/
+
+.foto__tarjeta{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:560px;
+
+    overflow:hidden;
+
+    padding:18px;
+
+    border-radius:
+        70px 22px
+        120px 28px
+        90px 35px
+        45px 110px;
+
+    background:#ffffff;
+
+    box-shadow:
+
+        0 18px 45px rgba(0,0,0,.12);
+
+    transition:
+        transform .45s ease,
+        box-shadow .45s ease;
+
+}
+
+/*=========================================
+            COLLAGE
+=========================================*/
+
+.foto__collage{
+
+    display:grid;
+
+    grid-template-columns:
+
+        repeat(4,1fr);
+
+    grid-auto-rows:135px;
+
+    gap:12px;
+
+}
+
+/*=========================================
+            ITEMS
+=========================================*/
+
+.foto__item{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    background:#f8f8f8;
+
+    box-shadow:
+
+        0 10px 25px rgba(0,0,0,.12);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.foto__item img{
+
+    width:100%;
+
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+
+    transition:
+
+        transform .8s ease;
+
+}
+
+/*=========================================
+        FOTO PRINCIPAL
+=========================================*/
+
+.foto__item--grande{
+
+    grid-column:
+
+        1 / 5;
+
+    grid-row:
+
+        span 2;
+
+}
+
+/*=========================================
+        POSICION DE FOTOS
+=========================================*/
+
+.foto__item:nth-child(2){
+
+    grid-column:
+
+        1 / 3;
+
+}
+
+.foto__item:nth-child(3){
+
+    grid-column:
+
+        3 / 5;
+
+}
+
+.foto__item:nth-child(4){
+
+    grid-column:
+
+        1 / 2;
+
+}
+
+.foto__item:nth-child(5){
+
+    grid-column:
+
+        2 / 5;
+
+}
+
+/*=========================================
+            EFECTO LUZ
+=========================================*/
+
+.foto__item::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        linear-gradient(
+
+            180deg,
+
+            rgba(255,255,255,.10),
+
+            transparent 40%,
+
+            rgba(0,0,0,.08)
+
+        );
+
+    opacity:0;
+
+    transition:.35s;
+
+}
+
+/*=========================================
+            HOVER
+=========================================*/
+
+.foto__tarjeta:hover{
+
+    transform:
+
+        translateY(-6px);
+
+    box-shadow:
+
+        0 30px 60px rgba(0,0,0,.16);
+
+}
+
+.foto__item:hover{
+
+    transform:
+
+        translateY(-5px);
+
+    box-shadow:
+
+        0 18px 35px rgba(0,0,0,.18);
+
+}
+
+.foto__item:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.foto__item:hover::after{
+
+    opacity:1;
+
+}
+
+/*=========================================
+            MARCO INTERNO
+=========================================*/
+
+.foto__tarjeta::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:12px;
+
+    border-radius:inherit;
+
+    border:1px solid rgba(255,255,255,.45);
+
+    pointer-events:none;
+
+    z-index:5;
+
+}
+
+/*=========================================
+            EFECTO DE LUZ
+=========================================*/
+
+.foto__tarjeta::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            rgba(255,255,255,.20),
+
+            transparent 35%,
+
+            transparent 70%,
+
+            rgba(255,255,255,.08)
+
+        );
+
+    pointer-events:none;
+
+    z-index:4;
+
+}
+
+
+/*=========================================
             TABLET
 =========================================*/
 
@@ -186,9 +475,23 @@
 
     }
 
-    .foto__imagen{
+    .foto__tarjeta{
 
-        height:560px;
+        padding:16px;
+
+    }
+
+    .foto__collage{
+
+        grid-auto-rows:120px;
+
+        gap:10px;
+
+    }
+
+    .foto__item{
+
+        border-radius:20px;
 
     }
 
@@ -208,6 +511,8 @@
 
     .foto__tarjeta{
 
+        padding:14px;
+
         border-radius:
             55px 18px
             90px 22px
@@ -216,13 +521,60 @@
 
     }
 
-    .foto__imagen{
+    .foto__collage{
 
-        height:500px;
+        grid-template-columns:
+
+            repeat(2,1fr);
+
+        grid-auto-rows:135px;
+
+        gap:10px;
+
+    }
+
+    /*==============================
+            FOTO PRINCIPAL
+    ==============================*/
+
+    .foto__item--grande{
+
+        grid-column:
+
+            1 / 3;
+
+        grid-row:
+
+            span 2;
+
+    }
+
+    /*==============================
+            RESTO DE FOTOS
+    ==============================*/
+
+    .foto__item:nth-child(2),
+
+    .foto__item:nth-child(3),
+
+    .foto__item:nth-child(4),
+
+    .foto__item:nth-child(5){
+
+        grid-column:auto;
+
+        grid-row:auto;
+
+    }
+
+    .foto__item{
+
+        border-radius:18px;
 
     }
 
 }
+
 
 
 
@@ -308,15 +660,17 @@
 
     overflow:hidden;
 
+    position:relative;
+
     box-shadow:
 
         0 20px 45px rgba(0,0,0,.15);
 
-    position:relative;
-
 }
 
-/* Marco interior */
+/*=========================================
+        MARCO INTERNO
+=========================================*/
 
 .foto--estilo3 .foto__tarjeta::after{
 
@@ -326,9 +680,7 @@
 
     inset:14px;
 
-    border:
-
-        1px solid rgba(255,255,255,.45);
+    border:1px solid rgba(255,255,255,.45);
 
     border-radius:inherit;
 
@@ -336,41 +688,45 @@
 
 }
 
-/* Imagen */
+/*=========================================
+        COLLAGE
+=========================================*/
 
-.foto--estilo3 .foto__imagen{
+.foto--estilo3 .foto__collage{
 
-    width:100%;
-
-    height:620px;
-
-    object-fit:cover;
-
-    display:block;
-
-    transition:.6s;
+    grid-auto-rows:140px;
 
 }
 
-.foto--estilo3:hover .foto__imagen{
+.foto--estilo3 .foto__item{
 
-    transform:scale(1.03);
+    border-radius:22px;
 
 }
 
+.foto--estilo3 .foto__item img{
 
+    transition:
 
+        transform .6s ease;
+
+}
+
+.foto--estilo3 .foto__item:hover img{
+
+    transform:scale(1.04);
+
+}
 
 @media(max-width:480px){
 
-    .foto--estilo3 .foto__imagen{
+    .foto--estilo3 .foto__collage{
 
-        height:520px;
+        grid-auto-rows:125px;
 
     }
 
 }
-
 
 
 /*======================================
@@ -400,6 +756,220 @@
     box-shadow:
 
         0 20px 45px rgba(0,0,0,.12);
+
+}
+
+/*======================================
+        OVERLAY
+======================================*/
+
+.foto--estilo5 .foto__overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        linear-gradient(
+
+            rgba(109,46,70,.18),
+
+            rgba(0,0,0,.28)
+
+        );
+
+}
+
+/*======================================
+        CONTENIDO
+======================================*/
+
+.foto--estilo5 .foto__contenido{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:60px 35px 270px;
+
+    color:#ffffff;
+
+    z-index:2;
+
+}
+
+/*======================================
+        DETALLE
+======================================*/
+
+.foto--estilo5 .foto__detalle{
+
+    letter-spacing:6px;
+
+    text-transform:uppercase;
+
+    font-size:.75rem;
+
+    margin-bottom:18px;
+
+    opacity:.85;
+
+}
+
+/*======================================
+        FRASE
+======================================*/
+
+.foto--estilo5 .foto__frase{
+
+    font-family:var(--fuente-cursiva);
+
+    font-size:3.2rem;
+
+    line-height:1.2;
+
+    margin-bottom:18px;
+
+}
+
+/*======================================
+        TEXTO
+======================================*/
+
+.foto--estilo5 .foto__texto{
+
+    max-width:300px;
+
+    line-height:1.8;
+
+    opacity:.92;
+
+}
+
+/*======================================
+        RESPONSIVE
+======================================*/
+
+@media(max-width:768px){
+
+    .foto--estilo5{
+
+        max-width:92%;
+
+        height:500px;
+
+        border-radius:0 60px 0 60px;
+
+    }
+
+    .foto--estilo5 .foto__frase{
+
+        font-size:2.6rem;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .foto--estilo5{
+
+        height:450px;
+
+        border-radius:0 45px 0 45px;
+
+    }
+
+    .foto--estilo5 .foto__frase{
+
+        font-size:2.2rem;
+
+    }
+
+    .foto--estilo5 .foto__texto{
+
+        font-size:.9rem;
+
+    }
+
+}
+
+/*======================================
+        TARJETA MUSICA
+======================================*/
+
+.foto .musica{
+
+    width:88%;
+
+    max-width:450px;
+
+    padding:24px 28px;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.30);
+
+    box-shadow:
+
+        0 15px 35px rgba(0,0,0,.18);
+
+}
+
+/*======================================
+        TITULO MUSICA
+======================================*/
+
+.foto .musica__titulo{
+
+    color:#ffffff;
+
+    text-align:center;
+
+    margin-bottom:18px;
+
+    font-size:1rem;
+
+    font-weight:500;
+
+    letter-spacing:.5px;
+
+}
+
+/*======================================
+        BARRA
+======================================*/
+
+.foto .musica__barra{
+
+    margin-bottom:22px;
+
+}
+
+/*======================================
+        CONTROLES
+======================================*/
+
+.foto .musica__controles{
+
+    justify-content:center;
 
 }
 

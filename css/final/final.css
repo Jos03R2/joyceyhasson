@@ -1,0 +1,379 @@
+/*=========================================
+            SECCION FINAL
+=========================================*/
+
+.foto--estilo5{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:560px;
+
+    height:700px;
+
+    margin:70px auto;
+
+    overflow:hidden;
+
+    border-radius:
+        70px 24px
+        120px 30px
+        90px 35px
+        45px 110px;
+
+    background:
+
+        url("../../img/Foto11.jpg")
+
+        center center / cover
+
+        no-repeat;
+
+    box-shadow:
+
+        0 25px 60px rgba(0,0,0,.16);
+
+}
+
+/*=========================================
+            MARCO INTERNO
+=========================================*/
+
+.foto--estilo5::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:14px;
+
+    border-radius:inherit;
+
+    border:1px solid rgba(255,255,255,.40);
+
+    z-index:3;
+
+    pointer-events:none;
+
+}
+
+/*=========================================
+            BRILLO
+=========================================*/
+
+.foto--estilo5::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            rgba(255,255,255,.18),
+
+            transparent 35%,
+
+            transparent 70%,
+
+            rgba(255,255,255,.08)
+
+        );
+
+    z-index:2;
+
+    pointer-events:none;
+
+}
+
+/*=========================================
+            OVERLAY
+=========================================*/
+
+.foto--estilo5 .foto__overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:1;
+
+    background:
+
+        linear-gradient(
+
+            to bottom,
+
+            rgba(0,0,0,.08),
+
+            rgba(0,0,0,.12),
+
+            rgba(0,0,0,.32),
+
+            rgba(0,0,0,.55)
+
+        );
+
+}
+
+/*=========================================
+            CONTENIDO
+=========================================*/
+
+.foto--estilo5 .foto__contenido{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:5;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:0 40px 240px;
+
+}
+
+/*=========================================
+            DETALLE
+=========================================*/
+
+.foto--estilo5 .foto__detalle{
+
+    margin-bottom:18px;
+
+    font-size:.78rem;
+
+    letter-spacing:7px;
+
+    text-transform:uppercase;
+
+    color:rgba(255,255,255,.85);
+
+}
+
+/*=========================================
+            TITULO
+=========================================*/
+
+.foto--estilo5 .foto__frase{
+
+    margin-bottom:22px;
+
+    font-family:var(--fuente-cursiva);
+
+    font-size:3.5rem;
+
+    line-height:1.15;
+
+    color:#ffffff;
+
+    text-shadow:
+
+        0 6px 18px rgba(0,0,0,.28);
+
+}
+
+/*=========================================
+            TEXTO
+=========================================*/
+
+.foto--estilo5 .foto__texto{
+
+    max-width:320px;
+
+    line-height:1.9;
+
+    font-size:1rem;
+
+    color:rgba(255,255,255,.90);
+
+}
+
+
+
+
+
+/*=========================================
+            HOVER
+=========================================*/
+
+.foto--estilo5{
+
+    transition:
+
+        transform .45s ease,
+
+        box-shadow .45s ease;
+
+}
+
+.foto--estilo5:hover{
+
+    transform:
+
+        translateY(-8px);
+
+    box-shadow:
+
+        0 35px 70px rgba(0,0,0,.20);
+
+}
+
+.foto--estilo5:hover::after{
+
+    opacity:.9;
+
+}
+
+/*=========================================
+            CONTENIDO
+=========================================*/
+
+.foto--estilo5:hover .foto__contenido{
+
+    transform:
+
+        translateY(-6px);
+
+    transition:.45s;
+
+}
+
+/*=========================================
+            TABLET
+=========================================*/
+
+@media(max-width:768px){
+
+    .foto--estilo5{
+
+        max-width:92%;
+
+        height:620px;
+
+        margin:60px auto;
+
+        border-radius:
+            55px 18px
+            90px 24px
+            70px 28px
+            40px 90px;
+
+    }
+
+    .foto--estilo5 .foto__contenido{
+
+        padding:60px 28px 70px;
+
+    }
+
+    .foto--estilo5 .foto__frase{
+
+        font-size:3rem;
+
+    }
+
+}
+
+/*=========================================
+            MOVIL
+=========================================*/
+
+@media(max-width:480px){
+
+    .foto--estilo5{
+
+        height:540px;
+
+        margin:50px auto;
+
+        border-radius:
+            45px 15px
+            75px 20px
+            55px 22px
+            30px 75px;
+
+    }
+
+    .foto--estilo5 .foto__contenido{
+
+        padding:45px 24px 55px;
+
+    }
+
+    .foto--estilo5 .foto__detalle{
+
+        font-size:.68rem;
+
+        letter-spacing:5px;
+
+    }
+
+    .foto--estilo5 .foto__frase{
+
+        font-size:2.4rem;
+
+    }
+
+    .foto--estilo5 .foto__texto{
+
+        font-size:.92rem;
+
+        max-width:260px;
+
+        line-height:1.7;
+
+    }
+
+}
+
+/*=========================================
+            ANIMACION
+=========================================*/
+
+.foto--estilo5{
+
+    animation:
+
+        fotoFinal .9s ease both;
+
+}
+
+@keyframes fotoFinal{
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+            translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+
+            translateY(0);
+
+    }
+
+}

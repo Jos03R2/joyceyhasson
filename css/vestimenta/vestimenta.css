@@ -157,8 +157,6 @@
 
 }
 
-/* Vestido */
-
 .vestimenta__icono--vestido{
 
     width:125px;
@@ -188,105 +186,32 @@
 }
 
 /*=========================================
-            COLORES
-=========================================*/
-
-.vestimenta__colores{
-
-    margin-top:60px;
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*=========================================
-            TABLET
-=========================================*/
-
-@media(max-width:768px){
-
-    .vestimenta__titulo{
-
-        font-size:4.3rem;
-
-    }
-
-}
-
-/*=========================================
-            MOVIL
-=========================================*/
-
-@media(max-width:480px){
-
-    .vestimenta{
-
-        padding:14px 10px 35px;
-
-    }
-
-    .vestimenta__tarjeta{
-
-        border-radius:
-            90px 22px
-            40px 90px;
-
-    }
-
-    .vestimenta__contenido{
-
-        padding:
-
-            50px
-            20px;
-
-    }
-
-    .vestimenta__grid{
-
-        grid-template-columns:1fr;
-
-        gap:18px;
-
-    }
-
-    .vestimenta__titulo{
-
-        font-size:3.8rem;
-
-    }
-
-    .vestimenta__descripcion{
-
-        font-size:1.15rem;
-
-    }
-
-}
-
-
-
-
-
-/*=========================================
         COLORES PROHIBIDOS
 =========================================*/
 
 .vestimenta__colores{
 
     margin-top:65px;
+
+    padding:36px 24px;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #fafafa,
+            #f2f2f2
+        );
+
+    border:1px solid rgba(0,0,0,.05);
+
+    border-radius:28px;
+
+    box-shadow:
+
+        inset 0 1px 0 rgba(255, 255, 255, 0.767),
+
+        0 10px 30px rgba(0,0,0,.05);
 
 }
 
@@ -298,7 +223,7 @@
 
     line-height:1.7;
 
-    margin-bottom:40px;
+    margin-bottom:34px;
 
 }
 
@@ -308,29 +233,37 @@
 
 .vestimenta__paleta{
 
-    display:grid;
+    display:flex;
 
-    grid-template-columns:
+    justify-content:center;
 
-        repeat(4,1fr);
+    align-items:flex-start;
 
-    gap:28px 18px;
+    flex-wrap:nowrap;
 
-    justify-items:center;
+    gap:14px;
+
+    max-width:450px;
+
+    margin:0 auto;
 
 }
 
 .color{
 
+    width:60px;
+
     text-align:center;
+
+    flex-shrink:0;
 
 }
 
 .color__circulo{
 
-    width:54px;
+    width:50px;
 
-    height:54px;
+    height:50px;
 
     display:block;
 
@@ -342,23 +275,37 @@
 
     box-shadow:
 
-        0 8px 18px rgba(0,0,0,.10);
+        0 8px 18px rgba(0,0,0,.12);
+
+    transition:
+
+        transform .30s,
+
+        box-shadow .30s;
+
+}
+
+.color:hover .color__circulo{
+
+    transform:scale(1.08);
+
+    box-shadow:
+
+        0 14px 24px rgba(0,0,0,.18);
 
 }
 
 .color p{
 
-    margin-top:12px;
+    margin-top:10px;
 
-    font-size:.95rem;
+    font-size:.82rem;
 
     color:var(--texto);
 
-    line-height:1.3;
+    line-height:1.25;
 
 }
-
-
 
 /*=========================================
             COLORES
@@ -406,16 +353,123 @@
 
 }
 
+/*=========================================
+            TABLET
+=========================================*/
 
+@media(max-width:768px){
 
+    .vestimenta__titulo{
 
-@media(max-width:480px){
+        font-size:4.3rem;
+
+    }
+
+    .vestimenta__colores{
+
+        padding:30px 20px;
+
+    }
 
     .vestimenta__paleta{
 
-        grid-template-columns:
+        flex-wrap:wrap;
 
-            repeat(2,1fr);
+        justify-content:center;
+
+        gap:22px 18px;
+
+    }
+
+    .color{
+
+        width:72px;
+
+    }
+
+}
+
+/*=========================================
+            MOVIL
+=========================================*/
+
+@media(max-width:480px){
+
+    .vestimenta{
+
+        padding:14px 10px 35px;
+
+    }
+
+    .vestimenta__tarjeta{
+
+        border-radius:
+            90px 22px
+            40px 90px;
+
+    }
+
+    .vestimenta__contenido{
+
+        padding:
+            50px
+            20px;
+
+    }
+
+    .vestimenta__grid{
+
+        grid-template-columns:1fr;
+
+        gap:18px;
+
+    }
+
+    .vestimenta__titulo{
+
+        font-size:3.8rem;
+
+    }
+
+    .vestimenta__descripcion{
+
+        font-size:1.15rem;
+
+    }
+
+    .vestimenta__colores{
+
+        padding:22px 16px;
+
+    }
+
+    .vestimenta__paleta{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:18px 14px;
+
+    }
+
+    .color{
+
+        width:70px;
+
+    }
+
+    .color__circulo{
+
+        width:48px;
+
+        height:48px;
+
+    }
+
+    .color p{
+
+        font-size:.82rem;
 
     }
 

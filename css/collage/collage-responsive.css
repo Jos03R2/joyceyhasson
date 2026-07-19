@@ -1,0 +1,176 @@
+/*=========================================
+        RESPONSIVE TABLET
+=========================================*/
+
+@media(max-width:768px){
+
+    .collage{
+
+        padding:18px 14px 40px;
+
+    }
+
+    .collage__tarjeta{
+
+        padding:14px;
+
+    }
+
+    .collage__grid{
+
+        grid-template-columns:
+
+            repeat(4,1fr);
+
+        grid-template-rows:
+
+            220px
+            180px
+            180px;
+
+        gap:10px;
+
+    }
+
+    .collage__item{
+
+        border-radius:18px;
+
+    }
+
+    /*==============================
+        FOTO PRINCIPAL
+    ==============================*/
+
+    .collage__item--grande{
+
+        grid-column:1 / 5;
+
+        grid-row:1;
+
+    }
+
+    /*==============================
+            FOTO 2
+    ==============================*/
+
+    .collage__item:nth-child(2){
+
+        grid-column:1 / 3;
+
+        grid-row:2 / 4;
+
+    }
+
+    /*==============================
+            FOTO 3
+    ==============================*/
+
+    .collage__item:nth-child(3){
+
+        grid-column:3 / 5;
+
+        grid-row:2;
+
+    }
+
+    /*==============================
+            FOTO 4
+    ==============================*/
+
+    .collage__item:nth-child(4){
+
+        grid-column:3 / 5;
+
+        grid-row:3;
+
+    }
+
+    /*==============================
+            FOTO 5
+    ==============================*/
+
+    .collage__item:nth-child(5){
+
+        grid-column:1 / 3;
+
+        grid-row:4;
+
+    }
+
+}
+
+/*=========================================
+        RESPONSIVE MOVIL
+=========================================*/
+
+@media(max-width:480px){
+
+    .collage{
+
+        padding:14px 10px 35px;
+
+    }
+
+    .collage__tarjeta{
+
+        padding:12px;
+
+        border-radius:
+
+            55px 18px
+            90px 22px
+            70px 26px
+            35px 90px;
+
+    }
+
+    .collage__grid{
+
+        grid-template-columns:
+
+            repeat(2,1fr);
+
+        grid-auto-rows:140px;
+
+        gap:10px;
+
+    }
+
+    /*==============================
+        FOTO PRINCIPAL
+    ==============================*/
+
+    .collage__item--grande{
+
+        grid-column:1 / 3;
+
+        grid-row:span 2;
+
+    }
+
+    /*==============================
+        RESTO DE FOTOS
+    ==============================*/
+
+    .collage__item:nth-child(2),
+
+    .collage__item:nth-child(3),
+
+    .collage__item:nth-child(4),
+
+    .collage__item:nth-child(5){
+
+        grid-column:auto;
+
+        grid-row:auto;
+
+    }
+
+    .collage__item{
+
+        border-radius:18px;
+
+    }
+
+}
