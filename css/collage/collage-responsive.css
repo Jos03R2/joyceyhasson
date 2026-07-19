@@ -80,11 +80,17 @@
 
     .collage__item:nth-child(4){
 
-        grid-column:3 / 5;
+    grid-column:1 / 3;
 
-        grid-row:3;
+    grid-row:4;
 
-    }
+    width:95%;
+
+    justify-self:center;
+
+    margin-top:-8px;
+
+}
 
     /*==============================
             FOTO 5
@@ -127,50 +133,69 @@
 
     .collage__grid{
 
-        grid-template-columns:
+    display:grid;
 
-            repeat(2,1fr);
+    grid-template-columns:repeat(2,1fr);
 
-        grid-auto-rows:140px;
+    grid-template-rows:
 
-        gap:10px;
+        230px
+        150px
+        150px;
 
-    }
+    gap:10px;
 
-    /*==============================
+}
+   /*==============================
         FOTO PRINCIPAL
-    ==============================*/
+==============================*/
 
-    .collage__item--grande{
+.collage__item--grande{
 
-        grid-column:1 / 3;
+    grid-column:1 / 3;
 
-        grid-row:span 2;
+    grid-row:1;
 
-    }
+}
 
-    /*==============================
-        RESTO DE FOTOS
-    ==============================*/
+/*==============================
+        FOTO 2
+==============================*/
 
-    .collage__item:nth-child(2),
+.collage__item:nth-child(2){
 
-    .collage__item:nth-child(3),
+    grid-column:1;
 
-    .collage__item:nth-child(4),
+    grid-row:2;
 
-    .collage__item:nth-child(5){
+}
 
-        grid-column:auto;
+/*==============================
+        FOTO 3
+==============================*/
 
-        grid-row:auto;
+.collage__item:nth-child(3){
 
-    }
+    grid-column:2;
 
-    .collage__item{
+    grid-row:2;
 
-        border-radius:18px;
+}
 
-    }
+/*==============================
+        FOTO 4
+==============================*/
+
+.collage__item:nth-child(4){
+
+    grid-column:1 / 3;
+
+    grid-row:3;
+
+    width:100%;
+
+    justify-self:stretch;
+
+}
 
 }

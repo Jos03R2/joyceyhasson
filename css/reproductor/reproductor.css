@@ -10,7 +10,7 @@
 
     justify-content:center;
 
-    padding:20px 20px 50px;
+    padding:12px 10px 90px;
 
 }
 
@@ -48,9 +48,7 @@
 
 .foto__tarjeta img{
 
-    height:720px;
-
-    object-position:center;
+    height:670px;
 
 }
 
@@ -604,13 +602,25 @@
 
 @media(max-width:480px){
 
+    /*==============================
+            CONTENEDOR
+    ==============================*/
+
     .foto{
 
-        padding:12px 10px 32px;
+        padding:12px 10px 140px;
 
     }
 
+    /*==============================
+            TARJETA FOTO
+    ==============================*/
+
     .foto__tarjeta{
+
+        position:relative;
+
+        overflow:visible;
 
         border-radius:
 
@@ -621,27 +631,61 @@
 
     }
 
+    /*==============================
+            IMAGEN
+    ==============================*/
+
     .foto__tarjeta img{
 
-        height:560px;
+        height:610px;
+
+        object-fit:cover;
+
+        object-position:center;
 
     }
+
+    /*==============================
+            OVERLAY
+    ==============================*/
 
     .foto__overlay{
 
-        padding-bottom:26px;
+        position:absolute;
+
+        inset:0;
+
+        display:flex;
+
+        justify-content:center;
+
+        align-items:flex-end;
+
+        padding:0;
+
+        overflow:visible;
 
     }
 
-    .musica{
+    /*==============================
+            REPRODUCTOR
+    ==============================*/
 
-        width:92%;
+  .musica{
 
-        padding:20px;
+    width:90%;
 
-        border-radius:28px;
+    padding:14px 16px;
 
-    }
+    border-radius:28px;
+
+    transform:translateY(0px);
+
+}
+
+    /*==============================
+            TITULOS
+    ==============================*/
 
     .musica__titulo{
 
@@ -651,41 +695,49 @@
 
     .musica__cancion{
 
-        font-size:1.05rem;
+    margin-top:18px;
 
-    }
+}
 
-    .musica__artista{
+.musica__artista{
 
-        font-size:.90rem;
+    margin-top:4px;
 
-    }
+    margin-bottom:16px;
 
-    .musica__controles{
+}
 
-        gap:10px;
+.musica__contador{
 
-    }
+    margin-top:12px;
 
-    .musica__boton{
+}
 
-        width:44px;
+.musica__controles{
 
-        height:44px;
+    margin-top:18px;
 
-        font-size:1rem;
+}
 
-    }
+   .musica__boton{
+
+    width:40px;
+
+    height:40px;
+
+    font-size:.95rem;
+
+}
 
     .musica__play{
 
-        width:66px;
+    width:60px;
 
-        height:66px;
+    height:60px;
 
-        font-size:1.5rem;
+    font-size:1.35rem;
 
-    }
+}
 
     .musica__slider{
 
@@ -694,4 +746,3 @@
     }
 
 }
-

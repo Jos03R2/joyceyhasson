@@ -115,7 +115,9 @@
 
 .collage__item:nth-child(2) img{
 
-    object-position:center 18%;
+    object-fit:cover;
+
+    object-position:center 55%;
 
 }
 
@@ -141,17 +143,7 @@
 
 }
 
-/*=========================================
-        FOTO 5
-=========================================*/
 
-.collage__item:nth-child(5) img{
-
-    object-fit:cover;
-
-    object-position:center 32%;
-
-}
 
 /*=========================================
         BRILLO SOBRE FOTOS

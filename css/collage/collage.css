@@ -58,23 +58,19 @@
 
     display:grid;
 
-    grid-template-columns:
-
-        repeat(2,1fr);
+    grid-template-columns:repeat(2,1fr);
 
     grid-template-areas:
 
         "principal principal"
         "dos tres"
-        "dos cuatro"
-        "cinco cinco";
+        "cuatro cuatro";
 
     grid-template-rows:
 
         320px
         170px
-        170px
-        250px;
+        170px;
 
     gap:10px;
 
@@ -124,11 +120,7 @@
                 FOTO 5
 =========================================*/
 
-.collage__item:nth-child(5){
 
-    grid-area:cinco;
-
-}
 
 /*=========================================
                 ITEMS
@@ -161,14 +153,3 @@
 
 }
 
-/*=========================================
-        FOTO INFERIOR
-=========================================*/
-
-.collage__item:nth-child(5){
-
-    grid-area:cinco;
-
-    border-radius:28px;
-
-}

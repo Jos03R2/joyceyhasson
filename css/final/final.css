@@ -23,15 +23,11 @@
         45px 110px;
 
     background:
-
         url("../../img/Foto11.jpg")
-
         center center / cover
-
         no-repeat;
 
     box-shadow:
-
         0 25px 60px rgba(0,0,0,.16);
 
 }
@@ -71,19 +67,12 @@
     inset:0;
 
     background:
-
         linear-gradient(
-
             135deg,
-
             rgba(255,255,255,.18),
-
             transparent 35%,
-
             transparent 70%,
-
             rgba(255,255,255,.08)
-
         );
 
     z-index:2;
@@ -105,19 +94,12 @@
     z-index:1;
 
     background:
-
         linear-gradient(
-
             to bottom,
-
             rgba(0,0,0,.08),
-
             rgba(0,0,0,.12),
-
             rgba(0,0,0,.32),
-
             rgba(0,0,0,.55)
-
         );
 
 }
@@ -144,7 +126,7 @@
 
     text-align:center;
 
-    padding:0 40px 240px;
+    padding:0 40px 180px;
 
 }
 
@@ -183,7 +165,6 @@
     color:#ffffff;
 
     text-shadow:
-
         0 6px 18px rgba(0,0,0,.28);
 
 }
@@ -204,10 +185,6 @@
 
 }
 
-
-
-
-
 /*=========================================
             HOVER
 =========================================*/
@@ -215,21 +192,16 @@
 .foto--estilo5{
 
     transition:
-
         transform .45s ease,
-
         box-shadow .45s ease;
 
 }
 
 .foto--estilo5:hover{
 
-    transform:
-
-        translateY(-8px);
+    transform:translateY(-8px);
 
     box-shadow:
-
         0 35px 70px rgba(0,0,0,.20);
 
 }
@@ -240,15 +212,9 @@
 
 }
 
-/*=========================================
-            CONTENIDO
-=========================================*/
-
 .foto--estilo5:hover .foto__contenido{
 
-    transform:
-
-        translateY(-6px);
+    transform:translateY(-6px);
 
     transition:.45s;
 
@@ -278,7 +244,7 @@
 
     .foto--estilo5 .foto__contenido{
 
-        padding:60px 28px 70px;
+        padding:0 28px 150px;
 
     }
 
@@ -312,7 +278,16 @@
 
     .foto--estilo5 .foto__contenido{
 
-        padding:45px 24px 55px;
+        justify-content:flex-start;
+
+        align-items:center;
+
+        text-align:center;
+
+        padding:
+            110px
+            24px
+            40px;
 
     }
 
@@ -322,19 +297,25 @@
 
         letter-spacing:5px;
 
+        margin-bottom:14px;
+
     }
 
     .foto--estilo5 .foto__frase{
 
         font-size:2.4rem;
 
+        line-height:1.15;
+
+        margin-bottom:16px;
+
     }
 
     .foto--estilo5 .foto__texto{
 
-        font-size:.92rem;
+        max-width:270px;
 
-        max-width:260px;
+        font-size:.92rem;
 
         line-height:1.7;
 
@@ -349,7 +330,6 @@
 .foto--estilo5{
 
     animation:
-
         fotoFinal .9s ease both;
 
 }
@@ -360,9 +340,7 @@
 
         opacity:0;
 
-        transform:
-
-            translateY(35px);
+        transform:translateY(35px);
 
     }
 
@@ -370,9 +348,7 @@
 
         opacity:1;
 
-        transform:
-
-            translateY(0);
+        transform:translateY(0);
 
     }
 

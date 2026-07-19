@@ -116,7 +116,7 @@
 
     text-align:center;
 
-    padding:60px 30px;
+    padding:60px 30px 95px;
 
 }
 
@@ -140,7 +140,7 @@
 
 .fecha__titulo{
 
-    margin-top:18px;
+    margin-top:12px;
 
     font-size:2.7rem;
 
@@ -152,7 +152,7 @@
 
 .fecha__faltan{
 
-    margin-top:40px;
+    margin-top:26px;
 
     font-family:"Great Vibes",cursive;
 
@@ -174,9 +174,9 @@
 
     width:100%;
 
-    margin-top:45px;
+    margin-top:28px;
 
-    min-height:170px;
+    transform:translateY(35px);
 
 }
 
@@ -336,20 +336,94 @@
 
 @media(max-width:480px){
 
+    .fecha{
+
+        padding:12px 10px 35px;
+
+    }
+
+    .fecha__tarjeta{
+
+        height:700px;
+
+        border-radius:
+            90px 24px
+            70px 24px;
+
+    }
+
+    .fecha__contenido{
+
+    padding:45px 18px 85px;
+
+}
+    .fecha__subtitulo{
+
+        font-size:1rem;
+
+        letter-spacing:1px;
+
+    }
+
+    .fecha__titulo{
+
+        margin-top:10px;
+
+        font-size:1.75rem;
+
+    }
+
+    .fecha__faltan{
+
+        margin-top:18px;
+
+        font-size:3.6rem;
+
+    }
+
+    .fecha__contador{
+
+        margin-top:26px;
+
+    }
+
+    /*==============================
+            CONTADOR
+    ==============================*/
+
     .contador{
 
-        grid-template-columns:
+        grid-template-columns:repeat(4,1fr);
 
-            repeat(2,1fr);
+        gap:8px;
 
-        gap:12px;
+    }
+
+    .contador__item{
+
+        padding:16px 6px;
+
+        border-radius:24px;
 
     }
 
     .contador__numero{
 
-        font-size:2.3rem;
+        font-size:2rem;
 
     }
+
+    .contador__texto{
+
+        margin-top:6px;
+
+        font-size:.75rem;
+
+        letter-spacing:.5px;
+
+    }
+
+
+
 
 }

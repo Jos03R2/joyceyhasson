@@ -5,8 +5,7 @@
 const audio =
 document.getElementById("audio");
 
-const btnPlay =
-document.getElementById("btnPlay");
+
 
 const btnAnterior =
 document.getElementById("btnAnterior");
@@ -97,10 +96,6 @@ function reproducir(){
 
     reproduciendo = true;
 
-    btnPlay.innerHTML =
-
-    '<i class="fa-solid fa-pause"></i>';
-
 }
 
 /*======================================
@@ -113,37 +108,13 @@ function pausar(){
 
     reproduciendo = false;
 
-    btnPlay.innerHTML =
-
-    '<i class="fa-solid fa-play"></i>';
-
 }
 
 /*======================================
         PLAY / PAUSA
 ======================================*/
 
-btnPlay.addEventListener(
 
-    "click",
-
-    ()=>{
-
-        if(reproduciendo){
-
-            pausar();
-
-        }
-
-        else{
-
-            reproducir();
-
-        }
-
-    }
-
-);
 
 /*======================================
         FADE OUT
@@ -187,11 +158,7 @@ function fadeIn(){
 
     audio.play();
 
-    reproduciendo = true;
-
-    btnPlay.innerHTML =
-
-    '<i class="fa-solid fa-pause"></i>';
+reproduciendo = true;
 
     const intervalo = setInterval(()=>{
 
@@ -660,9 +627,7 @@ document.addEventListener(
             PLAY INICIAL
         ------------------------------*/
 
-        btnPlay.innerHTML =
-
-        '<i class="fa-solid fa-play"></i>';
+    
 
         /*------------------------------
             PROGRESO
