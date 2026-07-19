@@ -48,15 +48,17 @@
 
 .foto__tarjeta img{
 
-    width:100%;
-
-    height:760px;
-
-    display:block;
-
-    object-fit:cover;
+    height:720px;
 
     object-position:center;
+
+}
+
+.foto__overlay{
+
+    align-items:flex-end;
+
+    padding-bottom:18px;
 
 }
 
@@ -120,15 +122,18 @@
             TARJETA MUSICA
 =========================================*/
 
+
+
+
 .musica{
 
-    width:88%;
+    width:90%;
 
     max-width:510px;
 
-    padding:28px;
+    padding:18px;
 
-    border-radius:34px;
+    border-radius:28px;
 
     background:
 
