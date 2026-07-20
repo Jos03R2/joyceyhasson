@@ -44,34 +44,6 @@ document.addEventListener(
 
         );
 
-        /*------------------------------
-            DESBLOQUEAR SAFARI
-        ------------------------------*/
-
-        document.addEventListener(
-
-            "pointerdown",
-
-            async ()=>{
-
-                if(audioDesbloqueado){
-
-                    return;
-
-                }
-
-                await desbloquearAudio();
-
-            },
-
-            {
-
-                once:true
-
-            }
-
-        );
-
     }
 
 );

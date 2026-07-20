@@ -22,6 +22,8 @@ function cargarCancion(){
 
     audio.src = cancion.archivo;
 
+    audio.load();
+
     nombreCancion.textContent =
     cancion.titulo;
 
@@ -34,74 +36,14 @@ function cargarCancion(){
 }
 
 /*======================================
-        DESBLOQUEAR AUDIO
-======================================*/
-
-async function desbloquearAudio(){
-
-    if(audioDesbloqueado){
-
-        return true;
-
-    }
-
-    try{
-
-        const promesa = audio.play();
-
-        if(promesa){
-
-            await promesa;
-
-        }
-
-        audio.pause();
-
-        audio.currentTime = 0;
-
-        audioDesbloqueado = true;
-
-        return true;
-
-    }
-
-    catch(error){
-
-        console.warn(
-
-            "Safari aun no permite reproducir audio.",
-
-            error
-
-        );
-
-        return false;
-
-    }
-
-}
-
-/*======================================
         REPRODUCIR
 ======================================*/
 
 async function reproducir(){
 
-    const permitido =
-
-        await desbloquearAudio();
-
-    if(!permitido){
-
-        return;
-
-    }
-
     try{
 
-        const promesa =
-
-        audio.play();
+        const promesa = audio.play();
 
         if(promesa){
 
@@ -119,7 +61,7 @@ async function reproducir(){
 
         console.error(
 
-            "Error al reproducir.",
+            "No fue posible reproducir el audio.",
 
             error
 
@@ -142,6 +84,26 @@ function pausar(){
 }
 
 /*======================================
+        TOGGLE PLAY
+======================================*/
+
+async function alternarReproduccion(){
+
+    if(reproduciendo){
+
+        pausar();
+
+    }
+
+    else{
+
+        await reproducir();
+
+    }
+
+}
+
+/*======================================
         LIMPIAR FADE
 ======================================*/
 
@@ -160,6 +122,9 @@ function detenerFade(){
     }
 
 }
+
+
+
 
 
 /*======================================
@@ -206,23 +171,11 @@ async function fadeIn(){
 
     detenerFade();
 
-    const permitido =
-
-        await desbloquearAudio();
-
-    if(!permitido){
-
-        return;
-
-    }
-
     audio.volume = 0;
 
     try{
 
-        const promesa =
-
-        audio.play();
+        const promesa = audio.play();
 
         if(promesa){
 
@@ -252,7 +205,7 @@ async function fadeIn(){
 
     fadeInterval = setInterval(()=>{
 
-        if(audio.volume < ultimoVolumen - 0.05){
+        if(audio.volume < ultimoVolumen){
 
             audio.volume += ultimoVolumen / 20;
 
@@ -284,19 +237,19 @@ async function cambiarCancion(indice){
 
     cambioEnProceso = true;
 
+    if(indice >= PLAYLIST.length){
+
+        indice = 0;
+
+    }
+
+    if(indice < 0){
+
+        indice = PLAYLIST.length - 1;
+
+    }
+
     indiceActual = indice;
-
-    if(indiceActual >= PLAYLIST.length){
-
-        indiceActual = 0;
-
-    }
-
-    if(indiceActual < 0){
-
-        indiceActual = PLAYLIST.length - 1;
-
-    }
 
     cargarCancion();
 
@@ -313,4 +266,6 @@ async function cambiarCancion(indice){
     }
 
 }
+
+
 

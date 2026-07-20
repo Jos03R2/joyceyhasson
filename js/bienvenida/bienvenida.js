@@ -22,7 +22,13 @@ boton.addEventListener(
 
     "click",
 
-    ()=>{
+    async ()=>{
+
+        /*==============================
+                EVITAR DOBLE CLIC
+        ==============================*/
+
+        boton.disabled = true;
 
         /*==============================
                 ANIMACION BOTON
@@ -35,30 +41,20 @@ boton.addEventListener(
         );
 
         /*==============================
-            INICIAR MUSICA
+            REPRODUCIR MUSICA
         ==============================*/
 
-        setTimeout(
+        try{
 
-            ()=>{
+            await reproducir();
 
-                try{
+        }
 
-                    reproducir();
+        catch(error){
 
-                }
+            console.error(error);
 
-                catch(error){
-
-                    console.error(error);
-
-                }
-
-            },
-
-            250
-
-        );
+        }
 
         /*==============================
             ANIMACION SALIDA
