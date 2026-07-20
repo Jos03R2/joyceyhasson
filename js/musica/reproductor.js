@@ -150,6 +150,7 @@ function fadeOut(callback){
             audio.pause();
 
             audio.volume = 0;
+            audio.muted = false;
 
             if(typeof callback === "function"){
 
@@ -223,6 +224,7 @@ async function fadeIn(){
 
 }
 
+
 /*======================================
         CAMBIAR CANCION
 ======================================*/
@@ -253,6 +255,32 @@ async function cambiarCancion(indice){
 
     cargarCancion();
 
+    await new Promise((resolve)=>{
+
+        if(audio.readyState >= 3){
+
+            resolve();
+
+            return;
+
+        }
+
+        audio.addEventListener(
+
+            "canplay",
+
+            resolve,
+
+            {
+
+                once:true
+
+            }
+
+        );
+
+    });
+
     try{
 
         await fadeIn();
@@ -266,6 +294,3 @@ async function cambiarCancion(indice){
     }
 
 }
-
-
-
