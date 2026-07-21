@@ -6,7 +6,7 @@ const familias = {
         integrantes: [
             "Byron Rosario Perez",
             "Joyce Lopez De Rosario",
-            "Josue Rosario "
+            "Josue Rosario"
         ]
     },
 
@@ -46,10 +46,10 @@ const familias = {
         familia: "Familia Lopez Alvarado",
         integrantes: [
             "Leticia Lopez Alvarado",
-            "Asucena Lopez Alvarado ",
+            "Asucena Lopez Alvarado",
             "Joseline Arango Lopez",
             "Paola Arango Lopez",
-            "Mateo Arango Lopez "
+            "Mateo Arango Lopez"
         ]
     },
 
@@ -103,7 +103,7 @@ const familias = {
 
     "PERR-1D43": {
         codigo: "PERR-1D43",
-        familia: "Familia Perez ",
+        familia: "Familia Perez",
         integrantes: [
             "Josue Perez",
             "Alejandra Revolorio De Perez",
@@ -161,7 +161,7 @@ const familias = {
         ]
     },
 
-        "RAMO-3N52": {
+    "RAMO-3N52": {
         codigo: "RAMO-3N52",
         familia: "Familia Ramos",
         integrantes: [
@@ -205,20 +205,11 @@ const familias = {
         ]
     },
 
-    "JASC-9O75": {
-        codigo: "JASC-9O75",
-        familia: "Familia Jacinto",
-        integrantes: [
-            "Iralda Jacinto"
-        ]
-    },
-
     "SOSA-7C68": {
         codigo: "SOSA-7C68",
         familia: "Familia Sosa",
         integrantes: [
-            "Aura Sosa",
-            "Esposo de Aura Sosa"
+            "Aura Sosa"
         ]
     },
 
@@ -230,7 +221,7 @@ const familias = {
         ]
     },
 
-    "LORE-6K85": {
+        "LORE-6K85": {
         codigo: "LORE-6K85",
         familia: "Familia Lorenzana",
         integrantes: [
@@ -280,7 +271,7 @@ const familias = {
         ]
     },
 
-        "ALVA-8D23": {
+    "ALVA-8D23": {
         codigo: "ALVA-8D23",
         familia: "Alvarez",
         integrantes: [
@@ -339,7 +330,8 @@ const familias = {
         integrantes: [
             "Antonio Davila",
             "Olga de Davila",
-            "Alejandra Davila"
+            "Alejandra Davila",
+            "Hendel Guas"
         ]
     },
 
@@ -349,7 +341,8 @@ const familias = {
         integrantes: [
             "Elmer Lemus",
             "Elsa de Lemus",
-            "Yasmin Lemus"
+            "Yasmin Lemus",
+            "Benjamin Gonzales"
         ]
     },
 
@@ -366,8 +359,7 @@ const familias = {
         codigo: "GUZM-5R24",
         familia: "Familia Guzman",
         integrantes: [
-            "Dennis Guzman",
-            "Elizabeth Guzman"
+            "Dennis Guzman"
         ]
     },
 
@@ -376,9 +368,7 @@ const familias = {
         familia: "Familia Davila",
         integrantes: [
             "Josue Davila",
-            "Shirley de Davila",
-            "Adriana Davila",
-            "Madeline Davila"
+            "Shirley de Davila"
         ]
     },
 
@@ -403,16 +393,16 @@ const familias = {
         familia: "Familia Valle",
         integrantes: [
             "Luis Valle",
-            "Carolina de Valle",
-            "Valeria Valle"
+            "Carolina de Valle"
         ]
     },
 
-    "ESCR-32E9": {
+        "ESCR-32E9": {
         codigo: "ESCR-32E9",
         familia: "Escriba",
         integrantes: [
-            "Juan Diego Escriba"
+            "Valeria Valle",
+            "Juan Diego Escribá"
         ]
     },
 
@@ -438,9 +428,7 @@ const familias = {
         ]
     },
 
-
-
-        "HERN-29N5": {
+    "HERN-29N5": {
         codigo: "HERN-29N5",
         familia: "Familia Hernandez",
         integrantes: [
@@ -459,7 +447,14 @@ const familias = {
         familia: "Familia Ambrocio",
         integrantes: [
             "Nora Ambrocio",
-            "Mayeli Ambrocio",
+            "Mayeli Ambrocio"
+        ]
+    },
+
+    "AMBR-UL36": {
+        codigo: "AMBR-UL36",
+        familia: "Familia Ambrocio",
+        integrantes: [
             "Wilson Ambrocio",
             "Diana de Ambrocio"
         ]
@@ -476,11 +471,11 @@ const familias = {
 
     "GUZM-19D2": {
         codigo: "GUZM-19D2",
-        familia: "Familia Guzman",
+        familia: "Familia Gomez",
         integrantes: [
-            "Angelica Guzman",
             "Edwin Gomez",
-            "Luis Gomez"
+            "Luis Gomez",
+            "Angelica de Gomez"
         ]
     },
 
@@ -512,7 +507,7 @@ const familias = {
             "Edson Garzo",
             "Monica de Garzo",
             "Andre Garzo",
-            "Karen de la Marina",
+            "Karen Garzo",
             "Marina De Garzo",
             "Balmori Garzo"
         ]
@@ -520,7 +515,7 @@ const familias = {
 
     "CATL-67DE": {
         codigo: "CATL-67DE",
-        familia: "Familia Catalan",
+        familia: "Familia Catalan Ambrocio",
         integrantes: [
             "Cesar Catalan",
             "Raquel Ambrocio",
@@ -530,7 +525,7 @@ const familias = {
 
     "LORM-2D69": {
         codigo: "LORM-2D69",
-        familia: "Familia Meneses",
+        familia: "Familia Lorenzana de Meneses",
         integrantes: [
             "Noemi Lorenzana De Meneses",
             "Herbet Meneses"
@@ -541,8 +536,7 @@ const familias = {
         codigo: "LORO-6Y52",
         familia: "Familia Lorenzana",
         integrantes: [
-            "Nohelia Lorenzana",
-            "Edvin Oliva"
+            "Nohelia Lorenzana"
         ]
     },
 
@@ -550,9 +544,7 @@ const familias = {
         codigo: "LORE-D521",
         familia: "Familia Lorenzana",
         integrantes: [
-            "Norma Lorenzana",
-            "Nicole Lorenzana",
-            "Jesse Lorenzana"
+            "Norma Lorenzana"
         ]
     },
 
@@ -564,7 +556,7 @@ const familias = {
         ]
     },
 
-    "AUCE-98D3": {
+        "AUCE-98D3": {
         codigo: "AUCE-98D3",
         familia: "Familia Auceda",
         integrantes: [
@@ -582,9 +574,7 @@ const familias = {
         ]
     },
 
-
-
-        "SOBE-832D": {
+    "SOBE-832D": {
         codigo: "SOBE-832D",
         familia: "Soberanis",
         integrantes: [
@@ -640,6 +630,87 @@ const familias = {
         integrantes: [
             "Aracely de Morales",
             "Kevin Morales"
+        ]
+    },
+
+    "SAND-G586": {
+        codigo: "SAND-G586",
+        familia: "Sandoval",
+        integrantes: [
+            "Brayan Sandoval"
+        ]
+    },
+
+    "VASQ-586D": {
+        codigo: "VASQ-586D",
+        familia: "Familia Vasquez",
+        integrantes: [
+            "Antonio Vasquez",
+            "Hilda de Vasquez",
+            "Wilklson Vasquez",
+            "Crustoopher Vasquez"
+        ]
+    },
+
+    "PALE-9L48": {
+        codigo: "PALE-9L48",
+        familia: "Familia Palencia",
+        integrantes: [
+            "Omsar Palencia",
+            "Monica de Palencia"
+        ]
+    },
+
+    "LESL-589D": {
+        codigo: "LESL-589D",
+        familia: "Familia Alarcon",
+        integrantes: [
+            "Leslie Alarcon"
+        ]
+    },
+
+    "JACI-E3D4": {
+        codigo: "JACI-E3D4",
+        familia: "Familia Jacinto",
+        integrantes: [
+            "Heralda Jacinto"
+        ]
+    },
+
+    "IVOY-UDK3": {
+        codigo: "IVOY-UDK3",
+        familia: "Ivoy",
+        integrantes: [
+            "Johanna Ivoy"
+        ]
+    },
+
+    "DIAZ-739K": {
+        codigo: "DIAZ-739K",
+        familia: "Familia Diaz",
+        integrantes: [
+            "Miguel Diaz",
+            "Stephanie Leal"
+        ]
+    },
+
+        "CRIS-56ED": {
+        codigo: "CRIS-56ED",
+        familia: "Familia Crispin",
+        integrantes: [
+            "Jhony Crispin",
+            "Raquel de Crispin",
+            "Daniel Crispin"
+        ]
+    },
+
+    "RAXC-5ED2": {
+        codigo: "RAXC-5ED2",
+        familia: "Familia Raxcaco",
+        integrantes: [
+            "David Raxcaco",
+            "Iris Raxcaco",
+            "Samual Raxcaco"
         ]
     }
 
