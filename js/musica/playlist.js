@@ -2,11 +2,11 @@ const PLAYLIST = [
 
     {
 
-        titulo: "Perfect",
+        titulo: "Canción 1",
 
-        artista: "Ed Sheeran",
+        artista: "Joyce & Hasson",
 
-        archivo: "music/perfect.mp3"
+        archivo: "music/01.mp3"
 
     }
 
