@@ -6,7 +6,7 @@ const PLAYLIST = [
 
         artista: "Joyce & Hasson",
 
-        archivo: "music/01.mp3"
+        archivo: "music/playlist/01.mp3"
 
     }
 
