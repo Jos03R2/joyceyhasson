@@ -842,9 +842,9 @@
 
 .musica__vinilo{
 
-    width:120px;
+    width:90px;
 
-    height:120px;
+    height:90px;
 
     border-radius:50%;
 
@@ -904,9 +904,9 @@
 
 .musica__centro{
 
-    width:48px;
+    width:36px;
 
-    height:48px;
+    height:36px;
 
     border-radius:50%;
 
@@ -922,7 +922,7 @@
 
     font-weight:700;
 
-    font-size:1rem;
+    font-size:.85rem;
 
     letter-spacing:2px;
 
