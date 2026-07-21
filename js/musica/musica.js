@@ -1,5 +1,19 @@
-function reproducir() {
+/*======================================
+            MUSICA
+======================================*/
 
-    return player.reproducir();
+cargarCancion();
+
+cambiarVolumen(100);
+
+iniciarControles();
+
+/*======================================
+        FUNCION GLOBAL
+======================================*/
+
+async function reproducir() {
+
+    await reproducirCancion();
 
 }
