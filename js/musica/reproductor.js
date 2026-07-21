@@ -1,296 +1,51 @@
-/*======================================
-        CONFIGURACION
-======================================*/
+class Reproductor {
 
-audio.volume = 1;
+    constructor() {
 
-/*======================================
-        VARIABLES INTERNAS
-======================================*/
+        this.audio = document.getElementById("audio");
 
-let fadeInterval = null;
+        this.indice = 0;
 
-let cambioEnProceso = false;
+        this.playlist = PLAYLIST;
 
-/*======================================
-        CARGAR CANCION
-======================================*/
+        this.inicializado = false;
 
-function cargarCancion(){
+    }
 
-    const cancion = PLAYLIST[indiceActual];
+    iniciar() {
 
-    audio.src = cancion.archivo;
+        const cancion = this.playlist[this.indice];
 
-    audio.load();
+        this.audio.src = cancion.archivo;
 
-    nombreCancion.textContent =
-    cancion.titulo;
+        this.audio.load();
 
-    nombreArtista.textContent =
-    cancion.artista;
+        this.inicializado = true;
 
-    contadorPlaylist.textContent =
-    `${indiceActual + 1} / ${PLAYLIST.length}`;
+    }
 
-}
+    async reproducir() {
 
-/*======================================
-        REPRODUCIR
-======================================*/
+        if (!this.inicializado) {
 
-async function reproducir(){
-
-    try{
-
-        const promesa = audio.play();
-
-        if(promesa){
-
-            await promesa;
+            this.iniciar();
 
         }
 
-        reproduciendo = true;
+        try {
 
-        reproduccionIniciada = true;
-
-    }
-
-    catch(error){
-
-        console.error(
-
-            "No fue posible reproducir el audio.",
-
-            error
-
-        );
-
-    }
-
-}
-
-/*======================================
-        PAUSAR
-======================================*/
-
-function pausar(){
-
-    audio.pause();
-
-    reproduciendo = false;
-
-}
-
-/*======================================
-        TOGGLE PLAY
-======================================*/
-
-async function alternarReproduccion(){
-
-    if(reproduciendo){
-
-        pausar();
-
-    }
-
-    else{
-
-        await reproducir();
-
-    }
-
-}
-
-/*======================================
-        LIMPIAR FADE
-======================================*/
-
-function detenerFade(){
-
-    if(fadeInterval){
-
-        clearInterval(
-
-            fadeInterval
-
-        );
-
-        fadeInterval = null;
-
-    }
-
-}
-
-
-
-
-
-/*======================================
-        FADE OUT
-======================================*/
-
-function fadeOut(callback){
-
-    detenerFade();
-
-    fadeInterval = setInterval(()=>{
-
-        if(audio.volume > 0.05){
-
-            audio.volume -= ultimoVolumen / 20;
+            await this.audio.play();
 
         }
 
-        else{
+        catch (error) {
 
-            detenerFade();
-
-            audio.pause();
-
-            audio.volume = 0;
-            audio.muted = false;
-
-            if(typeof callback === "function"){
-
-                callback();
-
-            }
+            console.error("Error al reproducir:", error);
 
         }
-
-    },40);
-
-}
-
-/*======================================
-        FADE IN
-======================================*/
-
-async function fadeIn(){
-
-    detenerFade();
-
-    audio.volume = 0;
-
-    try{
-
-        const promesa = audio.play();
-
-        if(promesa){
-
-            await promesa;
-
-        }
-
-        reproduciendo = true;
-
-        reproduccionIniciada = true;
-
-    }
-
-    catch(error){
-
-        console.error(
-
-            "No fue posible iniciar la reproduccion.",
-
-            error
-
-        );
-
-        return;
-
-    }
-
-    fadeInterval = setInterval(()=>{
-
-        if(audio.volume < ultimoVolumen){
-
-            audio.volume += ultimoVolumen / 20;
-
-        }
-
-        else{
-
-            audio.volume = ultimoVolumen;
-
-            detenerFade();
-
-        }
-
-    },40);
-
-}
-
-
-/*======================================
-        CAMBIAR CANCION
-======================================*/
-
-async function cambiarCancion(indice){
-
-    if(cambioEnProceso){
-
-        return;
-
-    }
-
-    cambioEnProceso = true;
-
-    if(indice >= PLAYLIST.length){
-
-        indice = 0;
-
-    }
-
-    if(indice < 0){
-
-        indice = PLAYLIST.length - 1;
-
-    }
-
-    indiceActual = indice;
-
-    cargarCancion();
-
-    await new Promise((resolve)=>{
-
-        if(audio.readyState >= 3){
-
-            resolve();
-
-            return;
-
-        }
-
-        audio.addEventListener(
-
-            "canplay",
-
-            resolve,
-
-            {
-
-                once:true
-
-            }
-
-        );
-
-    });
-
-    try{
-
-        await fadeIn();
-
-    }
-
-    finally{
-
-        cambioEnProceso = false;
 
     }
 
 }
+
+const player = new Reproductor();
