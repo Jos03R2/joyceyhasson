@@ -1,7 +1,7 @@
 /*======================================
             INTERFAZ
 ======================================*/
-
+let temporizadorVolumen = null;
 /*======================================
         ACTUALIZAR INFORMACION
 ======================================*/
@@ -10,14 +10,34 @@ function actualizarInformacion() {
 
     const cancion = PLAYLIST[EstadoMusica.indice];
 
-    EstadoMusica.nombreCancion.textContent =
-        cancion.titulo;
+    EstadoMusica.nombreCancion.classList.remove(
+        "mostrar"
+    );
 
-    EstadoMusica.nombreArtista.textContent =
-        cancion.artista;
+    EstadoMusica.nombreArtista.classList.remove(
+        "mostrar"
+    );
 
-    EstadoMusica.contador.textContent =
-        `${EstadoMusica.indice + 1} / ${PLAYLIST.length}`;
+    setTimeout(() => {
+
+        EstadoMusica.nombreCancion.textContent =
+            cancion.titulo;
+
+        EstadoMusica.nombreArtista.textContent =
+            cancion.artista;
+
+        EstadoMusica.contador.textContent =
+            `${EstadoMusica.indice + 1} / ${PLAYLIST.length}`;
+
+        EstadoMusica.nombreCancion.classList.add(
+            "mostrar"
+        );
+
+        EstadoMusica.nombreArtista.classList.add(
+            "mostrar"
+        );
+
+    }, 180);
 
 }
 
@@ -30,6 +50,10 @@ function actualizarBarra() {
     if (!EstadoMusica.audio.duration) {
 
         EstadoMusica.barra.style.width = "0%";
+
+        EstadoMusica.tiempoActual.textContent = "0:00";
+
+        EstadoMusica.tiempoTotal.textContent = "0:00";
 
         return;
 
@@ -44,7 +68,21 @@ function actualizarBarra() {
     EstadoMusica.barra.style.width =
         porcentaje + "%";
 
+    EstadoMusica.tiempoActual.textContent =
+        formatearTiempo(
+            EstadoMusica.audio.currentTime
+        );
+
+    EstadoMusica.tiempoTotal.textContent =
+        formatearTiempo(
+            EstadoMusica.audio.duration
+        );
+
 }
+
+/*======================================
+        CAMBIAR VOLUMEN
+======================================*/
 
 /*======================================
         CAMBIAR VOLUMEN
@@ -58,6 +96,14 @@ function cambiarVolumen(valor) {
 
     EstadoMusica.audio.muted = false;
 
+    localStorage.setItem(
+
+        "volumenMusica",
+
+        EstadoMusica.volumen
+
+    );
+
     actualizarIconoVolumen();
 
 }
@@ -66,11 +112,23 @@ function cambiarVolumen(valor) {
         SILENCIAR
 ======================================*/
 
+/*======================================
+        MOSTRAR VOLUMEN
+======================================*/
+
 function alternarSilencio() {
 
     const contenedor = document.querySelector(".musica__volumen");
 
-    contenedor.classList.toggle("mostrar");
+    contenedor.classList.add("mostrar");
+
+    clearTimeout(temporizadorVolumen);
+
+    temporizadorVolumen = setTimeout(() => {
+
+        contenedor.classList.remove("mostrar");
+
+    }, 3000);
 
 }
 
@@ -82,21 +140,29 @@ function actualizarIconoVolumen() {
 
     const icono = EstadoMusica.btnVolumen.querySelector("i");
 
-    if (EstadoMusica.audio.muted || EstadoMusica.audio.volume === 0) {
+    const volumen = EstadoMusica.audio.volume;
 
-        icono.className = "fa-solid fa-volume-xmark";
+    if (volumen === 0) {
+
+        icono.className =
+
+            "fa-solid fa-volume-xmark";
 
     }
 
-    else if (EstadoMusica.audio.volume < 0.4) {
+    else if (volumen < 0.35) {
 
-        icono.className = "fa-solid fa-volume-low";
+        icono.className =
+
+            "fa-solid fa-volume-low";
 
     }
 
     else {
 
-        icono.className = "fa-solid fa-volume-high";
+        icono.className =
+
+            "fa-solid fa-volume-high";
 
     }
 
@@ -136,5 +202,25 @@ function cambiarPosicion(evento) {
 function reiniciarBarra() {
 
     EstadoMusica.barra.style.width = "0%";
+
+}
+
+/*======================================
+        FORMATEAR TIEMPO
+======================================*/
+
+function formatearTiempo(segundos){
+
+    if(isNaN(segundos)){
+
+        return "0:00";
+
+    }
+
+    const minutos = Math.floor(segundos / 60);
+
+    const seg = Math.floor(segundos % 60);
+
+    return `${minutos}:${seg.toString().padStart(2,"0")}`;
 
 }

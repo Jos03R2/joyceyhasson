@@ -24,6 +24,9 @@ const EstadoMusica = {
 
     contenedorBarra: document.querySelector(".musica__barra"),
 
+    tiempoActual: document.getElementById("tiempoActual"),
+
+    tiempoTotal: document.getElementById("tiempoTotal"),
     /*==============================
             BOTONES
     ==============================*/
