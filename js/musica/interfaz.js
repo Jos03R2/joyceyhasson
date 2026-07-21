@@ -54,8 +54,11 @@ function cambiarVolumen(valor) {
 
     EstadoMusica.volumen = valor / 100;
 
-    EstadoMusica.audio.volume =
-        EstadoMusica.volumen;
+    EstadoMusica.audio.volume = EstadoMusica.volumen;
+
+    EstadoMusica.audio.muted = false;
+
+    actualizarIconoVolumen();
 
 }
 
@@ -65,23 +68,63 @@ function cambiarVolumen(valor) {
 
 function alternarSilencio() {
 
-    if (EstadoMusica.audio.volume > 0) {
+    if (EstadoMusica.audio.muted) {
 
-        EstadoMusica.audio.volume = 0;
+        EstadoMusica.audio.muted = false;
 
-        EstadoMusica.sliderVolumen.value = 0;
+    } else {
+
+        EstadoMusica.audio.muted = true;
+
+    }
+
+    actualizarIconoVolumen();
+
+}
+
+/*======================================
+        ACTUALIZAR ICONO
+======================================*/
+
+function actualizarIconoVolumen() {
+
+    const icono = EstadoMusica.btnVolumen.querySelector("i");
+
+    if (EstadoMusica.audio.muted || EstadoMusica.audio.volume === 0) {
+
+        icono.className = "fa-solid fa-volume-xmark";
+
+    }
+
+    else if (EstadoMusica.audio.volume < 0.4) {
+
+        icono.className = "fa-solid fa-volume-low";
 
     }
 
     else {
 
-        EstadoMusica.audio.volume =
-            EstadoMusica.volumen;
-
-        EstadoMusica.sliderVolumen.value =
-            EstadoMusica.volumen * 100;
+        icono.className = "fa-solid fa-volume-high";
 
     }
+
+}
+
+/*======================================
+        CAMBIAR POSICION
+======================================*/
+
+function cambiarPosicion(evento) {
+
+    const rect = EstadoMusica.contenedorBarra.getBoundingClientRect();
+
+    const porcentaje =
+
+        (evento.clientX - rect.left) / rect.width;
+
+    EstadoMusica.audio.currentTime =
+
+        porcentaje * EstadoMusica.audio.duration;
 
 }
 

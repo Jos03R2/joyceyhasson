@@ -4,6 +4,10 @@
 
 function iniciarControles() {
 
+    /*==================================
+            BOTONES
+    ==================================*/
+
     EstadoMusica.btnSiguiente.addEventListener(
 
         "click",
@@ -80,6 +84,10 @@ function iniciarControles() {
 
     );
 
+    /*==================================
+            BARRA DE PROGRESO
+    ==================================*/
+
     EstadoMusica.audio.addEventListener(
 
         "timeupdate",
@@ -88,11 +96,31 @@ function iniciarControles() {
 
     );
 
+    EstadoMusica.contenedorBarra.addEventListener(
+
+        "click",
+
+        cambiarPosicion
+
+    );
+
+    /*==================================
+            EVENTOS AUDIO
+    ==================================*/
+
     EstadoMusica.audio.addEventListener(
 
         "ended",
 
         finalizarCancion
+
+    );
+
+    EstadoMusica.audio.addEventListener(
+
+        "loadedmetadata",
+
+        actualizarBarra
 
     );
 

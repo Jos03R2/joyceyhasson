@@ -22,6 +22,8 @@ const EstadoMusica = {
 
     barra: document.getElementById("barraProgreso"),
 
+    contenedorBarra: document.querySelector(".musica__barra"),
+
     /*==============================
             BOTONES
     ==============================*/

@@ -6,6 +6,8 @@ cargarCancion();
 
 cambiarVolumen(100);
 
+actualizarIconoVolumen();
+
 iniciarControles();
 
 /*======================================
