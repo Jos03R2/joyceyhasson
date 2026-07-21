@@ -68,17 +68,9 @@ function cambiarVolumen(valor) {
 
 function alternarSilencio() {
 
-    if (EstadoMusica.audio.muted) {
+    const contenedor = document.querySelector(".musica__volumen");
 
-        EstadoMusica.audio.muted = false;
-
-    } else {
-
-        EstadoMusica.audio.muted = true;
-
-    }
-
-    actualizarIconoVolumen();
+    contenedor.classList.toggle("mostrar");
 
 }
 
@@ -116,14 +108,23 @@ function actualizarIconoVolumen() {
 
 function cambiarPosicion(evento) {
 
+    console.log("Click en barra");
+
     const rect = EstadoMusica.contenedorBarra.getBoundingClientRect();
 
-    const porcentaje =
+    const x = evento.clientX - rect.left;
 
-        (evento.clientX - rect.left) / rect.width;
+    const porcentaje = x / rect.width;
+
+    console.log("Porcentaje:", porcentaje);
+
+    if (!EstadoMusica.audio.duration) {
+
+        return;
+
+    }
 
     EstadoMusica.audio.currentTime =
-
         porcentaje * EstadoMusica.audio.duration;
 
 }
